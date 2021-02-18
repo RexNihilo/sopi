@@ -1,0 +1,13 @@
+<h1><%= @course.name %></h1>
+
+<p>Prefix: <%= @course.prefix %></p>
+<p>Number: <%= @course.number %></p>
+<p>Section: <%= @course.section %></p>
+<p><%= @course.created_at %></p>
+<ul>
+  <li><%= link_to "Edit", edit_course_path(@course) %></li>
+
+<li><%= link_to "Destroy Course", course_path(@course),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+</ul>

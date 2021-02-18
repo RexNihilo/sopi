@@ -56,3 +56,1009 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 3ms (Views: 2.4ms | Allocations: 342)
 
 
+Started GET "/" for 69.153.28.152 at 2021-02-18 01:14:41 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/railties-6.1.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.4ms | Allocations: 233)
+Completed 200 OK in 14ms (Views: 11.7ms | Allocations: 872)
+
+
+Started GET "/courses" for 69.153.28.152 at 2021-02-18 01:14:46 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  Rendered courses/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 118)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: fb044230d924c0055b60
+Version: webpack 4.46.0
+Time: 5528ms
+Built at: 02/18/2021 1:14:54 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-b43fa54005da8e229d8c.js    125 KiB  application  [emitted] [immutable]  application
+js/application-b43fa54005da8e229d8c.js.map    139 KiB  application  [emitted] [dev]        application
+      js/hello_vue-24af88da08877c31c086.js    239 KiB    hello_vue  [emitted] [immutable]  hello_vue
+  js/hello_vue-24af88da08877c31c086.js.map    292 KiB    hello_vue  [emitted] [dev]        hello_vue
+                             manifest.json  689 bytes               [emitted]              
+Entrypoint application = js/application-b43fa54005da8e229d8c.js js/application-b43fa54005da8e229d8c.js.map
+Entrypoint hello_vue = js/hello_vue-24af88da08877c31c086.js js/hello_vue-24af88da08877c31c086.js.map
+[./app/javascript/app.vue] 291 bytes {hello_vue} [built] [failed] [1 error]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./app/javascript/packs/hello_vue.js] 1.89 KiB {hello_vue} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {hello_vue} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 7 hidden modules
+
+ERROR in ./app/javascript/app.vue 1:0
+Module parse failed: Unexpected token (1:0)
+You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
+> <template>
+|   <div id="app">
+|     <p>{{ message }}</p>
+ @ ./app/javascript/packs/hello_vue.js 8:0-29 12:15-18
+
+  Rendered layout layouts/application.html.erb (Duration: 8501.7ms | Allocations: 16265)
+Completed 200 OK in 8509ms (Views: 8506.1ms | Allocations: 17374)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCourses (20210218011755)
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCourses (20210218011755)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.0ms)[0m  [1m[35mCREATE TABLE "courses" ("id" bigserial primary key, "prefix" character varying, "name" character varying, "number" integer, "section" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210218011755"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.8ms)[0m  [1m[32mINSERT INTO "courses" ("prefix", "name", "number", "section", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["prefix", "CSCI"], ["name", "Senior Seminar"], ["number", 421], ["section", 1], ["created_at", "2021-02-18 01:22:01.262103"], ["updated_at", "2021-02-18 01:22:01.262103"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/courses" for 69.153.28.152 at 2021-02-18 01:26:26 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 27.3ms | Allocations: 6171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.5ms | Allocations: 9366)
+Completed 200 OK in 42ms (Views: 20.9ms | ActiveRecord: 18.3ms | Allocations: 10789)
+
+
+Started GET "/courses" for 69.153.28.152 at 2021-02-18 01:26:45 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.8ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1103)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 4311)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.8ms | Allocations: 5444)
+
+
+Started GET "/courses" for 69.153.28.152 at 2021-02-18 01:31:43 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 17.8ms | Allocations: 5291)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 8480)
+Completed 200 OK in 33ms (Views: 24.4ms | ActiveRecord: 6.5ms | Allocations: 9883)
+
+
+Started GET "/courses/1" for 69.153.28.152 at 2021-02-18 01:31:45 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (1.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 11.5ms | Allocations: 4204)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 4274)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 2.6ms | Allocations: 6041)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `course' for #<ActionView::Base:0x007f9e08a2e6a0>
+Did you mean?  @course):
+    1: <h1><%= @course.name %></h1>
+    2: 
+    3: <p><%= course.prefix %></p>
+    4: <p><%= course.number %></p>
+    5: <p><%= course.section %></p>
+    6: <p><%= course.cerated_at %></p>
+  
+app/views/courses/show.html.erb:3
+Started GET "/courses" for 69.153.28.152 at 2021-02-18 01:31:47 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (2.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 975)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 4139)
+Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 2.7ms | Allocations: 4639)
+
+
+Started GET "/courses/1" for 69.153.28.152 at 2021-02-18 01:31:48 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (1.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 10.5ms | Allocations: 3314)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 3384)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.3ms | Allocations: 4456)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `course' for #<ActionView::Base:0x007f9e09dc9390>
+Did you mean?  @course):
+    1: <h1><%= @course.name %></h1>
+    2: 
+    3: <p><%= course.prefix %></p>
+    4: <p><%= course.number %></p>
+    5: <p><%= course.section %></p>
+    6: <p><%= course.cerated_at %></p>
+  
+app/views/courses/show.html.erb:3
+Started GET "/courses/1" for 69.153.28.152 at 2021-02-18 01:32:47 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (2.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 6.4ms | Allocations: 3457)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 3527)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.5ms | Allocations: 5349)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `course' for #<ActionView::Base:0x005601f704ff48>
+Did you mean?  @course):
+    1: <h1><%= @course.name %></h1>
+    2: 
+    3: <p><%= course.prefix %></p>
+    4: <p><%= course.number %></p>
+    5: <p><%= course.section %></p>
+    6: <p><%= course.cerated_at %></p>
+  
+app/views/courses/show.html.erb:3
+Started GET "/" for 69.153.28.152 at 2021-02-18 01:32:50 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1120)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 4329)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 1.3ms | Allocations: 4847)
+
+
+Started GET "/" for 69.153.28.152 at 2021-02-18 01:32:51 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 891)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 3910)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.9ms | Allocations: 4299)
+
+
+Started GET "/courses/1" for 69.153.28.152 at 2021-02-18 01:32:52 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (1.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 11.7ms | Allocations: 3307)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 3377)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.4ms | Allocations: 5359)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `course' for #<ActionView::Base:0x007f9e09680930>
+Did you mean?  @course):
+    1: <h1><%= @course.name %></h1>
+    2: 
+    3: <p><%= course.prefix %></p>
+    4: <p><%= course.number %></p>
+    5: <p><%= course.section %></p>
+    6: <p><%= course.cerated_at %></p>
+  
+app/views/courses/show.html.erb:3
+Started GET "/courses/1" for 69.153.28.152 at 2021-02-18 01:33:43 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.8ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 6.0ms | Allocations: 3307)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3377)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.8ms | Allocations: 4440)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `course' for #<ActionView::Base:0x007f9e0a386e40>
+Did you mean?  @course):
+    1: <h1><%= @course.name %></h1>
+    2: 
+    3: <p><%= course.prefix %></p>
+    4: <p><%= course.number %></p>
+    5: <p><%= course.section %></p>
+    6: <p><%= course.cerated_at %></p>
+  
+app/views/courses/show.html.erb:3
+Started GET "/" for 69.153.28.152 at 2021-02-18 01:34:23 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 890)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 3910)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.9ms | Allocations: 4298)
+
+
+Started GET "/courses/1" for 69.153.28.152 at 2021-02-18 01:34:25 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (1.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 9.8ms | Allocations: 3307)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 3377)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.5ms | Allocations: 5372)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `course' for #<ActionView::Base:0x007f9e08f15ad8>
+Did you mean?  @course):
+    1: <h1><%= @course.name %></h1>
+    2: 
+    3: <p><%= course.prefix %></p>
+    4: <p><%= course.number %></p>
+    5: <p><%= course.section %></p>
+    6: <p><%= course.cerated_at %></p>
+  
+app/views/courses/show.html.erb:3
+Started GET "/" for 69.153.28.152 at 2021-02-18 01:34:27 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (4.8ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 891)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 3912)
+Completed 200 OK in 25ms (Views: 20.1ms | ActiveRecord: 4.8ms | Allocations: 4301)
+
+
+Started GET "/courses/1" for 69.153.28.152 at 2021-02-18 01:34:28 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (2.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 10.2ms | Allocations: 3307)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 3377)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 2.1ms | Allocations: 4428)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `course' for #<ActionView::Base:0x007f9e0a330bf8>
+Did you mean?  @course):
+    1: <h1><%= @course.name %></h1>
+    2: 
+    3: <p><%= course.prefix %></p>
+    4: <p><%= course.number %></p>
+    5: <p><%= course.section %></p>
+    6: <p><%= course.cerated_at %></p>
+  
+app/views/courses/show.html.erb:3
+Started GET "/" for 69.153.28.152 at 2021-02-18 01:34:29 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.8ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 890)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 3910)
+Completed 200 OK in 16ms (Views: 13.2ms | ActiveRecord: 1.8ms | Allocations: 4298)
+
+
+Started GET "/courses/1" for 69.153.28.152 at 2021-02-18 01:34:34 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (1.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 11.1ms | Allocations: 3307)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 3377)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.9ms | Allocations: 4428)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `course' for #<ActionView::Base:0x007f9e0898dc00>
+Did you mean?  @course):
+    1: <h1><%= @course.name %></h1>
+    2: 
+    3: <p><%= course.prefix %></p>
+    4: <p><%= course.number %></p>
+    5: <p><%= course.section %></p>
+    6: <p><%= course.cerated_at %></p>
+  
+app/views/courses/show.html.erb:3
+Started GET "/courses/1" for 69.153.28.152 at 2021-02-18 01:36:00 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 7.2ms | Allocations: 2867)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 2937)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 5.7ms | Allocations: 9248)
+
+
+  
+ActionView::Template::Error (undefined method `cerated_at' for #<Course:0x00007f9e0a3b85d0>
+Did you mean?  created_at
+               created_at?
+               created_at=):
+    3: <p><%= @course.prefix %></p>
+    4: <p><%= @course.number %></p>
+    5: <p><%= @course.section %></p>
+    6: <p><%= @course.cerated_at %></p>
+  
+app/views/courses/show.html.erb:6
+Started GET "/courses/1" for 69.153.28.152 at 2021-02-18 01:36:20 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (1.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 205)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3414)
+Completed 200 OK in 17ms (Views: 11.0ms | ActiveRecord: 1.6ms | Allocations: 5230)
+
+
+Started GET "/courses/1" for 69.153.28.152 at 2021-02-18 01:36:54 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (1.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 207)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 3415)
+Completed 200 OK in 17ms (Views: 11.1ms | ActiveRecord: 1.6ms | Allocations: 5227)
+
+
+Started GET "/" for 69.153.28.152 at 2021-02-18 01:36:57 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (2.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1120)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 4142)
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 2.0ms | Allocations: 4662)
+
+
+Started GET "/courses/1" for 69.153.28.152 at 2021-02-18 01:36:58 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (2.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 55)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 3074)
+Completed 200 OK in 21ms (Views: 15.1ms | ActiveRecord: 2.0ms | Allocations: 4149)
+
+
+Started GET "/" for 69.153.28.152 at 2021-02-18 01:38:56 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 891)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 3910)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 1.9ms | Allocations: 4298)
+
+
+Started GET "/" for 69.153.28.152 at 2021-02-18 01:41:07 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 19.7ms | Allocations: 8493)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 8563)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 5.8ms | Allocations: 9943)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<ActionView::Base:0x007f9e08867e48>):
+    3: <ul>
+    4:   <% @courses.each do |course| %>
+    5:     <li>
+    6:       <a href= "<%= course_path(article) %>">
+    7:       <%=course.prefix%>
+    8:       <%=course.number%>
+    9:       <%=course.section%>
+  
+app/views/courses/index.html.erb:6
+app/views/courses/index.html.erb:4
+Started GET "/" for 69.153.28.152 at 2021-02-18 01:41:23 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1155)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 4364)
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 1.2ms | Allocations: 5497)
+
+
+Started GET "/courses/1" for 69.153.28.152 at 2021-02-18 01:41:25 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (1.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 204)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 3226)
+Completed 200 OK in 17ms (Views: 10.2ms | ActiveRecord: 1.7ms | Allocations: 4525)
+
+
+Started GET "/" for 69.153.28.152 at 2021-02-18 01:43:00 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1203)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 4411)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.9ms | Allocations: 5545)
+
+
+Started GET "/courses/1" for 69.153.28.152 at 2021-02-18 01:43:01 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (1.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 204)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 3226)
+Completed 200 OK in 19ms (Views: 12.0ms | ActiveRecord: 1.5ms | Allocations: 4430)
+
+
+Started GET "/" for 69.153.28.152 at 2021-02-18 01:44:51 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 14.6ms | Allocations: 5141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | Allocations: 8141)
+Completed 200 OK in 26ms (Views: 17.5ms | ActiveRecord: 6.9ms | Allocations: 8937)
+
+
+Started GET "/courses/1" for 69.153.28.152 at 2021-02-18 01:44:51 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (2.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 55)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 3074)
+Completed 200 OK in 16ms (Views: 9.6ms | ActiveRecord: 2.2ms | Allocations: 4243)
+
+
+Started GET "/" for 69.153.28.152 at 2021-02-18 02:00:44 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 38.9ms | Allocations: 7656)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 46.4ms | Allocations: 10848)
+Completed 200 OK in 54ms (Views: 51.7ms | ActiveRecord: 9.3ms | Allocations: 12489)
+
+
+Started GET "/courses/1" for 69.153.28.152 at 2021-02-18 02:00:46 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (1.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 204)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 3226)
+Completed 200 OK in 20ms (Views: 10.6ms | ActiveRecord: 3.6ms | Allocations: 4694)
+
+
+Started GET "/" for 69.153.28.152 at 2021-02-18 02:07:01 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 22.0ms | Allocations: 4315)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.6ms | Allocations: 7522)
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 9.3ms | Allocations: 8655)
+
+
+Started GET "/courses/1" for 69.153.28.152 at 2021-02-18 02:07:03 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (1.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 204)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 3226)
+Completed 200 OK in 19ms (Views: 10.9ms | ActiveRecord: 2.8ms | Allocations: 4595)
+
+
+Started GET "/" for 69.153.28.152 at 2021-02-18 02:09:45 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1178)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 4385)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.9ms | Allocations: 5513)
+
+
+Started GET "/courses/new" for 69.153.28.152 at 2021-02-18 02:09:46 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 36.4ms | Allocations: 7929)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.5ms | Allocations: 10850)
+Completed 200 OK in 48ms (Views: 45.5ms | ActiveRecord: 0.0ms | Allocations: 12329)
+
+
+Started POST "/courses" for 69.153.28.152 at 2021-02-18 02:10:00 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"prefix"=>"Test1", "number"=>"12", "section"=>"3", "name"=>"This is a test"}, "commit"=>"Create Course"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 629)
+
+
+  
+ArgumentError (wrong number of arguments (given 4, expected 1)):
+  
+app/controllers/courses_controller.rb:26:in `course_params'
+app/controllers/courses_controller.rb:15:in `create'
+Started POST "/courses" for 69.153.28.152 at 2021-02-18 02:10:43 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"prefix"=>"Test1", "number"=>"12", "section"=>"3", "name"=>"This is a test"}, "commit"=>"Create Course"}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms | Allocations: 1032)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: name):
+  
+app/controllers/courses_controller.rb:26:in `course_params'
+app/controllers/courses_controller.rb:15:in `create'
+Started GET "/courses/new" for 69.153.28.152 at 2021-02-18 02:10:46 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1140)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 4159)
+Completed 200 OK in 59ms (Views: 36.8ms | ActiveRecord: 11.7ms | Allocations: 9038)
+
+
+Started POST "/courses" for 69.153.28.152 at 2021-02-18 02:10:49 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"prefix"=>"Test1", "number"=>"12", "section"=>"3", "name"=>"This is a test"}, "commit"=>"Create Course"}
+Completed 400 Bad Request in 11ms (ActiveRecord: 0.0ms | Allocations: 609)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: name):
+  
+app/controllers/courses_controller.rb:26:in `course_params'
+app/controllers/courses_controller.rb:15:in `create'
+Started GET "/courses/new" for 69.153.28.152 at 2021-02-18 02:10:51 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1071)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 59.8ms | Allocations: 4089)
+Completed 200 OK in 62ms (Views: 61.5ms | ActiveRecord: 0.0ms | Allocations: 4483)
+
+
+Started GET "/" for 69.153.28.152 at 2021-02-18 02:10:51 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (2.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 950)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 104.0ms | Allocations: 9580)
+Completed 200 OK in 111ms (Views: 108.2ms | ActiveRecord: 2.0ms | Allocations: 9995)
+
+
+Started GET "/courses/new" for 69.153.28.152 at 2021-02-18 02:10:52 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1071)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 4089)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 5417)
+
+
+Started POST "/courses" for 69.153.28.152 at 2021-02-18 02:10:58 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"prefix"=>"Test1", "number"=>"12", "section"=>"3", "name"=>"This is a test"}, "commit"=>"Create Course"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 632)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: name):
+  
+app/controllers/courses_controller.rb:26:in `course_params'
+app/controllers/courses_controller.rb:15:in `create'
+Started POST "/courses" for 69.153.28.152 at 2021-02-18 02:30:35 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"prefix"=>"Test1", "number"=>"12", "section"=>"3", "name"=>"This is a test"}, "commit"=>"Create Course"}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/courses_controller.rb:17:in `create'
+  [1m[36mCourse Create (1.1ms)[0m  [1m[32mINSERT INTO "courses" ("prefix", "name", "number", "section", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["prefix", "Test1"], ["name", "This is a test"], ["number", 12], ["section", 3], ["created_at", "2021-02-18 02:30:35.108132"], ["updated_at", "2021-02-18 02:30:35.108132"]]
+  ↳ app/controllers/courses_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/courses_controller.rb:17:in `create'
+Redirected to https://fb4b5bed814246d289220cbabc4ba41d.vfs.cloud9.us-east-2.amazonaws.com/courses/2
+Completed 302 Found in 37ms (ActiveRecord: 10.6ms | Allocations: 9539)
+
+
+Started GET "/courses/2" for 69.153.28.152 at 2021-02-18 02:30:35 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCourse Load (2.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 205)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 3228)
+Completed 200 OK in 19ms (Views: 10.3ms | ActiveRecord: 3.8ms | Allocations: 4883)
+
+
+Started GET "/courses/" for 69.153.28.152 at 2021-02-18 02:30:42 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 998)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 4016)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.9ms | Allocations: 4405)
+
+
+Started GET "/courses/" for 69.153.28.152 at 2021-02-18 02:31:16 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1228)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 4435)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 1.3ms | Allocations: 5568)
+
+
+Started GET "/courses/1" for 69.153.28.152 at 2021-02-18 02:31:17 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (2.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 204)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 3226)
+Completed 200 OK in 20ms (Views: 12.3ms | ActiveRecord: 2.2ms | Allocations: 5394)
+
+
+Started GET "/courses/2" for 69.153.28.152 at 2021-02-18 02:31:19 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCourse Load (2.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 55)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3075)
+Completed 200 OK in 15ms (Views: 9.3ms | ActiveRecord: 2.9ms | Allocations: 4151)
+
+
+Started GET "/courses/" for 69.153.28.152 at 2021-02-18 02:32:54 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 17.2ms | Allocations: 5420)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 8420)
+Completed 200 OK in 28ms (Views: 18.5ms | ActiveRecord: 8.5ms | Allocations: 9407)
+
+
+Started GET "/courses/" for 69.153.28.152 at 2021-02-18 02:36:46 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1233)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 4440)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.9ms | Allocations: 5573)
+
+
+Started GET "/courses/1" for 69.153.28.152 at 2021-02-18 02:36:47 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (2.8ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 257)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.0ms | Allocations: 3278)
+Completed 200 OK in 47ms (Views: 39.6ms | ActiveRecord: 2.8ms | Allocations: 4577)
+
+
+Started GET "/courses/1/edit" for 69.153.28.152 at 2021-02-18 02:36:50 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (1.8ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/edit.html.erb within layouts/application
+  Rendered courses/_form.html.erb (Duration: 2.4ms | Allocations: 1623)
+  Rendered courses/edit.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1939)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 4957)
+Completed 200 OK in 22ms (Views: 15.9ms | ActiveRecord: 1.8ms | Allocations: 6161)
+
+
+Started PATCH "/courses/1" for 69.153.28.152 at 2021-02-18 02:36:52 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"prefix"=>"CSCI", "number"=>"421", "section"=>"11", "name"=>"Senior Seminar"}, "commit"=>"Update Course", "id"=>"1"}
+  [1m[36mCourse Load (0.8ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/courses_controller.rb:31:in `update'
+  [1m[36mCourse Update (0.9ms)[0m  [1m[33mUPDATE "courses" SET "section" = $1, "updated_at" = $2 WHERE "courses"."id" = $3[0m  [["section", 11], ["updated_at", "2021-02-18 02:36:52.926118"], ["id", 1]]
+  ↳ app/controllers/courses_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/courses_controller.rb:31:in `update'
+Redirected to https://fb4b5bed814246d289220cbabc4ba41d.vfs.cloud9.us-east-2.amazonaws.com/courses/1
+Completed 302 Found in 17ms (ActiveRecord: 3.9ms | Allocations: 3312)
+
+
+Started GET "/courses/1" for 69.153.28.152 at 2021-02-18 02:36:52 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (1.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 83)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 3102)
+Completed 200 OK in 15ms (Views: 9.2ms | ActiveRecord: 1.6ms | Allocations: 4175)
+
+
+Started GET "/courses/" for 69.153.28.152 at 2021-02-18 02:36:57 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 992)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 4010)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.9ms | Allocations: 4398)
+
+
+Started GET "/courses/new" for 69.153.28.152 at 2021-02-18 02:40:31 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1564)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 4582)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.0ms | Allocations: 5107)
+
+
+Started GET "/courses/" for 69.153.28.152 at 2021-02-18 02:43:14 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 27.8ms | Allocations: 7735)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.4ms | Allocations: 10921)
+Completed 200 OK in 41ms (Views: 38.4ms | ActiveRecord: 9.4ms | Allocations: 12515)
+
+
+Started GET "/courses/1" for 69.153.28.152 at 2021-02-18 02:43:17 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 317)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 3338)
+Completed 200 OK in 19ms (Views: 9.9ms | ActiveRecord: 5.4ms | Allocations: 4803)
+
+
+Started GET "/courses/2" for 69.153.28.152 at 2021-02-18 02:43:22 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCourse Load (2.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 117)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 3136)
+Completed 200 OK in 17ms (Views: 11.3ms | ActiveRecord: 2.0ms | Allocations: 4212)
+
+
+Started DELETE "/courses/2" for 69.153.28.152 at 2021-02-18 02:43:24 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mCourse Load (1.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/courses_controller.rb:40:in `destroy'
+  [1m[36mCourse Destroy (0.9ms)[0m  [1m[31mDELETE FROM "courses" WHERE "courses"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/courses_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/courses_controller.rb:40:in `destroy'
+Redirected to https://fb4b5bed814246d289220cbabc4ba41d.vfs.cloud9.us-east-2.amazonaws.com/
+Completed 302 Found in 15ms (ActiveRecord: 4.2ms | Allocations: 2726)
+
+
+Started GET "/" for 69.153.28.152 at 2021-02-18 02:43:24 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 938)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 3956)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.9ms | Allocations: 4344)
+
+
