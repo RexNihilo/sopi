@@ -25,13 +25,13 @@
 
 
 Branches:
-To Create: git branch "nameofbranchhere"
-To Checkout: git checkout nameofbranchhere
-To Show current branch: git branch --show-current
-To save your changes to your current branch: git add *
-To create a commit: git commit -m "i changed some stuff"
-To push commit to github repo: git push origin main 
-See Jeff's video or hit him up on slack with questions
-To delete: git branch -d nameofbranchhere
+1. To Create: git branch "nameofbranchhere"
+2. To Checkout: git checkout nameofbranchhere
+3. To Show current branch: git branch --show-current
+4. To save your changes to your current branch: git add *
+5. To create a commit: git commit -m "i changed some stuff"
+6. To push commit to github repo: git push origin main 
+8. To delete: git branch -d nameofbranchhere
+9. See Jeff's video or hit him up on slack with questions
 
 # If you have any questions or isses, please contact Ryan Maharrey or Dr. V
