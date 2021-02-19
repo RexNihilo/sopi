@@ -10,7 +10,7 @@ Rails.application.configure do
   config.hosts << "01e74ff49b9a46a3ad998e5a61217896.vfs.cloud9.us-east-2.amazonaws.com"
   # Do not eager load code on boot.
   config.eager_load = false
-
+  config.hosts << "7eee17b465a34d8895f3145a33bcc752.vfs.cloud9.us-east-2.amazonaws.com"
   # Show full error reports.
   config.consider_all_requests_local = true
 
