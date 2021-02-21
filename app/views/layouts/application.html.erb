@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Ipos</title>
+        <%= image_tag("CITADELLOGO.png",  :size => "200x40", :alt => "rss feed") %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,7 +13,7 @@
 
   <body>
       
-  <header>
+  <header> 
       <% if signed_in? %>
         Signed in as: <%= current_user.email %>
         <%= button_to 'Sign out', sign_out_path, method: :delete %>
