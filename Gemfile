@@ -7,6 +7,7 @@ gem "clearance", '~> 1.15.1' #added this gem for Authentication ELGAZAR and TEAM
 gem 'rails', '~> 6.1.3'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3', '~> 1.4'
+gem 'cucumber'
 gem 'pg'
 gem 'figaro'
 # Use Puma as the app server
