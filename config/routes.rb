@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-    
+  resources :plans
   resources :welcome
   resources :students
-  root "courses#index"
-  resources :courses
-  
+  resources :semesters
+    root "courses#index"
+    resources :courses
 end

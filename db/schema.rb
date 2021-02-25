@@ -43,5 +43,20 @@ ActiveRecord::Schema.define(version: 2021_02_21_072628) do
     t.index ["email"], name: "index_users_on_email"
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end
+  
+   create_table "plans", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "semesters", force: :cascade do |t|
+    t.string "course1"
+    t.string "course2"
+    t.string "course3"
+    t.string "course4"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
 
 end
