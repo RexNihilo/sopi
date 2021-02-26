@@ -1,3 +1,6 @@
+#the following is a barebones guide on deploying the app to heroku
 sudo snap install heroku --classic
 heroku login --interactive
+<enter credentials>
+heroku create
 git push heroku main
