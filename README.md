@@ -35,4 +35,22 @@ Branches:
 8. To delete: git branch -d nameofbranchhere
 9. See Jeff's video or hit him up on slack with questions
 
+Hey Guys i am sure there is another easy way to do this, but I highly recommend doing the following before starting a new feature/project:
+
+1. Ensure you have no unsaved work on your environment.
+2. Delete the ipos folder in your environment
+3. open a new terminal
+4. git clone https://github.com/CitadelCS/ipos
+5. enter in your credentials
+6. cd ipos
+7. git branch enteradescriptivebranchnamehere
+8. git checkout enteradescriptivebranchnamehere
+Now you can start your work without worrying about git repo conflicts. When you are done, and you have made sure your feature is stable do:
+1. git add .
+2. git commit -m "I made these changes"
+3. git push origin enteradescriptivebranchnamehere
+4. enter in your credentials
+5. From here, open a pull request and have a team member look over your code before merging, for safety.
+thanks yall!
+
 # If you have any questions or isses, please contact Ryan Maharrey or Dr. V
