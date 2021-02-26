@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_21_072628) do
+ActiveRecord::Schema.define(version: 2021_02_24_184505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,20 @@ ActiveRecord::Schema.define(version: 2021_02_21_072628) do
     t.string "name"
     t.integer "number"
     t.integer "section"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "plans", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "semesters", force: :cascade do |t|
+    t.string "course1"
+    t.string "course2"
+    t.string "course3"
+    t.string "course4"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -43,20 +57,5 @@ ActiveRecord::Schema.define(version: 2021_02_21_072628) do
     t.index ["email"], name: "index_users_on_email"
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end
-  
-   create_table "plans", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "semesters", force: :cascade do |t|
-    t.string "course1"
-    t.string "course2"
-    t.string "course3"
-    t.string "course4"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
 
 end
