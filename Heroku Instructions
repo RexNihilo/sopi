@@ -3,4 +3,10 @@ sudo snap install heroku --classic
 heroku login --interactive
 <enter credentials>
 heroku create
+
+#The following three commands fix a webpacker/heroku issue causing deploymnet to fail. It took me 6 hours to fix this -JAS 
+heroku buildpacks:clear
+heroku buildpacks:set heroku/nodejs
+heroku buildpacks:add heroku/ruby
+
 git push heroku main
