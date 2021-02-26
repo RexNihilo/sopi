@@ -1,0 +1,3 @@
+sudo snap install heroku --classic
+heroku login --interactive
+git push heroku main
