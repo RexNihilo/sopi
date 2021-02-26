@@ -1,3 +1,19 @@
+#Upgrade Your environment to Ruby 2.6.6 !!
+
+1. rvm get stable
+2. rvm reload
+3. rvm gemset create ipos
+4. rvm 2.6.6@ipos
+5. bundle
+6. rvm --ruby-version use 2.6.6@ipos
+7. rvm install 2.6.6
+8. rvm use 2.6.6
+9. rvm gemset create ipos
+10. rvm 2.6.6@ipos
+11. gem install bundle
+12. bundle
+13. rvm --ruby-version use 2.6.6@ipos
+
 # GITHUB STEPS
 
 
