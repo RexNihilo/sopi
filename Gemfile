@@ -37,7 +37,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'pry'
   gem 'pry-byebug'
-  gem 'database_cleaner'
   gem 'launchy'
 end
 
