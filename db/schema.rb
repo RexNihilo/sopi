@@ -24,11 +24,6 @@ ActiveRecord::Schema.define(version: 2021_02_24_184505) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "plans", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "semesters", force: :cascade do |t|
     t.string "course1"
     t.string "course2"
