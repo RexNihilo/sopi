@@ -3626,3 +3626,830 @@ Processing by CoursesController#index as HTML
 Completed 200 OK in 39ms (Views: 29.3ms | ActiveRecord: 6.7ms | Allocations: 10648)
 
 
+Started GET "/" for 73.131.34.92 at 2021-02-26 19:29:23 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActiveRecord::ConnectionNotEstablished (FATAL:  password authentication failed for user "pg-user"
+FATAL:  password authentication failed for user "pg-user"
+):
+  
+activerecord (6.1.3) lib/active_record/connection_adapters/postgresql_adapter.rb:83:in `rescue in new_client'
+activerecord (6.1.3) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (6.1.3) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (6.1.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:882:in `public_send'
+activerecord (6.1.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:882:in `new_connection'
+activerecord (6.1.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:926:in `checkout_new_connection'
+activerecord (6.1.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:905:in `try_to_checkout_new_connection'
+activerecord (6.1.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:866:in `acquire_connection'
+activerecord (6.1.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:588:in `checkout'
+activerecord (6.1.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:428:in `connection'
+activerecord (6.1.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:1128:in `retrieve_connection'
+activerecord (6.1.3) lib/active_record/connection_handling.rb:327:in `retrieve_connection'
+activerecord (6.1.3) lib/active_record/connection_handling.rb:283:in `connection'
+activerecord (6.1.3) lib/active_record/migration.rb:611:in `connection'
+activerecord (6.1.3) lib/active_record/migration.rb:606:in `build_watcher'
+activerecord (6.1.3) lib/active_record/migration.rb:588:in `block in call'
+activerecord (6.1.3) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.3) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.1) lib/mini_profiler/profiler.rb:373:in `call'
+webpacker (5.2.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.1.3) lib/rails/engine.rb:539:in `call'
+puma (5.2.1) lib/puma/configuration.rb:247:in `call'
+puma (5.2.1) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.2.1) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.2.1) lib/puma/request.rb:75:in `handle_request'
+puma (5.2.1) lib/puma/server.rb:431:in `process_client'
+puma (5.2.1) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+  [1m[35m (239.6ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  [1m[35m (245.9ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCourses (20210218011755)
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "courses" ("id" bigserial primary key, "prefix" character varying, "name" character varying, "number" integer, "section" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210218011755"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateStudents (20210219152433)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "Name" character varying, "CWID" integer, "Concentration" character varying, "Advisor" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210219152433"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20210221072628)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "email" character varying NOT NULL, "encrypted_password" character varying(128) NOT NULL, "confirmation_token" character varying(128), "remember_token" character varying(128) NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210221072628"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePlans (20210224182751)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210224182751"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSemesters (20210224184505)
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "semesters" ("id" bigserial primary key, "course1" character varying, "course2" character varying, "course3" character varying, "course4" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210224184505"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-26 19:35:36.988037"], ["updated_at", "2021-02-26 19:35:36.988037"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 73.131.34.92 at 2021-02-26 19:37:32 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 153.6ms | Allocations: 28311)
+Completed 200 OK in 203ms (Views: 161.7ms | ActiveRecord: 1.9ms | Allocations: 32310)
+
+
+Started GET "/sign_in" for 73.131.34.92 at 2021-02-26 19:37:41 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 9.8ms | Allocations: 1865)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 26.1ms | Allocations: 6264)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | Allocations: 9951)
+Completed 200 OK in 42ms (Views: 41.3ms | ActiveRecord: 0.0ms | Allocations: 11560)
+
+
+Started GET "/sign_in" for 73.131.34.92 at 2021-02-26 19:37:44 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 0.9ms | Allocations: 489)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 612)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 4332)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 4771)
+
+
+Started GET "/" for 73.131.34.92 at 2021-02-26 19:47:29 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (2.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 1216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 62.0ms | Allocations: 8656)
+Completed 200 OK in 88ms (Views: 67.1ms | ActiveRecord: 2.6ms | Allocations: 12043)
+
+
+Started GET "/" for 73.131.34.92 at 2021-02-26 20:07:29 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (2.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 1216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 50.9ms | Allocations: 8656)
+Completed 200 OK in 71ms (Views: 54.7ms | ActiveRecord: 2.7ms | Allocations: 12041)
+
+
+Started GET "/sign_in" for 73.131.34.92 at 2021-02-26 20:07:36 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 7.0ms | Allocations: 1281)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 17.6ms | Allocations: 3276)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.4ms | Allocations: 6963)
+Completed 200 OK in 38ms (Views: 37.9ms | ActiveRecord: 0.0ms | Allocations: 8567)
+
+
+Started GET "/" for 73.131.34.92 at 2021-02-26 20:14:45 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 37.1ms | Allocations: 8656)
+Completed 200 OK in 62ms (Views: 44.3ms | ActiveRecord: 1.4ms | Allocations: 12042)
+
+
+Started GET "/sign_in" for 73.131.34.92 at 2021-02-26 20:14:47 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 6.5ms | Allocations: 1282)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 11.0ms | Allocations: 3282)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 6969)
+Completed 200 OK in 31ms (Views: 30.6ms | ActiveRecord: 0.0ms | Allocations: 8574)
+
+
+Started GET "/" for 73.131.34.92 at 2021-02-26 20:37:15 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 1216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.8ms | Allocations: 8656)
+Completed 200 OK in 60ms (Views: 43.1ms | ActiveRecord: 1.4ms | Allocations: 12042)
+
+
+Started GET "/sign_in" for 73.131.34.92 at 2021-02-26 20:37:19 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 7.1ms | Allocations: 1281)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 3276)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 6962)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.0ms | Allocations: 8566)
+
+
+Started GET "/sign_up" for 73.131.34.92 at 2021-02-26 20:37:21 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/_form.html.erb (Duration: 1.1ms | Allocations: 637)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application (Duration: 12.4ms | Allocations: 1595)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 5281)
+Completed 200 OK in 77ms (Views: 29.2ms | ActiveRecord: 13.4ms | Allocations: 12407)
+
+
+Started GET "/" for 73.131.34.92 at 2021-02-26 20:59:57 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 1216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.4ms | Allocations: 8656)
+Completed 200 OK in 64ms (Views: 48.6ms | ActiveRecord: 1.2ms | Allocations: 12042)
+
+
+Started GET "/sign_in" for 73.131.34.92 at 2021-02-26 21:00:27 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 7.9ms | Allocations: 1281)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 14.4ms | Allocations: 3276)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 6962)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.0ms | Allocations: 8566)
+
+
+Started GET "/sign_up" for 73.131.34.92 at 2021-02-26 21:00:29 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/_form.html.erb (Duration: 1.1ms | Allocations: 637)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1595)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 5281)
+Completed 200 OK in 107ms (Views: 28.7ms | ActiveRecord: 22.7ms | Allocations: 13371)
+
+
+Started GET "/sign_in" for 73.131.34.92 at 2021-02-26 21:00:37 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 1.0ms | Allocations: 500)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 623)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 4346)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms | Allocations: 4785)
+
+
+Started GET "/sign_up" for 73.131.34.92 at 2021-02-26 21:00:42 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/_form.html.erb (Duration: 1.4ms | Allocations: 409)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 810)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 4532)
+Completed 200 OK in 17ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 5019)
+
+
+Started POST "/users" for 73.131.34.92 at 2021-02-26 21:01:01 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bink@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (4.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bink@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "remember_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-02-26 21:01:01.368782"], ["updated_at", "2021-02-26 21:01:01.368782"], ["email", "bink@gmail.com"], ["encrypted_password", "$2a$12$zc83g1xauq8lh1MBZ/SZ9eg3UUKtxlMWzx6WQ6zu.xspkdxhD3VL2"], ["remember_token", "1398d4f77770a98b2211301ea3c6cc628c5b637a"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://5c37b026601f45d28ddc48f2b5889d68.vfs.cloud9.us-east-2.amazonaws.com/
+Completed 302 Found in 352ms (ActiveRecord: 8.9ms | Allocations: 8277)
+
+
+Started GET "/" for 73.131.34.92 at 2021-02-26 21:01:01 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 931)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "1398d4f77770a98b2211301ea3c6cc628c5b637a"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 42.5ms | Allocations: 5912)
+Completed 200 OK in 48ms (Views: 39.6ms | ActiveRecord: 7.0ms | Allocations: 6338)
+
+
+Started GET "/" for 73.131.34.92 at 2021-02-26 21:09:05 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "1398d4f77770a98b2211301ea3c6cc628c5b637a"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 73.5ms | Allocations: 16119)
+Completed 200 OK in 99ms (Views: 68.9ms | ActiveRecord: 13.1ms | Allocations: 19505)
+
+
+Started DELETE "/sign_out" for 73.131.34.92 at 2021-02-26 21:09:09 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "1398d4f77770a98b2211301ea3c6cc628c5b637a"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "remember_token" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2021-02-26 21:09:09.092747"], ["remember_token", "5d10b2f75b5945d589292bf2071c7df207464f72"], ["id", 1]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://5c37b026601f45d28ddc48f2b5889d68.vfs.cloud9.us-east-2.amazonaws.com/sign_in
+Completed 302 Found in 28ms (ActiveRecord: 4.2ms | Allocations: 4739)
+
+
+Started GET "/sign_in" for 73.131.34.92 at 2021-02-26 21:09:09 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 5.5ms | Allocations: 1279)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 14.2ms | Allocations: 3278)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | Allocations: 7003)
+Completed 200 OK in 43ms (Views: 42.4ms | ActiveRecord: 0.0ms | Allocations: 8541)
+
+
+Started GET "/sign_up" for 73.131.34.92 at 2021-02-26 21:09:11 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/_form.html.erb (Duration: 1.9ms | Allocations: 637)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application (Duration: 10.1ms | Allocations: 1583)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 5266)
+Completed 200 OK in 37ms (Views: 35.2ms | ActiveRecord: 0.0ms | Allocations: 6561)
+
+
+Started POST "/users" for 73.131.34.92 at 2021-02-26 21:09:22 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"billpaxton@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "billpaxton@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "remember_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-02-26 21:09:23.217436"], ["updated_at", "2021-02-26 21:09:23.217436"], ["email", "billpaxton@gmail.com"], ["encrypted_password", "$2a$12$qfgWFoIeSCmyEzdQWuAAbejQ5x8FBY8kYpzv2CPjrLPH6VyS4jYTC"], ["remember_token", "b7fbb2bf5a277b63bcd0bc0e39ef5fd40a69f8a4"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://5c37b026601f45d28ddc48f2b5889d68.vfs.cloud9.us-east-2.amazonaws.com/
+Completed 302 Found in 333ms (ActiveRecord: 4.3ms | Allocations: 5024)
+
+
+Started GET "/" for 73.131.34.92 at 2021-02-26 21:09:23 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (2.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 931)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "b7fbb2bf5a277b63bcd0bc0e39ef5fd40a69f8a4"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 5619)
+Completed 200 OK in 27ms (Views: 21.3ms | ActiveRecord: 4.7ms | Allocations: 6040)
+
+
+Started GET "/" for 73.131.34.92 at 2021-02-27 12:14:50 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (4.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 14.3ms | Allocations: 1216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 94.8ms | Allocations: 8671)
+Completed 200 OK in 129ms (Views: 102.6ms | ActiveRecord: 4.2ms | Allocations: 11999)
+
+
+Started GET "/courses/new" for 73.131.34.92 at 2021-02-27 12:15:05 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/new.html.erb within layouts/application (Duration: 15.6ms | Allocations: 3728)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.5ms | Allocations: 7472)
+Completed 200 OK in 95ms (Views: 38.9ms | ActiveRecord: 15.7ms | Allocations: 12955)
+
+
+Started GET "/sign_in" for 73.131.34.92 at 2021-02-27 12:15:11 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 6.4ms | Allocations: 870)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 10.5ms | Allocations: 1342)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 5027)
+Completed 200 OK in 40ms (Views: 38.0ms | ActiveRecord: 0.0ms | Allocations: 6623)
+
+
+Started GET "/" for 73.131.34.92 at 2021-02-27 12:16:30 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (2.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 932)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 4681)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 2.0ms | Allocations: 5110)
+
+
+Started GET "/sign_in" for 73.131.34.92 at 2021-02-27 12:16:33 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 1.1ms | Allocations: 489)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 612)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 54.2ms | Allocations: 4334)
+Completed 200 OK in 58ms (Views: 57.4ms | ActiveRecord: 0.0ms | Allocations: 4776)
+
+
+Started GET "/sign_up" for 73.131.34.92 at 2021-02-27 12:16:34 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/_form.html.erb (Duration: 3.2ms | Allocations: 626)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application (Duration: 11.8ms | Allocations: 1556)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 5239)
+Completed 200 OK in 63ms (Views: 31.2ms | ActiveRecord: 5.3ms | Allocations: 11611)
+
+
+Started POST "/users" for 73.131.34.92 at 2021-02-27 12:16:41 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"aminelgazar0420@yahoo.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (6.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "aminelgazar0420@yahoo.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (12.8ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "remember_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-02-27 12:16:42.023177"], ["updated_at", "2021-02-27 12:16:42.023177"], ["email", "aminelgazar0420@yahoo.com"], ["encrypted_password", "$2a$12$QFnMJ3zNjTzb.t9S9qiQ5ufq5rgORbpt39aR58833BfeFHoTlDpKG"], ["remember_token", "91d4f3e0a9f74dfd2fb95e669b376fc8e001fdca"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://5c37b026601f45d28ddc48f2b5889d68.vfs.cloud9.us-east-2.amazonaws.com/
+Completed 302 Found in 357ms (ActiveRecord: 24.5ms | Allocations: 5528)
+
+
+Started GET "/" for 73.131.34.92 at 2021-02-27 12:16:42 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (2.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 922)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "91d4f3e0a9f74dfd2fb95e669b376fc8e001fdca"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+  Rendered layout layouts/application.html.erb (Duration: 53.6ms | Allocations: 5902)
+Completed 200 OK in 60ms (Views: 50.6ms | ActiveRecord: 8.4ms | Allocations: 6323)
+
+
+Started DELETE "/sign_out" for 73.131.34.92 at 2021-02-27 12:16:48 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "91d4f3e0a9f74dfd2fb95e669b376fc8e001fdca"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "remember_token" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2021-02-27 12:16:48.431754"], ["remember_token", "668490b3ef72bd404e3d28643c180337e3c55642"], ["id", 3]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://5c37b026601f45d28ddc48f2b5889d68.vfs.cloud9.us-east-2.amazonaws.com/sign_in
+Completed 302 Found in 23ms (ActiveRecord: 6.3ms | Allocations: 4521)
+
+
+Started GET "/sign_in" for 73.131.34.92 at 2021-02-27 12:16:48 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 1.2ms | Allocations: 500)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 623)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 4347)
+Completed 200 OK in 39ms (Views: 38.4ms | ActiveRecord: 0.0ms | Allocations: 4780)
+
+
+Started GET "/" for 73.131.34.92 at 2021-02-27 12:21:20 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 54.5ms | Allocations: 8656)
+Completed 200 OK in 76ms (Views: 60.2ms | ActiveRecord: 1.4ms | Allocations: 12041)
+
+
+Started GET "/sign_in" for 73.131.34.92 at 2021-02-27 12:21:22 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 6.5ms | Allocations: 1288)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 27.8ms | Allocations: 3283)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.5ms | Allocations: 6970)
+Completed 200 OK in 54ms (Views: 53.3ms | ActiveRecord: 0.0ms | Allocations: 8575)
+
+
+Started GET "/passwords/new" for 73.131.34.92 at 2021-02-27 12:21:25 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/passwords/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/passwords/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 585)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 4272)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.0ms | Allocations: 5449)
+
+
+Started GET "/" for 73.131.34.92 at 2021-02-27 12:24:54 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 62.8ms | Allocations: 8656)
+Completed 200 OK in 85ms (Views: 67.9ms | ActiveRecord: 1.9ms | Allocations: 12041)
+
+
+Started GET "/sign_in" for 73.131.34.92 at 2021-02-27 12:24:57 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 3.2ms | Allocations: 1281)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 19.9ms | Allocations: 3276)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.9ms | Allocations: 6962)
+Completed 200 OK in 56ms (Views: 55.2ms | ActiveRecord: 0.0ms | Allocations: 8566)
+
+
+Started GET "/passwords/new" for 73.131.34.92 at 2021-02-27 12:25:18 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/passwords/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/passwords/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 585)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 4272)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.0ms | Allocations: 5449)
+
+
+Started POST "/passwords" for 73.131.34.92 at 2021-02-27 12:25:24 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::PasswordsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "password"=>"[FILTERED]", "commit"=>"Reset password"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "aminelgazar0420@yahoo.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "confirmation_token" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2021-02-27 12:25:24.252900"], ["confirmation_token", "292ed5274b253b89ddfb0f5b852ba8d0d3250053"], ["id", 3]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: f0adad37-b58b-4ca6-9d42-528f962d4b5e) to Async(default) with arguments: "ClearanceMailer", "change_password", "deliver_now", {:args=>[#<GlobalID:0x0000563c49bb3c18 @uri=#<URI::GID gid://ipos/User/3>>]}
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/passwords/create.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/passwords/create.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1140)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 5289)
+Completed 200 OK in 124ms (Views: 32.0ms | ActiveRecord: 17.8ms | Allocations: 28306)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f0adad37-b58b-4ca6-9d42-528f962d4b5e] Performing ActionMailer::MailDeliveryJob (Job ID: f0adad37-b58b-4ca6-9d42-528f962d4b5e) from Async(default) enqueued at 2021-02-27T12:25:24Z with arguments: "ClearanceMailer", "change_password", "deliver_now", {:args=>[#<GlobalID:0x00007fe438024080 @uri=#<URI::GID gid://ipos/User/3>>]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f0adad37-b58b-4ca6-9d42-528f962d4b5e]   Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/clearance_mailer/change_password.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f0adad37-b58b-4ca6-9d42-528f962d4b5e]   Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/clearance_mailer/change_password.html.erb (Duration: 5.6ms | Allocations: 1320)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f0adad37-b58b-4ca6-9d42-528f962d4b5e] ClearanceMailer#change_password: processed outbound mail in 13.4ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [f0adad37-b58b-4ca6-9d42-528f962d4b5e] Error performing ActionMailer::MailDeliveryJob (Job ID: f0adad37-b58b-4ca6-9d42-528f962d4b5e) from Async(default) in 14.03ms: ActionView::Template::Error (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-6.1.3/lib/action_dispatch/http/url.rb:64:in `full_url_for'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-6.1.3/lib/action_dispatch/http/url.rb:54:in `url_for'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-6.1.3/lib/action_dispatch/routing/route_set.rb:333:in `block in <class:RouteSet>'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-6.1.3/lib/action_dispatch/routing/route_set.rb:836:in `url_for'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-6.1.3/lib/action_dispatch/routing/route_set.rb:270:in `call'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-6.1.3/lib/action_dispatch/routing/route_set.rb:213:in `call'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-6.1.3/lib/action_dispatch/routing/route_set.rb:326:in `block in define_url_helper'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/clearance_mailer/change_password.html.erb:5:in `__home_ubuntu__rvm_gems_ruby_______gems_clearance________app_views_clearance_mailer_change_password_html_erb__2917071371567601618_70308983791380'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionview-6.1.3/lib/action_view/base.rb:247:in `public_send'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionview-6.1.3/lib/action_view/base.rb:247:in `_run'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionview-6.1.3/lib/action_view/template.rb:154:in `block in render'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/notifications.rb:205:in `instrument'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionview-6.1.3/lib/action_view/template.rb:345:in `instrument_render_template'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionview-6.1.3/lib/action_view/template.rb:152:in `render'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionview-6.1.3/lib/action_view/renderer/template_renderer.rb:61:in `block (2 levels) in render_template'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/notifications.rb:203:in `block in instrument'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/notifications.rb:203:in `instrument'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionview-6.1.3/lib/action_view/renderer/template_renderer.rb:56:in `block in render_template'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionview-6.1.3/lib/action_view/renderer/template_renderer.rb:75:in `render_with_layout'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionview-6.1.3/lib/action_view/renderer/template_renderer.rb:55:in `render_template'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionview-6.1.3/lib/action_view/renderer/template_renderer.rb:11:in `render'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionview-6.1.3/lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionview-6.1.3/lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionview-6.1.3/lib/action_view/rendering.rb:117:in `block in _render_template'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionview-6.1.3/lib/action_view/base.rb:273:in `in_rendering_context'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionview-6.1.3/lib/action_view/rendering.rb:116:in `_render_template'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionview-6.1.3/lib/action_view/rendering.rb:103:in `render_to_body'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-6.1.3/lib/abstract_controller/rendering.rb:25:in `render'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionmailer-6.1.3/lib/action_mailer/base.rb:958:in `block in collect_responses_from_templates'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionmailer-6.1.3/lib/action_mailer/base.rb:955:in `each'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionmailer-6.1.3/lib/action_mailer/base.rb:955:in `each'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionmailer-6.1.3/lib/action_mailer/base.rb:955:in `map'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionmailer-6.1.3/lib/action_mailer/base.rb:955:in `collect_responses_from_templates'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionmailer-6.1.3/lib/action_mailer/base.rb:933:in `collect_responses'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionmailer-6.1.3/lib/action_mailer/base.rb:841:in `mail'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/mailers/clearance_mailer.rb:4:in `change_password'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-6.1.3/lib/abstract_controller/base.rb:228:in `process_action'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-6.1.3/lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/callbacks.rb:117:in `block in run_callbacks'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actiontext-6.1.3/lib/action_text/rendering.rb:20:in `with_renderer'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actiontext-6.1.3/lib/action_text/engine.rb:55:in `block (4 levels) in <class:Engine>'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/callbacks.rb:126:in `instance_exec'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/callbacks.rb:137:in `run_callbacks'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-6.1.3/lib/abstract_controller/callbacks.rb:41:in `process_action'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionpack-6.1.3/lib/abstract_controller/base.rb:165:in `process'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionmailer-6.1.3/lib/action_mailer/rescuable.rb:25:in `block in process'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionmailer-6.1.3/lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionmailer-6.1.3/lib/action_mailer/rescuable.rb:24:in `process'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionview-6.1.3/lib/action_view/rendering.rb:39:in `process'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionmailer-6.1.3/lib/action_mailer/base.rb:615:in `block in process'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/notifications.rb:203:in `block in instrument'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/notifications.rb:203:in `instrument'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionmailer-6.1.3/lib/action_mailer/base.rb:614:in `process'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionmailer-6.1.3/lib/action_mailer/message_delivery.rb:128:in `block in processed_mailer'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionmailer-6.1.3/lib/action_mailer/message_delivery.rb:127:in `tap'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionmailer-6.1.3/lib/action_mailer/message_delivery.rb:127:in `processed_mailer'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionmailer-6.1.3/lib/action_mailer/message_delivery.rb:118:in `deliver_now'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionmailer-6.1.3/lib/action_mailer/mail_delivery_job.rb:23:in `perform'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activejob-6.1.3/lib/active_job/execution.rb:48:in `block in perform_now'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/callbacks.rb:117:in `block in run_callbacks'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/i18n-1.8.9/lib/i18n.rb:314:in `with_locale'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activejob-6.1.3/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/callbacks.rb:126:in `instance_exec'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/core_ext/time/zones.rb:66:in `use_zone'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activejob-6.1.3/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/callbacks.rb:126:in `instance_exec'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activejob-6.1.3/lib/active_job/instrumentation.rb:21:in `block in instrument'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/notifications.rb:203:in `block in instrument'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/notifications.rb:203:in `instrument'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activejob-6.1.3/lib/active_job/instrumentation.rb:31:in `instrument'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activejob-6.1.3/lib/active_job/instrumentation.rb:14:in `block (2 levels) in <module:Instrumentation>'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/callbacks.rb:126:in `instance_exec'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activejob-6.1.3/lib/active_job/logging.rb:22:in `block in tag_logger'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/tagged_logging.rb:99:in `block in tagged'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/tagged_logging.rb:37:in `tagged'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/tagged_logging.rb:99:in `tagged'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activejob-6.1.3/lib/active_job/logging.rb:22:in `tag_logger'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activejob-6.1.3/lib/active_job/logging.rb:15:in `block (2 levels) in <module:Logging>'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/callbacks.rb:126:in `instance_exec'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/callbacks.rb:137:in `run_callbacks'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activejob-6.1.3/lib/active_job/execution.rb:47:in `perform_now'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activejob-6.1.3/lib/active_job/execution.rb:25:in `block in execute'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/callbacks.rb:117:in `block in run_callbacks'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activejob-6.1.3/lib/active_job/railtie.rb:47:in `block (4 levels) in <class:Railtie>'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/execution_wrapper.rb:88:in `wrap'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/reloader.rb:72:in `block in wrap'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/execution_wrapper.rb:88:in `wrap'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/reloader.rb:71:in `wrap'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activejob-6.1.3/lib/active_job/railtie.rb:46:in `block (3 levels) in <class:Railtie>'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/callbacks.rb:126:in `instance_exec'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activesupport-6.1.3/lib/active_support/callbacks.rb:137:in `run_callbacks'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activejob-6.1.3/lib/active_job/execution.rb:23:in `execute'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activejob-6.1.3/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/concurrent-ruby-1.1.8/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:363:in `run_task'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/concurrent-ruby-1.1.8/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `block (3 levels) in create_worker'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/concurrent-ruby-1.1.8/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `loop'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/concurrent-ruby-1.1.8/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `block (2 levels) in create_worker'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/concurrent-ruby-1.1.8/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `catch'
+/home/ubuntu/.rvm/gems/ruby-2.6.6/gems/concurrent-ruby-1.1.8/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block in create_worker'
+Started GET "/" for 73.131.34.92 at 2021-02-27 12:27:39 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 1216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 42.1ms | Allocations: 8656)
+Completed 200 OK in 69ms (Views: 48.7ms | ActiveRecord: 1.4ms | Allocations: 12042)
+
+
+Started GET "/sign_in" for 73.131.34.92 at 2021-02-27 12:27:41 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 7.3ms | Allocations: 1281)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 14.7ms | Allocations: 3276)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 6962)
+Completed 200 OK in 43ms (Views: 42.3ms | ActiveRecord: 0.0ms | Allocations: 8566)
+
+
+Started GET "/passwords/new" for 73.131.34.92 at 2021-02-27 12:27:44 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/passwords/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/passwords/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 585)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 4272)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms | Allocations: 5449)
+
+
+Started GET "/" for 73.131.34.92 at 2021-02-27 12:29:20 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (3.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 12.7ms | Allocations: 1216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 61.9ms | Allocations: 8656)
+Completed 200 OK in 89ms (Views: 66.4ms | ActiveRecord: 3.5ms | Allocations: 12043)
+
+
+Started GET "/sign_in" for 73.131.34.92 at 2021-02-27 12:29:23 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 8.0ms | Allocations: 1281)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 14.4ms | Allocations: 3276)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 6962)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.0ms | Allocations: 8566)
+
+
+Started GET "/passwords/new" for 73.131.34.92 at 2021-02-27 12:29:25 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/passwords/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/passwords/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 4280)
+Completed 200 OK in 33ms (Views: 32.3ms | ActiveRecord: 0.0ms | Allocations: 5458)
+
+
+Started POST "/passwords" for 73.131.34.92 at 2021-02-27 12:29:30 +0000
+Cannot render console from 73.131.34.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::PasswordsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "password"=>"[FILTERED]", "commit"=>"Reset password"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "aelgazar@citadel.edu"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/passwords/create.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/passwords/create.html.erb within layouts/application (Duration: 0.5ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 3899)
+Completed 200 OK in 30ms (Views: 14.7ms | ActiveRecord: 4.4ms | Allocations: 8158)
+
+
