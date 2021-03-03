@@ -1,0 +1,17 @@
+<%= form_with(model: programdirector) do |form| %>
+  <% if programdirector.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(programdirector.errors.count, "error") %> prohibited this programdirector from being saved:</h2>
+
+      <ul>
+        <% programdirector.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
