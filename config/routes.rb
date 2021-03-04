@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :welcome
   resources :students
   resources :semesters
-    root "courses#index"
-    resources :courses
+  root "courses#index"
+  resources :courses
 
 end
