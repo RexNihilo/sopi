@@ -1,25 +1,12 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Programdirectors</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @programdirectors.each do |programdirector| %>
-      <tr>
-        <td><%= link_to 'Show', programdirector %></td>
-        <td><%= link_to 'Edit', edit_programdirector_path(programdirector) %></td>
-        <td><%= link_to 'Destroy', programdirector, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Programdirector', new_programdirector_path %>
+<ul>
+  <% @programdirectors.each do |programdirector| %>
+    <li>
+      <%=programdirector.CWID%>
+      <%= link_to programdirector.Name, programdirector %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "New Program Director", new_programdirector_path %>
+<p>Find this view in app/views/programdirectors/index.html.erb</p>
