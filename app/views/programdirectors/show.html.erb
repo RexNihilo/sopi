@@ -1,4 +1,15 @@
-<p id="notice"><%= notice %></p>
+<img src="CITADEL.jpg" alt="CITADEL" width="460" height="345">
 
-<%= link_to 'Edit', edit_programdirector_path(@programdirector) %> |
-<%= link_to 'Back', programdirectors_path %>
+<h1><%= @programdirector.name %></h1>
+<img src="CITADEL.jpg" alt="CITADEL" width="460" height="345">
+
+<p>Name: <%= @programdirector.name %></p>
+<p>CWID: <%= @programdirector.CWID %></p>
+<p><%= @programdirector.created_at %></p>
+<ul>
+  <li><%= link_to "Edit", edit_programdirector_path(@programdirector) %></li>
+
+<li><%= link_to "Destroy Programdirector", programdirector_path(@programdirector),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+</ul>

@@ -10,6 +10,22 @@
       </ul>
     </div>
   <% end %>
+  
+  <div>
+    <%= form.label :CWID %><br>
+    <%= form.text_field :CWID %>
+    <% plan.errors.full_messages_for(:CWID).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :nameofplan %><br>
+    <%= form.text_field :nameofplan %>
+    <% plan.errors.full_messages_for(:nameofplan).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

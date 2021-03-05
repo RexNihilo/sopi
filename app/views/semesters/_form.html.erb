@@ -1,0 +1,60 @@
+<%= form_with(model: semester) do |form| %>
+  <% if semester.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(semester.errors.count, "error") %> prohibited this semester from being saved:</h2>
+
+      <ul>
+        <% semester.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div>
+    <%= form.label :season %><br>
+    <%= form.text_field :season %>
+    <% semester.errors.full_messages_for(:season).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :year %><br>
+    <%= form.text_field :year %>
+    <% semester.errors.full_messages_for(:year).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :course1 %><br>
+    <%= form.text_field :course1 %>
+    <% semester.errors.full_messages_for(:course1).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :course2 %><br>
+    <%= form.text_field :course2 %>
+    <% semester.errors.full_messages_for(:course2).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+    <div>
+    <%= form.label :course3 %><br>
+    <%= form.text_field :course3 %>
+    <% semester.errors.full_messages_for(:course3).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+    <div>
+    <%= form.label :course4 %><br>
+    <%= form.text_field :course4 %>
+    <% semester.errors.full_messages_for(:course4).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

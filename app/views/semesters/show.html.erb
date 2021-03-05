@@ -1,0 +1,18 @@
+<img src="CITADEL.jpg" alt="CITADEL" width="460" height="345">
+
+<h1><%= @semester.season %></h1>
+<img src="CITADEL.jpg" alt="CITADEL" width="460" height="345">
+
+<p>Prefix: <%= @semester.year %></p>
+<p>Number: <%= @semester.course1 %></p>
+<p>Number: <%= @semester.course2 %></p>
+<p>Number: <%= @semester.course3 %></p>
+<p>Number: <%= @semester.course4 %></p>
+<p><%= @semester.created_at %></p>
+<ul>
+  <li><%= link_to "Edit", edit_semester_path(@semester) %></li>
+
+<li><%= link_to "Destroy Semester", semester_path(@semester),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+</ul>

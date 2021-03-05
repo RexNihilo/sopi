@@ -1,4 +1,16 @@
-<p id="notice"><%= notice %></p>
+<img src="CITADEL.jpg" alt="CITADEL" width="460" height="345">
 
-<%= link_to 'Edit', edit_plan_path(@plan) %> |
-<%= link_to 'Back', plans_path %>
+<h1><%= @plan.nameofplan %></h1>
+<img src="CITADEL.jpg" alt="CITADEL" width="460" height="345">
+
+<p>CWID: <%= @plan.CWID %></p>
+<p>Plan Name: <%= @plan.nameofplan %></p>
+
+<p><%= @plan.created_at %></p>
+<ul>
+  <li><%= link_to "Edit", edit_plan_path(@plan) %></li>
+
+<li><%= link_to "Destroy Plan", plan_path(@plan),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+</ul>
