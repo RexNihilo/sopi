@@ -1,9 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @student.Name %>
-</p>
+<h1>Student: <%= @student.Name %></h1>
+
 
 <p>
   <strong>Cwid:</strong>
@@ -20,5 +18,37 @@
   <%= @student.Advisor %>
 </p>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Edit Student', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
+
+<h2>Plans Of Study:</h2>
+<ul>
+  <% @student.plans.each do |plan| %>
+    <li>
+      <%=plan.nameofplan%>
+      <%=plan.created_at%>
+       
+      <%= button_to 'Destroy Plan', [plan.student, plan],
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+              
+      <%= button_to 'Submit To Advisor', @student.plans.destroy %>        
+  <% end %>
+</ul>
+
+<strong>Add a Plan Of Study:</strong>
+
+<%= form_with model: [ @student, @student.plans.build ] do |form| %>
+  <p>
+   Name Of POS: <%= form.text_field :nameofplan %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+</p>
+
+
+
+

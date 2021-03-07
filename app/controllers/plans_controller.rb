@@ -4,6 +4,7 @@ class PlansController < ApplicationController
   end
   
   def show
+    @student = Student.find(params[:student_id])
     @plan = Plan.find(params[:id])
   end
   
@@ -12,13 +13,9 @@ class PlansController < ApplicationController
   end
 
   def create
-    @plan = Plan.new(plan_params)
-
-    if @plan.save
-      redirect_to @plan
-    else
-      render :new
-    end
+    @student = Student.find(params[:student_id])
+    @plan = @student.plans.create(plan_params)
+    redirect_to student_path(@student)
   end
   
   def edit
@@ -38,8 +35,10 @@ class PlansController < ApplicationController
   def destroy
     @plan = Plan.find(params[:id])
     @plan.destroy
-
-    redirect_to root_path
+    
+    @student = Student.find(params[:student_id])
+    redirect_to student_path(@student)
+    
   end
   
   private

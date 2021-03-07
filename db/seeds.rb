@@ -18,18 +18,18 @@ courses.each do |course|
   Course.create!(course)
 end 
 
-plans = [{:nameofplan => 'Mynewplan1', :CWID => '456456'},
-    	{:nameofplan => 'JSmith plan 1', :CWID => '451256'},
-    	{:nameofplan => 'Stick to the plan', :CWID => '451256'},
-    	{:nameofplan => 'I like this plan', :CWID => '452346'},
-    	{:nameofplan => 'I dislike this plan', :CWID => '451286'},
-    	{:nameofplan => '12 courses in one semester plan', :CWID => '754256'},
-    	{:nameofplan => 'graduate in 10 years plan', :CWID => '451235'},
-	    {:nameofplan => 'planplanplanofstudy', :CWID => '499956'}
-    	]
-plans.each do |plan|
-  Plan.create!(plan)
-end 
+#plans = [{:nameofplan => 'Mynewplan1', :CWID => '456456'},
+    	#{:nameofplan => 'JSmith plan 1', :CWID => '451256'},
+    #	{:nameofplan => 'Stick to the plan', :CWID => '451256'},
+    #	{:nameofplan => 'I like this plan', :CWID => '452346'},
+    #	{:nameofplan => 'I dislike this plan', :CWID => '451286'},
+    #	{:nameofplan => '12 courses in one semester plan', :CWID => '754256'},
+    #	{:nameofplan => 'graduate in 10 years plan', :CWID => '451235'},
+	  #  {:nameofplan => 'planplanplanofstudy', :CWID => '499956'}
+    #	]
+#plans.each do |plan|
+#  Plan.create!(plan)
+#end 
 
 professors = [{:Name => 'Dr. Rob Stark', :CWID => '156456'},
     	{:Name => 'Dr. Tyrion Lannister', :CWID => '151256'},
