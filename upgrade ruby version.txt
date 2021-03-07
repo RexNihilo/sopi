@@ -1,0 +1,9 @@
+rvm get stable
+rvm reload
+rvm gemset create ipos
+rvm install "ruby-2.6.6"
+bundle
+rvm --ruby-version use 2.6.6@ipos
+rvm use 2.6.6
+rvm gemset create ipos
+rvm 2.6.6@ipos
