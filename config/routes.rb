@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
-  resources :programdirectors
-  resources :professors
-  resources :plans
-  resources :welcome
-  resources :students
-  resources :semesters
+  
   root "courses#index"
+  
+  resources :programdirectors
+  
+  resources :professors
+  
+  resources :welcome
+  
+  resources :students do
+    resources :plans
+  end
+  
+  resources :semesters
+  
   resources :courses
 
 end
