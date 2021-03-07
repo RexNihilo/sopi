@@ -14939,3 +14939,538 @@ Processing by StudentsController#show as HTML
 Completed 200 OK in 28ms (Views: 18.0ms | ActiveRecord: 2.3ms | Allocations: 7759)
 
 
+  [1m[35m (248.1ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  [1m[35m (300.6ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCourses (20210218011755)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "courses" ("id" bigserial primary key, "prefix" character varying, "name" character varying, "number" integer, "section" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210218011755"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateStudents (20210219152433)
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "Name" character varying, "CWID" integer, "Concentration" character varying, "Advisor" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210219152433"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20210221072628)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "email" character varying NOT NULL, "encrypted_password" character varying(128) NOT NULL, "confirmation_token" character varying(128), "remember_token" character varying(128) NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210221072628"]]
+  [1m[36mTRANSACTION (14.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePlans (20210224182751)
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210224182751"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSemesters (20210224184505)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.6ms)[0m  [1m[35mCREATE TABLE "semesters" ("id" bigserial primary key, "course1" character varying, "course2" character varying, "course3" character varying, "course4" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210224184505"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProfessors (20210303173753)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "professors" ("id" bigserial primary key, "Name" character varying, "CWID" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210303173753"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProgramdirectors (20210303173834)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "programdirectors" ("id" bigserial primary key, "Name" character varying, "CWID" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210303173834"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddNewColumnToPlans (20210303231939)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "plans" ADD "CWID" integer[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddNewColumnToPlans (20210303231939)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.5ms)[0m  [1m[35mALTER TABLE "plans" ADD "CWID" integer[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddNewColumnToPlans2 (20210303232324)
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.0ms)[0m  [1m[35mALTER TABLE "plans" ADD "nameofplan" character varying[0m
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddNewColumnToSemesters (20210303235055)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "semesters" ADD "season" character varying[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "semesters" ADD "year" int[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210303235055"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-03-07 22:55:48.663501"], ["updated_at", "2021-03-07 22:55:48.663501"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 69.153.28.152 at 2021-03-07 22:56:45 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+Redirected to https://f2942416d96a45898ef48a3ea2e7239c.vfs.cloud9.us-east-2.amazonaws.com/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 41ms (ActiveRecord: 0.0ms | Allocations: 5882)
+
+
+Started GET "/sign_in" for 69.153.28.152 at 2021-03-07 22:56:45 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 22.0ms | Allocations: 1888)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 28.5ms | Allocations: 2475)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: fb044230d924c0055b60
+Version: webpack 4.46.0
+Time: 1617ms
+Built at: 03/07/2021 10:56:50 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-b43fa54005da8e229d8c.js    125 KiB  application  [emitted] [immutable]  application
+js/application-b43fa54005da8e229d8c.js.map    139 KiB  application  [emitted] [dev]        application
+      js/hello_vue-24af88da08877c31c086.js    239 KiB    hello_vue  [emitted] [immutable]  hello_vue
+  js/hello_vue-24af88da08877c31c086.js.map    292 KiB    hello_vue  [emitted] [dev]        hello_vue
+                             manifest.json  689 bytes               [emitted]              
+Entrypoint application = js/application-b43fa54005da8e229d8c.js js/application-b43fa54005da8e229d8c.js.map
+Entrypoint hello_vue = js/hello_vue-24af88da08877c31c086.js js/hello_vue-24af88da08877c31c086.js.map
+[./app/javascript/app.vue] 291 bytes {hello_vue} [built] [failed] [1 error]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./app/javascript/packs/hello_vue.js] 1.89 KiB {hello_vue} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {hello_vue} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 7 hidden modules
+
+ERROR in ./app/javascript/app.vue 1:0
+Module parse failed: Unexpected token (1:0)
+You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
+> <template>
+|   <div id="app">
+|     <p>{{ message }}</p>
+ @ ./app/javascript/packs/hello_vue.js 8:0-29 12:15-18
+
+  Rendered layout layouts/application.html.erb (Duration: 4440.8ms | Allocations: 32425)
+Completed 200 OK in 4474ms (Views: 4473.8ms | ActiveRecord: 0.0ms | Allocations: 34969)
+
+
+Started POST "/session" for 69.153.28.152 at 2021-03-07 22:56:53 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"Test@Test.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 1.2ms | Allocations: 492)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 615)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 4389)
+Completed 401 Unauthorized in 34ms (Views: 18.5ms | ActiveRecord: 6.2ms | Allocations: 7652)
+
+
+Started GET "/sign_up" for 69.153.28.152 at 2021-03-07 22:56:54 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/_form.html.erb (Duration: 1.6ms | Allocations: 637)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 1705)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 5432)
+Completed 200 OK in 45ms (Views: 27.6ms | ActiveRecord: 3.1ms | Allocations: 10746)
+
+
+Started POST "/users" for 69.153.28.152 at 2021-03-07 22:56:56 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"Test@Test.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.9ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "remember_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-03-07 22:56:57.027255"], ["updated_at", "2021-03-07 22:56:57.027255"], ["email", "test@test.com"], ["encrypted_password", "$2a$12$MhVNVGRBbm6K/duT0uTe/OuNjGrWXV8e1beMsNiEje10WBwk3DlBu"], ["remember_token", "e944ad9d7545bc65e88edada36f635b54e3d8fca"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://f2942416d96a45898ef48a3ea2e7239c.vfs.cloud9.us-east-2.amazonaws.com/
+Completed 302 Found in 340ms (ActiveRecord: 5.0ms | Allocations: 5204)
+
+
+Started GET "/" for 69.153.28.152 at 2021-03-07 22:56:57 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e944ad9d7545bc65e88edada36f635b54e3d8fca"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.8ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 976)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 4854)
+Completed 200 OK in 36ms (Views: 18.8ms | ActiveRecord: 3.0ms | Allocations: 7579)
+
+
+Started DELETE "/sign_out" for 69.153.28.152 at 2021-03-07 22:56:58 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e944ad9d7545bc65e88edada36f635b54e3d8fca"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "remember_token" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2021-03-07 22:56:58.658861"], ["remember_token", "d7966359482b2be2b63f052779a68c453bce5898"], ["id", 1]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://f2942416d96a45898ef48a3ea2e7239c.vfs.cloud9.us-east-2.amazonaws.com/sign_in
+Completed 302 Found in 33ms (ActiveRecord: 10.2ms | Allocations: 4524)
+
+
+Started GET "/sign_in" for 69.153.28.152 at 2021-03-07 22:56:58 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 3.2ms | Allocations: 498)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 621)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | Allocations: 4386)
+Completed 200 OK in 33ms (Views: 32.8ms | ActiveRecord: 0.0ms | Allocations: 4822)
+
+
+Started POST "/session" for 69.153.28.152 at 2021-03-07 22:56:59 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"Test@Test.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+Redirected to https://f2942416d96a45898ef48a3ea2e7239c.vfs.cloud9.us-east-2.amazonaws.com/
+Completed 302 Found in 500ms (ActiveRecord: 2.2ms | Allocations: 1348)
+
+
+Started GET "/" for 69.153.28.152 at 2021-03-07 22:57:00 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d7966359482b2be2b63f052779a68c453bce5898"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 732)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 4601)
+Completed 200 OK in 27ms (Views: 18.1ms | ActiveRecord: 2.4ms | Allocations: 6236)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.7ms)[0m  [1m[32mINSERT INTO "courses" ("prefix", "name", "number", "section", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["prefix", "CSCI"], ["name", "Easy Course"], ["number", 100], ["section", 1], ["created_at", "2021-03-07 22:57:56.298754"], ["updated_at", "2021-03-07 22:57:56.298754"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("prefix", "name", "number", "section", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["prefix", "CSCI"], ["name", "Hard Course"], ["number", 200], ["section", 1], ["created_at", "2021-03-07 22:57:56.307587"], ["updated_at", "2021-03-07 22:57:56.307587"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("prefix", "name", "number", "section", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["prefix", "CSCI"], ["name", "Medium Course"], ["number", 300], ["section", 1], ["created_at", "2021-03-07 22:57:56.318313"], ["updated_at", "2021-03-07 22:57:56.318313"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("prefix", "name", "number", "section", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["prefix", "CSCI"], ["name", "Very Hard Course"], ["number", 400], ["section", 1], ["created_at", "2021-03-07 22:57:56.326022"], ["updated_at", "2021-03-07 22:57:56.326022"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("prefix", "name", "number", "section", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["prefix", "CSCI"], ["name", "Java"], ["number", 111], ["section", 1], ["created_at", "2021-03-07 22:57:56.333987"], ["updated_at", "2021-03-07 22:57:56.333987"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("prefix", "name", "number", "section", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["prefix", "CSCI"], ["name", "C++"], ["number", 299], ["section", 1], ["created_at", "2021-03-07 22:57:56.344309"], ["updated_at", "2021-03-07 22:57:56.344309"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("prefix", "name", "number", "section", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["prefix", "CSCI"], ["name", "Python"], ["number", 310], ["section", 4], ["created_at", "2021-03-07 22:57:56.357142"], ["updated_at", "2021-03-07 22:57:56.357142"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("prefix", "name", "number", "section", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["prefix", "CSCI"], ["name", "Stress Management When Programming"], ["number", 430], ["section", 1], ["created_at", "2021-03-07 22:57:56.366731"], ["updated_at", "2021-03-07 22:57:56.366731"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfessor Create (1.3ms)[0m  [1m[32mINSERT INTO "professors" ("Name", "CWID", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["Name", "Dr. Rob Stark"], ["CWID", 156456], ["created_at", "2021-03-07 22:57:56.395989"], ["updated_at", "2021-03-07 22:57:56.395989"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfessor Create (0.8ms)[0m  [1m[32mINSERT INTO "professors" ("Name", "CWID", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["Name", "Dr. Tyrion Lannister"], ["CWID", 151256], ["created_at", "2021-03-07 22:57:56.407425"], ["updated_at", "2021-03-07 22:57:56.407425"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfessor Create (0.3ms)[0m  [1m[32mINSERT INTO "professors" ("Name", "CWID", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["Name", "Dr. Sandor Clegane"], ["CWID", 151256], ["created_at", "2021-03-07 22:57:56.417012"], ["updated_at", "2021-03-07 22:57:56.417012"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfessor Create (1.5ms)[0m  [1m[32mINSERT INTO "professors" ("Name", "CWID", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["Name", "Dr. Bronn"], ["CWID", 152346], ["created_at", "2021-03-07 22:57:56.434780"], ["updated_at", "2021-03-07 22:57:56.434780"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgramdirector Create (1.1ms)[0m  [1m[32mINSERT INTO "programdirectors" ("Name", "CWID", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["Name", "Dr. A"], ["CWID", 256456], ["created_at", "2021-03-07 22:57:56.456670"], ["updated_at", "2021-03-07 22:57:56.456670"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgramdirector Create (0.3ms)[0m  [1m[32mINSERT INTO "programdirectors" ("Name", "CWID", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["Name", "Dr. B"], ["CWID", 251256], ["created_at", "2021-03-07 22:57:56.470423"], ["updated_at", "2021-03-07 22:57:56.470423"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSemester Create (1.3ms)[0m  [1m[32mINSERT INTO "semesters" ("course1", "course2", "course3", "course4", "created_at", "updated_at", "season", "year") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["course1", "CSCI 100"], ["course2", "CSCI 200"], ["course3", "CSCI 300"], ["course4", "CSCI 400"], ["created_at", "2021-03-07 22:57:56.500250"], ["updated_at", "2021-03-07 22:57:56.500250"], ["season", "Spring"], ["year", 2021]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSemester Create (1.3ms)[0m  [1m[32mINSERT INTO "semesters" ("course1", "course2", "course3", "course4", "created_at", "updated_at", "season", "year") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["course1", "CSCI 111"], ["course2", "CSCI 299"], ["course3", "CSCI 310"], ["course4", "CSCI 430"], ["created_at", "2021-03-07 22:57:56.511525"], ["updated_at", "2021-03-07 22:57:56.511525"], ["season", "Summer"], ["year", 2021]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Create (1.3ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["Name", "John Smith"], ["CWID", 456456], ["Concentration", "CSCI"], ["Advisor", "Dr. Rob Stark"], ["created_at", "2021-03-07 22:57:56.555535"], ["updated_at", "2021-03-07 22:57:56.555535"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["Name", "Joe Jones"], ["CWID", 451256], ["Concentration", "CSCI"], ["Advisor", "Dr. Rob Stark"], ["created_at", "2021-03-07 22:57:56.568445"], ["updated_at", "2021-03-07 22:57:56.568445"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["Name", "Sansa Stark"], ["CWID", 451256], ["Concentration", "CSCI"], ["Advisor", "Dr. Rob Stark"], ["created_at", "2021-03-07 22:57:56.578847"], ["updated_at", "2021-03-07 22:57:56.578847"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["Name", "Jon Snow"], ["CWID", 452346], ["Concentration", "CSCI"], ["Advisor", "Dr. Tyrion Lannister"], ["created_at", "2021-03-07 22:57:56.591456"], ["updated_at", "2021-03-07 22:57:56.591456"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["Name", "Ramsey Bolton"], ["CWID", 451286], ["Concentration", "CSCI"], ["Advisor", "Dr. Tyrion Lannister"], ["created_at", "2021-03-07 22:57:56.619220"], ["updated_at", "2021-03-07 22:57:56.619220"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["Name", "Oberyn Martell"], ["CWID", 754256], ["Concentration", "MATH"], ["Advisor", "Dr. Sandor Clegane"], ["created_at", "2021-03-07 22:57:56.628650"], ["updated_at", "2021-03-07 22:57:56.628650"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["Name", "Hodor Hodor"], ["CWID", 451235], ["Concentration", "MATH"], ["Advisor", "Dr. Sandor Clegane"], ["created_at", "2021-03-07 22:57:56.637244"], ["updated_at", "2021-03-07 22:57:56.637244"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["Name", "Gregor Clegane"], ["CWID", 499956], ["Concentration", "MATH"], ["Advisor", "Dr. Bronn"], ["created_at", "2021-03-07 22:57:56.644784"], ["updated_at", "2021-03-07 22:57:56.644784"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 69.153.28.152 at 2021-03-07 22:57:59 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d7966359482b2be2b63f052779a68c453bce5898"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 15.3ms | Allocations: 5340)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.6ms | Allocations: 9209)
+Completed 200 OK in 39ms (Views: 25.1ms | ActiveRecord: 8.1ms | Allocations: 10858)
+
+
+Started GET "/students" for 69.153.28.152 at 2021-03-07 22:58:07 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d7966359482b2be2b63f052779a68c453bce5898"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:17
+  Rendered students/index.html.erb within layouts/application (Duration: 17.9ms | Allocations: 6125)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 9950)
+Completed 200 OK in 47ms (Views: 29.2ms | ActiveRecord: 8.7ms | Allocations: 13265)
+
+
+Started GET "/students/1" for 69.153.28.152 at 2021-03-07 22:58:08 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d7966359482b2be2b63f052779a68c453bce5898"], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:62:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/show.html.erb within layouts/application (Duration: 37.1ms | Allocations: 9057)
+  Rendered layout layouts/application.html.erb (Duration: 42.4ms | Allocations: 9137)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 8.1ms | Allocations: 11580)
+
+
+  
+ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "plans" does not exist
+LINE 8:  WHERE a.attrelid = '"plans"'::regclass
+                            ^
+):
+    23: 
+    24: <h2>Plans Of Study:</h2>
+    25: <ul>
+    26:   <% @student.plans.each do |plan| %>
+    27:     <li>
+    28:       <%=plan.nameofplan%>
+    29:       <%=plan.created_at%>
+  
+app/views/students/show.html.erb:26
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/students/1" for 69.153.28.152 at 2021-03-07 23:00:47 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d7966359482b2be2b63f052779a68c453bce5898"], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:62:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2786)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 2868)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 9.9ms | Allocations: 13818)
+
+
+  
+ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "plans" does not exist
+LINE 8:  WHERE a.attrelid = '"plans"'::regclass
+                            ^
+):
+    23: 
+    24: <h2>Plans Of Study:</h2>
+    25: <ul>
+    26:   <% @student.plans.each do |plan| %>
+    27:     <li>
+    28:       <%=plan.nameofplan%>
+    29:       <%=plan.created_at%>
+  
+app/views/students/show.html.erb:26
+Started GET "/students" for 69.153.28.152 at 2021-03-07 23:00:55 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d7966359482b2be2b63f052779a68c453bce5898"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:17
+  Rendered students/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1663)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 5531)
+Completed 200 OK in 28ms (Views: 19.9ms | ActiveRecord: 2.7ms | Allocations: 7170)
+
+
+Started GET "/students/2" for 69.153.28.152 at 2021-03-07 23:00:57 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d7966359482b2be2b63f052779a68c453bce5898"], ["LIMIT", 1]]
+  [1m[36mStudent Load (1.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:62:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/show.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1946)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2028)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 6.1ms | Allocations: 4232)
+
+
+  
+ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "plans" does not exist
+LINE 8:  WHERE a.attrelid = '"plans"'::regclass
+                            ^
+):
+    23: 
+    24: <h2>Plans Of Study:</h2>
+    25: <ul>
+    26:   <% @student.plans.each do |plan| %>
+    27:     <li>
+    28:       <%=plan.nameofplan%>
+    29:       <%=plan.created_at%>
+  
+app/views/students/show.html.erb:26
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to Makeplans (20210307230142)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "plans" CASCADE[0m
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE "plans" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "CWID" integer, "nameofplan" character varying, "student_id" bigint NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_plans_on_student_id" ON "plans" ("student_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210307230142"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/students/2" for 69.153.28.152 at 2021-03-07 23:02:03 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d7966359482b2be2b63f052779a68c453bce5898"], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:62:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mPlan Load (1.1ms)[0m  [1m[34mSELECT "plans".* FROM "plans" WHERE "plans"."student_id" = $1[0m  [["student_id", 2]]
+  ↳ app/views/students/show.html.erb:26
+  Rendered students/show.html.erb within layouts/application (Duration: 38.7ms | Allocations: 7840)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 53.5ms | Allocations: 11607)
+Completed 200 OK in 87ms (Views: 51.8ms | ActiveRecord: 15.5ms | Allocations: 22581)
+
+
+Started POST "/students/2/plans" for 69.153.28.152 at 2021-03-07 23:02:05 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PlansController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "plan"=>{"nameofplan"=>"asdf"}, "commit"=>"Create Plan", "student_id"=>"2"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d7966359482b2be2b63f052779a68c453bce5898"], ["LIMIT", 1]]
+  [1m[36mStudent Load (2.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/plans_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/plans_controller.rb:17:in `create'
+  [1m[36mPlan Create (2.1ms)[0m  [1m[32mINSERT INTO "plans" ("created_at", "updated_at", "nameofplan", "student_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-03-07 23:02:05.937637"], ["updated_at", "2021-03-07 23:02:05.937637"], ["nameofplan", "asdf"], ["student_id", 2]]
+  ↳ app/controllers/plans_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/plans_controller.rb:17:in `create'
+Redirected to https://f2942416d96a45898ef48a3ea2e7239c.vfs.cloud9.us-east-2.amazonaws.com/students/2
+Completed 302 Found in 27ms (ActiveRecord: 8.9ms | Allocations: 4740)
+
+
+Started GET "/students/2" for 69.153.28.152 at 2021-03-07 23:02:05 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d7966359482b2be2b63f052779a68c453bce5898"], ["LIMIT", 1]]
+  [1m[36mStudent Load (1.8ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:62:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mPlan Load (2.0ms)[0m  [1m[34mSELECT "plans".* FROM "plans" WHERE "plans"."student_id" = $1[0m  [["student_id", 2]]
+  ↳ app/views/students/show.html.erb:26
+  Rendered students/show.html.erb within layouts/application (Duration: 7.5ms | Allocations: 2609)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 6467)
+Completed 200 OK in 35ms (Views: 21.8ms | ActiveRecord: 5.6ms | Allocations: 8696)
+
+
+Started DELETE "/students/2/plans/1" for 69.153.28.152 at 2021-03-07 23:02:08 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PlansController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student_id"=>"2", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d7966359482b2be2b63f052779a68c453bce5898"], ["LIMIT", 1]]
+  [1m[36mPlan Load (0.7ms)[0m  [1m[34mSELECT "plans".* FROM "plans" WHERE "plans"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/plans_controller.rb:36:in `destroy'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/plans_controller.rb:37:in `destroy'
+  [1m[36mPlan Destroy (1.3ms)[0m  [1m[31mDELETE FROM "plans" WHERE "plans"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/plans_controller.rb:37:in `destroy'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/plans_controller.rb:37:in `destroy'
+  [1m[36mStudent Load (1.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/plans_controller.rb:39:in `destroy'
+Redirected to https://f2942416d96a45898ef48a3ea2e7239c.vfs.cloud9.us-east-2.amazonaws.com/students/2
+Completed 302 Found in 26ms (ActiveRecord: 6.5ms | Allocations: 4573)
+
+
+Started GET "/students/2" for 69.153.28.152 at 2021-03-07 23:02:08 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d7966359482b2be2b63f052779a68c453bce5898"], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:62:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mPlan Load (2.0ms)[0m  [1m[34mSELECT "plans".* FROM "plans" WHERE "plans"."student_id" = $1[0m  [["student_id", 2]]
+  ↳ app/views/students/show.html.erb:26
+  Rendered students/show.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1326)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 5186)
+Completed 200 OK in 30ms (Views: 17.7ms | ActiveRecord: 3.6ms | Allocations: 7432)
+
+

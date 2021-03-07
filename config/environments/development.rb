@@ -1,6 +1,7 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  config.hosts << "f2942416d96a45898ef48a3ea2e7239c.vfs.cloud9.us-east-2.amazonaws.com"
   config.hosts << "5c37b026601f45d28ddc48f2b5889d68.vfs.cloud9.us-east-2.amazonaws.com"
   config.hosts << "dca991ba5e05485087e244a7ef9b5d8d.vfs.cloud9.us-east-2.amazonaws.com"
   config.hosts << "da9d6599a49e465ea07d09d65b45db21.vfs.cloud9.us-east-2.amazonaws.com"
