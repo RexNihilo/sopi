@@ -1,3 +1,6 @@
+#Elgazar created this is were you put the route for the Email address 
 class ApplicationMailbox < ActionMailbox::Base
-  # routing /something/i => :somewhere
+
+  routing RepliesMailbox::MATCHER=> :replies #github email used Rubular
+ # routing:all => :replies
 end
