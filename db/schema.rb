@@ -15,9 +15,6 @@ ActiveRecord::Schema.define(version: 2021_03_13_205036) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-
-
-#Elgazar Model for actionMailbox its the status
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
     t.string "message_id", null: false
@@ -26,7 +23,6 @@ ActiveRecord::Schema.define(version: 2021_03_13_205036) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["message_id", "message_checksum"], name: "index_action_mailbox_inbound_emails_uniqueness", unique: true
   end
-#Elgazar created for ACTION MAILBOX
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -49,13 +45,12 @@ ActiveRecord::Schema.define(version: 2021_03_13_205036) do
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
-#Elgazar created for ACTION MAILBOX
+
   create_table "active_storage_variant_records", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
-#Elgazar created for ACTION MAILBOX
 
   create_table "comments", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -76,7 +71,6 @@ ActiveRecord::Schema.define(version: 2021_03_13_205036) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-#Elgazar created for ACTION MAILBOX
   create_table "discussions", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
