@@ -17,7 +17,7 @@ class RepliesMailbox < ApplicationMailbox
   end
   
   def user
-    @user ||= User.find_by(email; mail.from)
+    @users ||= User.find_by(email: mail.from)
   end
   
   def discussion

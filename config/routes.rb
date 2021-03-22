@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :notes
   #these constraints are for when we figure out the associations with users to students, programdirectors, professors/advisors
   
    # constraints Clearance::Constraints::SignedIn.new { |user| user.programdirectors? } do
@@ -27,7 +28,7 @@ Rails.application.routes.draw do
   resources :welcome
   
   resources :students do
-    resources :plans
+  resources :plans
   end
   
   resources :semesters

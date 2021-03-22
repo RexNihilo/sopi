@@ -1,4 +1,7 @@
 class CoursesController < ApplicationController
+# before action Elgazar notes 
+  before_action :require_login 
+  #this could be used to protect 
   def index
     @courses = Course.all
   end

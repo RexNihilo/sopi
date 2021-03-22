@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
+#gem 'faker', :git =>'https://github.com/faker-ruby/faker.git', :branch => 'main' (is a very useful gem to create fake data so you dont have to keep making it yourself)
 gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
@@ -41,6 +42,7 @@ group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
   gem 'launchy'
+  
 end
 
 group :development do
