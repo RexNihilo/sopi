@@ -21068,3 +21068,506 @@ Processing by NotesController#new as HTML
 Completed 200 OK in 83ms (Views: 76.9ms | ActiveRecord: 1.0ms | Allocations: 29798)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/ubuntu/environment/ipos/config/environment.rb:5)
+Started GET "/" for 155.225.2.100 at 2021-03-22 15:43:50 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+Redirected to https://8fd3ce43e6f643368c42536621c56a9a.vfs.cloud9.us-east-2.amazonaws.com/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 19ms (ActiveRecord: 0.0ms | Allocations: 2942)
+
+
+Started GET "/sign_in" for 155.225.2.100 at 2021-03-22 15:43:50 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vendor/bundle/ruby/2.6.0/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered vendor/bundle/ruby/2.6.0/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 6.3ms | Allocations: 1309)
+  Rendered vendor/bundle/ruby/2.6.0/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 10.7ms | Allocations: 1903)
+  Rendered layout layouts/application.html.erb (Duration: 99.9ms | Allocations: 20888)
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 0.0ms | Allocations: 23402)
+
+
+  
+ActionView::Template::Error (Multiple files with the same output path cannot be linked ("application.css")
+In "/home/ubuntu/environment/ipos/app/assets/config/manifest.js" these files were linked:
+  - /home/ubuntu/environment/ipos/app/assets/stylesheets/application.css
+  - /home/ubuntu/environment/ipos/app/assets/stylesheets/application.scss
+):
+  
+sprockets (4.0.2) lib/sprockets/base.rb:100:in `find_all_linked_assets'
+sprockets (4.0.2) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:19:in `execute'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/promise.rb:563:in `block in realize'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:363:in `run_task'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `block (3 levels) in create_worker'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `loop'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `block (2 levels) in create_worker'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `catch'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block in create_worker'
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/ubuntu/environment/ipos/config/environment.rb:5)
+Started GET "/" for 155.225.2.100 at 2021-03-22 15:44:29 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+Redirected to https://8fd3ce43e6f643368c42536621c56a9a.vfs.cloud9.us-east-2.amazonaws.com/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 17ms (ActiveRecord: 0.0ms | Allocations: 3000)
+
+
+Started GET "/sign_in" for 155.225.2.100 at 2021-03-22 15:44:29 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vendor/bundle/ruby/2.6.0/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered vendor/bundle/ruby/2.6.0/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 5.7ms | Allocations: 1309)
+  Rendered vendor/bundle/ruby/2.6.0/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 1903)
+  Rendered layout layouts/application.html.erb (Duration: 47.5ms | Allocations: 8334)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 0.0ms | Allocations: 10843)
+
+
+  
+ActionView::Template::Error (Multiple files with the same output path cannot be linked ("application.css")
+In "/home/ubuntu/environment/ipos/app/assets/config/manifest.js" these files were linked:
+  - /home/ubuntu/environment/ipos/app/assets/stylesheets/application.css
+  - /home/ubuntu/environment/ipos/app/assets/stylesheets/application.scss
+):
+  
+sprockets (4.0.2) lib/sprockets/base.rb:100:in `find_all_linked_assets'
+sprockets (4.0.2) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:41:in `block in synchronize'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:41:in `synchronize'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:19:in `execute'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/promise.rb:563:in `block in realize'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:363:in `run_task'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `block (3 levels) in create_worker'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `loop'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `block (2 levels) in create_worker'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `catch'
+concurrent-ruby (1.1.8) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block in create_worker'
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/ubuntu/environment/ipos/config/environment.rb:5)
+Started GET "/" for 155.225.2.100 at 2021-03-22 15:46:28 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+Redirected to https://8fd3ce43e6f643368c42536621c56a9a.vfs.cloud9.us-east-2.amazonaws.com/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 0.0ms | Allocations: 3000)
+
+
+Started GET "/sign_in" for 155.225.2.100 at 2021-03-22 15:46:28 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vendor/bundle/ruby/2.6.0/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered vendor/bundle/ruby/2.6.0/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 2.4ms | Allocations: 1309)
+  Rendered vendor/bundle/ruby/2.6.0/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1903)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 311.8ms | Allocations: 43438)
+Completed 200 OK in 319ms (Views: 318.1ms | ActiveRecord: 0.0ms | Allocations: 45979)
+
+
+Started GET "/notes" for 155.225.2.100 at 2021-03-22 15:46:37 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by NotesController#index as HTML
+Redirected to https://8fd3ce43e6f643368c42536621c56a9a.vfs.cloud9.us-east-2.amazonaws.com/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 402)
+
+
+Started GET "/sign_in" for 155.225.2.100 at 2021-03-22 15:46:37 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vendor/bundle/ruby/2.6.0/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered vendor/bundle/ruby/2.6.0/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 1.0ms | Allocations: 495)
+  Rendered vendor/bundle/ruby/2.6.0/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 625)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 5316)
+Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 5761)
+
+
+Started GET "/notes/new" for 155.225.2.100 at 2021-03-22 15:46:51 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by NotesController#new as HTML
+Redirected to https://8fd3ce43e6f643368c42536621c56a9a.vfs.cloud9.us-east-2.amazonaws.com/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 338)
+
+
+Started GET "/sign_in" for 155.225.2.100 at 2021-03-22 15:46:51 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vendor/bundle/ruby/2.6.0/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered vendor/bundle/ruby/2.6.0/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 2.0ms | Allocations: 492)
+  Rendered vendor/bundle/ruby/2.6.0/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 622)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 5312)
+Completed 200 OK in 19ms (Views: 18.7ms | ActiveRecord: 0.0ms | Allocations: 5754)
+
+
+Started GET "/notes/" for 155.225.2.100 at 2021-03-22 15:47:04 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by NotesController#index as HTML
+Redirected to https://8fd3ce43e6f643368c42536621c56a9a.vfs.cloud9.us-east-2.amazonaws.com/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 338)
+
+
+Started GET "/sign_in" for 155.225.2.100 at 2021-03-22 15:47:04 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vendor/bundle/ruby/2.6.0/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered vendor/bundle/ruby/2.6.0/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 1.3ms | Allocations: 492)
+  Rendered vendor/bundle/ruby/2.6.0/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 622)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 5314)
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.0ms | Allocations: 5759)
+
+
+Started GET "/notes/new" for 155.225.2.100 at 2021-03-22 15:47:11 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by NotesController#new as HTML
+Redirected to https://8fd3ce43e6f643368c42536621c56a9a.vfs.cloud9.us-east-2.amazonaws.com/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 17ms (ActiveRecord: 0.0ms | Allocations: 338)
+
+
+Started GET "/sign_in" for 155.225.2.100 at 2021-03-22 15:47:11 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vendor/bundle/ruby/2.6.0/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered vendor/bundle/ruby/2.6.0/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 0.9ms | Allocations: 494)
+  Rendered vendor/bundle/ruby/2.6.0/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 624)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 5315)
+Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 5758)
+
+
+Started POST "/session" for 155.225.2.100 at 2021-03-22 15:47:13 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"aelgazar@citadel.edu", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (9.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "aelgazar@citadel.edu"], ["LIMIT", 1]]
+Redirected to https://8fd3ce43e6f643368c42536621c56a9a.vfs.cloud9.us-east-2.amazonaws.com/notes/new
+Completed 302 Found in 328ms (ActiveRecord: 27.9ms | Allocations: 11698)
+
+
+Started GET "/notes/new" for 155.225.2.100 at 2021-03-22 15:47:14 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by NotesController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "23c16043096b206f19d4e120dc1ad08353af5360"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 4.9ms | Allocations: 1713)
+  Rendered notes/new.html.erb within layouts/application (Duration: 7.5ms | Allocations: 2073)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 6866)
+Completed 200 OK in 42ms (Views: 23.7ms | ActiveRecord: 5.9ms | Allocations: 13085)
+
+
+Started POST "/notes" for 155.225.2.100 at 2021-03-22 15:47:51 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by NotesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"title"=>"my pos elgazar", "body"=>"<div>here&nbsp;</div>"}, "commit"=>"Create Note"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "23c16043096b206f19d4e120dc1ad08353af5360"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 2.3ms | Allocations: 2711)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'body' for Note.):
+  
+app/controllers/notes_controller.rb:24:in `create'
+Started GET "/notes/new" for 155.225.2.100 at 2021-03-22 15:48:00 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by NotesController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "23c16043096b206f19d4e120dc1ad08353af5360"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 1.7ms | Allocations: 827)
+  Rendered notes/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 942)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 5728)
+Completed 200 OK in 27ms (Views: 19.1ms | ActiveRecord: 1.7ms | Allocations: 8092)
+
+
+Started POST "/notes" for 155.225.2.100 at 2021-03-22 15:48:03 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by NotesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"title"=>"my pos elgazar", "body"=>"<div>dd</div>"}, "commit"=>"Create Note"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "23c16043096b206f19d4e120dc1ad08353af5360"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 2.3ms | Allocations: 2666)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'body' for Note.):
+  
+app/controllers/notes_controller.rb:24:in `create'
+Started GET "/sign_in" for 155.225.2.100 at 2021-03-22 15:52:01 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "23c16043096b206f19d4e120dc1ad08353af5360"], ["LIMIT", 1]]
+Redirected to https://8fd3ce43e6f643368c42536621c56a9a.vfs.cloud9.us-east-2.amazonaws.com/
+Filter chain halted as :redirect_signed_in_users rendered or redirected
+Completed 302 Found in 20ms (ActiveRecord: 6.7ms | Allocations: 7595)
+
+
+Started GET "/" for 155.225.2.100 at 2021-03-22 15:52:01 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "23c16043096b206f19d4e120dc1ad08353af5360"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (4.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 18.5ms | Allocations: 7026)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.1ms | Allocations: 11821)
+Completed 200 OK in 58ms (Views: 35.4ms | ActiveRecord: 13.3ms | Allocations: 15217)
+
+
+Started GET "/notes/new" for 155.225.2.100 at 2021-03-22 15:52:07 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by NotesController#new as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "23c16043096b206f19d4e120dc1ad08353af5360"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 2.0ms | Allocations: 949)
+  Rendered notes/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1065)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 5854)
+Completed 200 OK in 38ms (Views: 19.1ms | ActiveRecord: 8.2ms | Allocations: 11512)
+
+
+Started POST "/notes" for 155.225.2.100 at 2021-03-22 15:52:12 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by NotesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"title"=>"e", "body"=>"<div>d</div>"}, "commit"=>"Create Note"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "23c16043096b206f19d4e120dc1ad08353af5360"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :body[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:27:in `block in create'
+  [1m[36mNote Create (7.3ms)[0m  [1m[32mINSERT INTO "notes" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "e"], ["created_at", "2021-03-22 15:52:12.059689"], ["updated_at", "2021-03-22 15:52:12.059689"]]
+  ↳ app/controllers/notes_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/notes_controller.rb:27:in `block in create'
+Redirected to https://8fd3ce43e6f643368c42536621c56a9a.vfs.cloud9.us-east-2.amazonaws.com/notes/2
+Completed 302 Found in 31ms (ActiveRecord: 12.4ms | Allocations: 5886)
+
+
+Started GET "/notes/2" for 155.225.2.100 at 2021-03-22 15:52:12 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "23c16043096b206f19d4e120dc1ad08353af5360"], ["LIMIT", 1]]
+  [1m[36mNote Load (1.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:62:in `set_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.erb within layouts/application
+  Rendered notes/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 251)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.7ms | Allocations: 5035)
+Completed 200 OK in 54ms (Views: 38.6ms | ActiveRecord: 3.7ms | Allocations: 8577)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/ubuntu/environment/ipos/config/environment.rb:5)
+Started GET "/" for 155.225.2.100 at 2021-03-22 15:53:41 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "23c16043096b206f19d4e120dc1ad08353af5360"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 19.8ms | Allocations: 7177)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 102.5ms | Allocations: 19069)
+Completed 200 OK in 157ms (Views: 101.2ms | ActiveRecord: 14.9ms | Allocations: 31007)
+
+
+Started GET "/students/new" for 155.225.2.100 at 2021-03-22 15:53:46 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "23c16043096b206f19d4e120dc1ad08353af5360"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_form.html.erb (Duration: 12.2ms | Allocations: 3703)
+  Rendered students/new.html.erb within layouts/application (Duration: 15.1ms | Allocations: 4067)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 8856)
+Completed 200 OK in 52ms (Views: 31.0ms | ActiveRecord: 5.5ms | Allocations: 17577)
+
+
+Started GET "/plans" for 155.225.2.100 at 2021-03-22 15:54:01 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/plans"):
+  
+Started GET "/plan" for 155.225.2.100 at 2021-03-22 15:54:04 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/plan"):
+  
+Started GET "/students/plan" for 155.225.2.100 at 2021-03-22 15:54:13 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"plan"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "23c16043096b206f19d4e120dc1ad08353af5360"], ["LIMIT", 1]]
+  [1m[36mStudent Load (1.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:62:in `set_student'
+Completed 404 Not Found in 15ms (ActiveRecord: 4.5ms | Allocations: 3595)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Student with 'id'=plan):
+  
+app/controllers/students_controller.rb:62:in `set_student'
+Started GET "/student/plan" for 155.225.2.100 at 2021-03-22 15:54:20 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/student/plan"):
+  
+Started GET "/student" for 155.225.2.100 at 2021-03-22 15:54:56 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/student"):
+  
+Started GET "/studens/" for 155.225.2.100 at 2021-03-22 15:55:02 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/studens"):
+  
+Started GET "/students" for 155.225.2.100 at 2021-03-22 15:55:08 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "23c16043096b206f19d4e120dc1ad08353af5360"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (2.0ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:17
+  Rendered students/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2374)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 7156)
+Completed 200 OK in 31ms (Views: 21.5ms | ActiveRecord: 3.7ms | Allocations: 9659)
+
+
+Started GET "/students/1" for 155.225.2.100 at 2021-03-22 15:55:12 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "23c16043096b206f19d4e120dc1ad08353af5360"], ["LIMIT", 1]]
+  [1m[36mStudent Load (1.9ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:62:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mPlan Load (4.7ms)[0m  [1m[34mSELECT "plans".* FROM "plans" WHERE "plans"."student_id" = $1[0m  [["student_id", 1]]
+  ↳ app/views/students/show.html.erb:26
+  Rendered students/show.html.erb within layouts/application (Duration: 66.4ms | Allocations: 15108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 80.1ms | Allocations: 19788)
+Completed 200 OK in 97ms (Views: 72.8ms | ActiveRecord: 13.7ms | Allocations: 23237)
+
+
