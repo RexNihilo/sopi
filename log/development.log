@@ -21571,3 +21571,440 @@ Processing by StudentsController#show as HTML
 Completed 200 OK in 97ms (Views: 72.8ms | ActiveRecord: 13.7ms | Allocations: 23237)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/ubuntu/environment/ipos/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/ubuntu/environment/ipos/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/ubuntu/environment/ipos/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/ubuntu/environment/ipos/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/ubuntu/environment/ipos/config/environment.rb:5)
+Started GET "/" for 69.153.28.152 at 2021-03-23 04:33:02 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "088e7054222b4820c7bad99740406eb0be933938"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (3.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 26.1ms | Allocations: 5752)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+[webpack-cli] Failed to load '/home/ubuntu/environment/ipos/config/webpack/development.js' config
+[webpack-cli] /home/ubuntu/environment/ipos/config/webpack/base.js:5
+{ test: /\.vue$/, include: /src/, loader: 'vue-loader', options: { loaders: { js: 'awesome-typescript-loader?silent=true' } } }
+                         ^
+
+SyntaxError: Unexpected token :
+    at new Script (vm.js:83:7)
+    at NativeCompileCache._moduleCompile (/home/ubuntu/environment/ipos/node_modules/v8-compile-cache/v8-compile-cache.js:240:18)
+    at Module._compile (/home/ubuntu/environment/ipos/node_modules/v8-compile-cache/v8-compile-cache.js:184:36)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (/home/ubuntu/environment/ipos/node_modules/v8-compile-cache/v8-compile-cache.js:159:20)
+    at Object.<anonymous> (/home/ubuntu/environment/ipos/config/webpack/development.js:3:23)
+
+  Rendered layout layouts/application.html.erb (Duration: 1853.3ms | Allocations: 53812)
+Completed 200 OK in 2005ms (Views: 1847.1ms | ActiveRecord: 107.5ms | Allocations: 67444)
+
+
+Started GET "/packs/js/application-67e89a2bee0e0c075dcd.js" for 69.153.28.152 at 2021-03-23 04:33:05 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/packs/js/application-67e89a2bee0e0c075dcd.js"):
+  
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/ubuntu/environment/sleepy-thicket-65048/config/environment.rb:5)
+Started GET "/" for 69.153.28.152 at 2021-03-23 17:31:50 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+Redirected to https://a2f5c88e86924d44b1fa714fc1d1cd03.vfs.cloud9.us-east-2.amazonaws.com/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 20ms (ActiveRecord: 0.0ms | Allocations: 4092)
+
+
+Started GET "/sign_in" for 69.153.28.152 at 2021-03-23 17:31:51 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 6.3ms | Allocations: 1896)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 2645)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 13668)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms | Allocations: 17039)
+
+
+  
+ActionView::Template::Error (couldn't find file 'trix/dist/trix' with type 'text/css'
+Checked in these paths: 
+  /home/ubuntu/environment/sleepy-thicket-65048/app/assets/config
+  /home/ubuntu/environment/sleepy-thicket-65048/app/assets/images
+  /home/ubuntu/environment/sleepy-thicket-65048/app/assets/stylesheets
+  /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actioncable-6.1.3/app/assets/javascripts
+  /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/activestorage-6.1.3/app/assets/javascripts
+  /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/actionview-6.1.3/lib/assets/compiled
+  /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/ubuntu/environment/sleepy-thicket-65048/node_modules):
+  
+app/assets/stylesheets/actiontext.scss:6
+Started GET "/" for 69.153.28.152 at 2021-03-23 17:32:16 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+Redirected to https://a2f5c88e86924d44b1fa714fc1d1cd03.vfs.cloud9.us-east-2.amazonaws.com/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 2985)
+
+
+Started GET "/sign_in" for 69.153.28.152 at 2021-03-23 17:32:16 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 1.1ms | Allocations: 505)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 628)
+  Rendered layout layouts/application.html.erb (Duration: 61.7ms | Allocations: 27626)
+Completed 200 OK in 64ms (Views: 63.5ms | ActiveRecord: 0.0ms | Allocations: 28082)
+
+
+Started POST "/session" for 69.153.28.152 at 2021-03-23 17:32:24 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"Test@Test.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+Redirected to https://a2f5c88e86924d44b1fa714fc1d1cd03.vfs.cloud9.us-east-2.amazonaws.com/
+Completed 302 Found in 342ms (ActiveRecord: 23.8ms | Allocations: 7398)
+
+
+Started GET "/" for 69.153.28.152 at 2021-03-23 17:32:25 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "7f29c8f8e387c03a61118be8d521da23ed181a43"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (2.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 15.7ms | Allocations: 5610)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 6417)
+Completed 200 OK in 28ms (Views: 13.9ms | ActiveRecord: 7.6ms | Allocations: 9182)
+
+
+Started GET "/courses/1" for 69.153.28.152 at 2021-03-23 17:32:53 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "7f29c8f8e387c03a61118be8d521da23ed181a43"], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 321)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 1124)
+Completed 200 OK in 13ms (Views: 5.0ms | ActiveRecord: 1.7ms | Allocations: 3568)
+
+
+Started GET "/courses/CITADEL.jpg" for 69.153.28.152 at 2021-03-23 17:32:53 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as JPEG
+  Parameters: {"id"=>"CITADEL"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "7f29c8f8e387c03a61118be8d521da23ed181a43"], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:10:in `show'
+Completed 404 Not Found in 7ms (ActiveRecord: 1.5ms | Allocations: 2359)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=CITADEL):
+  
+app/controllers/courses_controller.rb:10:in `show'
+Started GET "/" for 69.153.28.152 at 2021-03-23 17:32:55 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "7f29c8f8e387c03a61118be8d521da23ed181a43"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1168)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 1967)
+Completed 200 OK in 12ms (Views: 6.7ms | ActiveRecord: 1.9ms | Allocations: 3602)
+
+
+Started DELETE "/sign_out" for 69.153.28.152 at 2021-03-23 17:32:57 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "7f29c8f8e387c03a61118be8d521da23ed181a43"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (5.0ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "remember_token" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2021-03-23 17:32:57.418802"], ["remember_token", "033c2575b3945952da89603d66e1374270d7307e"], ["id", 1]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://a2f5c88e86924d44b1fa714fc1d1cd03.vfs.cloud9.us-east-2.amazonaws.com/sign_in
+Completed 302 Found in 20ms (ActiveRecord: 10.3ms | Allocations: 4651)
+
+
+Started GET "/sign_in" for 69.153.28.152 at 2021-03-23 17:32:57 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 1.0ms | Allocations: 500)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 623)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 1325)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 1758)
+
+
+Started GET "/sign_up" for 69.153.28.152 at 2021-03-23 17:33:02 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/_form.html.erb (Duration: 1.6ms | Allocations: 637)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1692)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 2394)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 3699)
+
+
+Started POST "/users" for 69.153.28.152 at 2021-03-23 17:33:06 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"Test2@Test.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test2@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (4.9ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "remember_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-03-23 17:33:07.077594"], ["updated_at", "2021-03-23 17:33:07.077594"], ["email", "test2@test.com"], ["encrypted_password", "$2a$12$9vdhsmrRXl9KPeHS2arlteA6p0cbAbZ58Xueg881N52YQhsCmm3EG"], ["remember_token", "e7bdab2502ffa27fe79f3953e4c8cd6c1c605c92"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://a2f5c88e86924d44b1fa714fc1d1cd03.vfs.cloud9.us-east-2.amazonaws.com/
+Completed 302 Found in 327ms (ActiveRecord: 8.2ms | Allocations: 4987)
+
+
+Started GET "/" for 69.153.28.152 at 2021-03-23 17:33:07 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7bdab2502ffa27fe79f3953e4c8cd6c1c605c92"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1173)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 1977)
+Completed 200 OK in 12ms (Views: 6.7ms | ActiveRecord: 1.9ms | Allocations: 3624)
+
+
+Started GET "/courses/8" for 69.153.28.152 at 2021-03-23 17:33:09 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7bdab2502ffa27fe79f3953e4c8cd6c1c605c92"], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.8ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 119)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 917)
+Completed 200 OK in 11ms (Views: 4.0ms | ActiveRecord: 1.6ms | Allocations: 3127)
+
+
+Started GET "/courses/CITADEL.jpg" for 69.153.28.152 at 2021-03-23 17:33:09 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as JPEG
+  Parameters: {"id"=>"CITADEL"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7bdab2502ffa27fe79f3953e4c8cd6c1c605c92"], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.8ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:10:in `show'
+Completed 404 Not Found in 7ms (ActiveRecord: 1.5ms | Allocations: 2360)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=CITADEL):
+  
+app/controllers/courses_controller.rb:10:in `show'
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/ubuntu/environment/ipos/config/environment.rb:5)
+Started GET "/courses/8" for 69.153.28.152 at 2021-03-23 17:40:54 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7bdab2502ffa27fe79f3953e4c8cd6c1c605c92"], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.8ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 476)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 6552)
+Completed 200 OK in 62ms (Views: 12.5ms | ActiveRecord: 11.6ms | Allocations: 21320)
+
+
+Started GET "/courses/CITADEL.jpg" for 69.153.28.152 at 2021-03-23 17:40:55 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as JPEG
+  Parameters: {"id"=>"CITADEL"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7bdab2502ffa27fe79f3953e4c8cd6c1c605c92"], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:10:in `show'
+Completed 404 Not Found in 7ms (ActiveRecord: 1.6ms | Allocations: 2383)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=CITADEL):
+  
+app/controllers/courses_controller.rb:10:in `show'
