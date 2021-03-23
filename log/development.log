@@ -21955,3 +21955,56 @@ Completed 404 Not Found in 7ms (ActiveRecord: 1.5ms | Allocations: 2360)
 ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=CITADEL):
   
 app/controllers/courses_controller.rb:10:in `show'
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/ubuntu/environment/ipos/config/environment.rb:5)
+Started GET "/courses/8" for 69.153.28.152 at 2021-03-23 17:40:54 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7bdab2502ffa27fe79f3953e4c8cd6c1c605c92"], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.8ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 476)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 6552)
+Completed 200 OK in 62ms (Views: 12.5ms | ActiveRecord: 11.6ms | Allocations: 21320)
+
+
+Started GET "/courses/CITADEL.jpg" for 69.153.28.152 at 2021-03-23 17:40:55 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#show as JPEG
+  Parameters: {"id"=>"CITADEL"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "e7bdab2502ffa27fe79f3953e4c8cd6c1c605c92"], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:10:in `show'
+Completed 404 Not Found in 7ms (ActiveRecord: 1.6ms | Allocations: 2383)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Course with 'id'=CITADEL):
+  
+app/controllers/courses_controller.rb:10:in `show'
