@@ -6,5 +6,6 @@ environment.plugins.append(
   new VueLoaderPlugin()
 )
 
+module.exports = environment
 module.exports = webpackConfig
 
