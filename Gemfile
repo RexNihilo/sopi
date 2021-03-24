@@ -10,6 +10,9 @@ gem 'rails', '~> 6.1.3'
 # gem 'sqlite3', '~> 1.4'
 #gem 'pg', group: [:production]
 
+gem 'rspec'
+gem 'rails-controller-testing'
+
 gem 'pg'
 gem 'figaro'
 # Use Puma as the app server
