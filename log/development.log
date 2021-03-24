@@ -22417,3 +22417,160 @@ Processing by Clearance::SessionsController#new as HTML
 Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.0ms | Allocations: 1772)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/ubuntu/environment/ipos/config/environment.rb:5)
+Started GET "/" for 69.153.28.152 at 2021-03-24 18:18:57 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+Redirected to https://1b169f9cf24f45219c120cf8d0569b5f.vfs.cloud9.us-east-2.amazonaws.com/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 23ms (ActiveRecord: 0.0ms | Allocations: 4810)
+
+
+Started GET "/sign_in" for 69.153.28.152 at 2021-03-24 18:18:57 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 3.9ms | Allocations: 1313)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1900)
+  Rendered layout layouts/application.html.erb (Duration: 54.3ms | Allocations: 8772)
+Completed 200 OK in 63ms (Views: 62.2ms | ActiveRecord: 0.0ms | Allocations: 11253)
+
+
+Started GET "/" for 69.153.28.152 at 2021-03-24 18:18:58 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+Redirected to https://1b169f9cf24f45219c120cf8d0569b5f.vfs.cloud9.us-east-2.amazonaws.com/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/sign_in" for 69.153.28.152 at 2021-03-24 18:18:58 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 2.6ms | Allocations: 492)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 615)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 1318)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 1765)
+
+
+Started GET "/sign_in" for 69.153.28.152 at 2021-03-24 18:20:43 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 2.1ms | Allocations: 756)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1208)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+[webpack-cli] { BrowserslistError: /home/ubuntu/environment/ipos contains both .browserslistrc and package.json with browsers
+    at /home/ubuntu/environment/ipos/node_modules/browserslist/node.js:333:15
+    at eachParent (/home/ubuntu/environment/ipos/node_modules/browserslist/node.js:49:18)
+    at Object.findConfig (/home/ubuntu/environment/ipos/node_modules/browserslist/node.js:305:20)
+    at Function.loadConfig (/home/ubuntu/environment/ipos/node_modules/browserslist/node.js:223:37)
+    at Object.load (/home/ubuntu/environment/ipos/node_modules/webpack/lib/config/browserslistTargetHandler.js:67:18)
+    at getDefaultTarget (/home/ubuntu/environment/ipos/node_modules/webpack/lib/config/target.js:15:45)
+    at F (/home/ubuntu/environment/ipos/node_modules/webpack/lib/config/defaults.js:129:10)
+    at F (/home/ubuntu/environment/ipos/node_modules/webpack/lib/config/defaults.js:71:15)
+    at applyWebpackOptionsDefaults (/home/ubuntu/environment/ipos/node_modules/webpack/lib/config/defaults.js:128:2)
+    at createCompiler (/home/ubuntu/environment/ipos/node_modules/webpack/lib/webpack.js:75:2)
+  name: 'BrowserslistError',
+  message:
+   '/home/ubuntu/environment/ipos contains both .browserslistrc and package.json with browsers',
+  browserslist: true }
+
+  Rendered layout layouts/application.html.erb (Duration: 2216.6ms | Allocations: 15111)
+Completed 200 OK in 2226ms (Views: 2225.9ms | ActiveRecord: 0.0ms | Allocations: 16867)
+
+
+Started GET "/packs/js/application-67e89a2bee0e0c075dcd.js" for 69.153.28.152 at 2021-03-24 18:20:46 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/packs/js/application-67e89a2bee0e0c075dcd.js"):
+  
+Started GET "/sign_in" for 69.153.28.152 at 2021-03-24 18:21:11 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 2.6ms | Allocations: 758)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 8.4ms | Allocations: 1212)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 4376)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.0ms | Allocations: 6141)
+
+
+Started POST "/session" for 69.153.28.152 at 2021-03-24 18:21:29 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"Test@Test.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 0.9ms | Allocations: 492)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 615)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 3412)
+Completed 401 Unauthorized in 64ms (Views: 15.0ms | ActiveRecord: 8.7ms | Allocations: 10020)
+
+
+Started GET "/sign_up" for 69.153.28.152 at 2021-03-24 18:21:32 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/_form.html.erb (Duration: 1.8ms | Allocations: 637)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1705)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 4513)
+Completed 200 OK in 36ms (Views: 24.2ms | ActiveRecord: 3.4ms | Allocations: 9810)
+
+
+Started POST "/users" for 69.153.28.152 at 2021-03-24 18:21:36 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"Test@Test.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.4ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "remember_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-03-24 18:21:36.578390"], ["updated_at", "2021-03-24 18:21:36.578390"], ["email", "test@test.com"], ["encrypted_password", "$2a$12$Ilxnbc0mQxtRKiGrSthe2OBKAravlXb/5mYpcwB3lK7dL5rYG57sO"], ["remember_token", "9360f44bad1ede80fd7d486492f766183631ae7d"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://1b169f9cf24f45219c120cf8d0569b5f.vfs.cloud9.us-east-2.amazonaws.com/
+Completed 302 Found in 331ms (ActiveRecord: 6.5ms | Allocations: 5189)
+
+
+Started GET "/" for 69.153.28.152 at 2021-03-24 18:21:36 +0000
+Cannot render console from 69.153.28.152! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "9360f44bad1ede80fd7d486492f766183631ae7d"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:4
+  Rendered courses/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 976)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 3887)
+Completed 200 OK in 33ms (Views: 17.4ms | ActiveRecord: 2.7ms | Allocations: 7069)
+
+
