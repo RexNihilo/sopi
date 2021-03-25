@@ -4,7 +4,6 @@ class PlansController < ApplicationController
   end
   
   def show
-    @student = Student.find(params[:student_id])
     @plan = Plan.find(params[:id])
   end
   
@@ -15,6 +14,7 @@ class PlansController < ApplicationController
   def create
     @student = Student.find(params[:student_id])
     @plan = @student.plans.create(plan_params)
+    #flash.alert = "plan added!"
     redirect_to student_path(@student)
   end
   
@@ -26,7 +26,9 @@ class PlansController < ApplicationController
     @plan = Plan.find(params[:id])
 
     if @plan.update(plan_params)
+      flash.alert = "plan edited"
       redirect_to @plan
+      
     else
       render :edit
     end
@@ -37,6 +39,7 @@ class PlansController < ApplicationController
     @plan.destroy
     
     @student = Student.find(params[:student_id])
+    flash.alert = "plan destroyed"
     redirect_to student_path(@student)
     
   end

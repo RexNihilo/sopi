@@ -44,6 +44,6 @@ class ProgramdirectorsController < ApplicationController
   
   private
     def programdirector_params
-      params.require(:programdirector).permit(:name, :number, :section, :prefix)
+      params.require(:programdirector).permit(:Name, :CWID)
     end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_22_084420) do
+ActiveRecord::Schema.define(version: 2021_03_25_150406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,8 @@ ActiveRecord::Schema.define(version: 2021_03_22_084420) do
     t.integer "section"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "semesters_id", null: false
+    t.index ["semesters_id"], name: "index_courses_on_semesters_id"
   end
 
   create_table "discussions", force: :cascade do |t|
@@ -96,7 +98,6 @@ ActiveRecord::Schema.define(version: 2021_03_22_084420) do
   create_table "plans", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "CWID"
     t.string "nameofplan"
     t.bigint "student_id", null: false
     t.index ["student_id"], name: "index_plans_on_student_id"
@@ -107,6 +108,8 @@ ActiveRecord::Schema.define(version: 2021_03_22_084420) do
     t.integer "CWID"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "programdirector_id", null: false
+    t.index ["programdirector_id"], name: "index_professors_on_programdirector_id"
   end
 
   create_table "programdirectors", force: :cascade do |t|
@@ -125,6 +128,8 @@ ActiveRecord::Schema.define(version: 2021_03_22_084420) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "season"
     t.integer "year"
+    t.bigint "plan_id", null: false
+    t.index ["plan_id"], name: "index_semesters_on_plan_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -134,6 +139,8 @@ ActiveRecord::Schema.define(version: 2021_03_22_084420) do
     t.string "Advisor"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "professor_id", null: false
+    t.index ["professor_id"], name: "index_students_on_professor_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -151,4 +158,8 @@ ActiveRecord::Schema.define(version: 2021_03_22_084420) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "discussions"
   add_foreign_key "comments", "users"
+  add_foreign_key "courses", "semesters", column: "semesters_id"
+  add_foreign_key "professors", "programdirectors"
+  add_foreign_key "semesters", "plans"
+  add_foreign_key "students", "professors"
 end
