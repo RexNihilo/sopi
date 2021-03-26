@@ -1,4 +1,54 @@
-<p id="notice"><%= notice %></p>
+<html>
+    
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<script>
+    
+  .w3-teal, .w3-hover-teal:hover {
+      background-color: #1F3A60!important;
+  }
+    
+</script>
+    
+    
+<body>
+    
+<!-- Sidebar -->    
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="background-color: #1A3152!important; color:white;">
+  <h3 class="w3-bar-item">Menu</h3>
+   <a href="<%= students_path  %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">STUDENTS</a>
+ <a href="<%=professors_path %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">ADVISORS</a>
+  <a href="<%= programdirectors_path %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">PROGRAM DIRECTORS</a>
+ <a href="<%=semesters_path %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">SEMESTERS</a>
+  <a href="<%= comments_path %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">COMMENTS</a>
+    <a href="<%= discussions_path %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">E-MAILS</a>
+</div>
+  
+<div id="main">
+    
+<div class="w3-teal" style="background-color: #1A3152!important;">
+  <button id="openNav" class="w3-button w3-teal w3-xlarge" style="background-color: #1A3152!important; padding-left: 2%; padding-bottom: 0px; font-weight: bold;color:white!important;" onclick="w3_open()">Menu</button>
+  <div class="w3-container">
+    <h1></h1>
+  </div>
+</div>
+    
+<script>
+function w3_open() {
+  document.getElementById("main").style.marginLeft = "10%";
+  document.getElementById("mySidebar").style.width = "10%";
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("openNav").style.display = 'none';
+}
+
+function w3_close() {
+  document.getElementById("main").style.marginLeft = "0%";
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("openNav").style.display = "inline-block";
+}
+</script>
+p id="notice"><%= notice %></p>
 
 <p>
   <strong>Title:</strong>

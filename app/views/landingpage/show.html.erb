@@ -1,57 +1,34 @@
-<p id="notice"><%= notice %></p>
-<p>Landing page after log in. To be replaced with role based dashboards where everything available to a user based on role is displayed.</p>
+
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+<!-- Sidebar -->
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="background-color: #1A3152!important; color:white;">
+  <h3 class="w3-bar-item">Menu</h3>
+   <a href="<%= students_path  %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">STUDENTS</a>
+ <a href="<%=professors_path %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">ADVISORS</a>
+  <a href="<%= programdirectors_path %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">PROGRAM DIRECTORS</a>
+ <a href="<%=semesters_path %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">SEMESTERS</a>
+  <a href="<%= comments_path %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">COMMENTS</a>
+    <a href="<%= discussions_path %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">E-MAILS</a>
+</div>
+
+<!-- Page Content -->
+<div style="margin-left:25%">
+
+<div class="w3-container w3-#3975B7">
+</div>
+
+<div class="w3-container">
+</div>
+<p>Landing page after log in. To be replaced with role based dashboards
+where everything available to a user based on role is displayed.</p>
 <p>Hello. Here is everything available to you:</p>
-
-<p>Students:</p>
-
-<ul>
-  <li><%= link_to 'Students Index', students_path %> </li>
-</ul>
-
-<p>Professors:</p>
-
-<ul>
-  <li><%= link_to 'Professors Index', professors_path %> </li>
-</ul>
+</div>
+      
+</body>
+</html>
 
 
-<p>Program Directors:</p>
-
-<ul>
-  <li><%= link_to 'Program Directors Index', programdirectors_path %> </li>
-</ul>
-
-<p>Courses:</p>
-
-<ul>
-  <li><%= link_to 'Courses Index', courses_path %> </li>
-</ul>
-
-
-<p>Semesters:</p>
-
-<ul>
-  <li><%= link_to 'Semesters Index', semesters_path %> </li>
-</ul>
-
-
-<p>Plans of Study:</p>
-
-<ul>
-  <li><%= link_to 'Plans Index', plans_path %> </li>
-</ul>
-
-
-<p>Discussions:</p>
-
-<ul>
-  <li><%= link_to 'Discussions Index', discussions_path %> </li>
-</ul>
-
-
-<p>Comments:</p>
-
-<ul>
-  <li><%= link_to 'Comments Index', comments_path %> </li>
-</ul>
 
