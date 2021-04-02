@@ -32455,3 +32455,541 @@ Processing by LandingpageController#show as HTML
 Completed 200 OK in 25ms (Views: 17.0ms | ActiveRecord: 1.0ms | Allocations: 5171)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/ubuntu/environment/ipos/config/environment.rb:5)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to Addrefrences (20210324211058)
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "semesters" ADD "plan_id" bigint NOT NULL[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/ubuntu/environment/ipos/config/environment.rb:5)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (117.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_development"[0m
+  [1m[35m (109.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_test"[0m
+  [1m[35m (388.9ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  [1m[35m (234.9ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "action_mailbox_inbound_emails" CASCADE[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "action_mailbox_inbound_emails" ("id" bigserial primary key, "status" integer DEFAULT 0 NOT NULL, "message_id" character varying NOT NULL, "message_checksum" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_action_mailbox_inbound_emails_uniqueness" ON "action_mailbox_inbound_emails" ("message_id", "message_checksum")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "action_text_rich_texts" CASCADE[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "action_text_rich_texts" ("id" bigserial primary key, "name" character varying NOT NULL, "body" text, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_action_text_rich_texts_uniqueness" ON "action_text_rich_texts" ("record_type", "record_id", "name")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "user_id" bigint NOT NULL, "discussion_id" bigint NOT NULL, "body" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE INDEX "index_comments_on_discussion_id" ON "comments" ("discussion_id")[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses" CASCADE[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "courses" ("id" bigserial primary key, "prefix" character varying, "name" character varying, "number" integer, "section" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "semesters_id" bigint NOT NULL)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE INDEX "index_courses_on_semesters_id" ON "courses" ("semesters_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "discussions" CASCADE[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "discussions" ("id" bigserial primary key, "title" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "notes" CASCADE[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "notes" ("id" bigserial primary key, "title" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "plans" CASCADE[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "plans" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "nameofplan" character varying, "student_id" bigint NOT NULL)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE INDEX "index_plans_on_student_id" ON "plans" ("student_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "professors" CASCADE[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "professors" ("id" bigserial primary key, "Name" character varying, "CWID" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "programdirector_id" bigint NOT NULL)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE INDEX "index_professors_on_programdirector_id" ON "professors" ("programdirector_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "programdirectors" CASCADE[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "programdirectors" ("id" bigserial primary key, "Name" character varying, "CWID" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "semesters" CASCADE[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "semesters" ("id" bigserial primary key, "course1" character varying, "course2" character varying, "course3" character varying, "course4" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "season" character varying, "year" integer, "plan_id" bigint NOT NULL)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE INDEX "index_semesters_on_plan_id" ON "semesters" ("plan_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "students" CASCADE[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "Name" character varying, "CWID" integer, "Concentration" character varying, "Advisor" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "professor_id" bigint NOT NULL)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE INDEX "index_students_on_professor_id" ON "students" ("professor_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "email" character varying NOT NULL, "encrypted_password" character varying(128) NOT NULL, "confirmation_token" character varying(128), "remember_token" character varying(128) NOT NULL)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_750d1a8a36"
+FOREIGN KEY ("discussion_id")
+  REFERENCES "discussions" ("id")
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "courses" ADD CONSTRAINT "fk_rails_2bbdc077f9"
+FOREIGN KEY ("semesters_id")
+  REFERENCES "semesters" ("id")
+[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "professors" ADD CONSTRAINT "fk_rails_9cb87ba47d"
+FOREIGN KEY ("programdirector_id")
+  REFERENCES "programdirectors" ("id")
+[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "semesters" ADD CONSTRAINT "fk_rails_39521c9cf2"
+FOREIGN KEY ("plan_id")
+  REFERENCES "plans" ("id")
+[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "students" ADD CONSTRAINT "fk_rails_bd7f9380b5"
+FOREIGN KEY ("professor_id")
+  REFERENCES "professors" ("id")
+[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210325150406)[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210218011755),
+(20210219152433),
+(20210221072628),
+(20210224184505),
+(20210303173753),
+(20210303173834),
+(20210303235055),
+(20210307230142),
+(20210308021241),
+(20210308021242),
+(20210313204735),
+(20210313205036),
+(20210322083607),
+(20210322084420),
+(20210324211058),
+(20210324212936);
+
+[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-04-02 16:13:18.146366"], ["updated_at", "2021-04-02 16:13:18.146366"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "df0efa145bee46bced94385c4c0965a17bdf079d"], ["created_at", "2021-04-02 16:13:18.160443"], ["updated_at", "2021-04-02 16:13:18.160443"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "action_mailbox_inbound_emails" CASCADE[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "action_mailbox_inbound_emails" ("id" bigserial primary key, "status" integer DEFAULT 0 NOT NULL, "message_id" character varying NOT NULL, "message_checksum" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_action_mailbox_inbound_emails_uniqueness" ON "action_mailbox_inbound_emails" ("message_id", "message_checksum")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "action_text_rich_texts" CASCADE[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "action_text_rich_texts" ("id" bigserial primary key, "name" character varying NOT NULL, "body" text, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_action_text_rich_texts_uniqueness" ON "action_text_rich_texts" ("record_type", "record_id", "name")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "user_id" bigint NOT NULL, "discussion_id" bigint NOT NULL, "body" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE INDEX "index_comments_on_discussion_id" ON "comments" ("discussion_id")[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses" CASCADE[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "courses" ("id" bigserial primary key, "prefix" character varying, "name" character varying, "number" integer, "section" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "semesters_id" bigint NOT NULL)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE INDEX "index_courses_on_semesters_id" ON "courses" ("semesters_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "discussions" CASCADE[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "discussions" ("id" bigserial primary key, "title" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "notes" CASCADE[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "notes" ("id" bigserial primary key, "title" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "plans" CASCADE[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "plans" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "nameofplan" character varying, "student_id" bigint NOT NULL)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE INDEX "index_plans_on_student_id" ON "plans" ("student_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "professors" CASCADE[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "professors" ("id" bigserial primary key, "Name" character varying, "CWID" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "programdirector_id" bigint NOT NULL)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE INDEX "index_professors_on_programdirector_id" ON "professors" ("programdirector_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "programdirectors" CASCADE[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "programdirectors" ("id" bigserial primary key, "Name" character varying, "CWID" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "semesters" CASCADE[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "semesters" ("id" bigserial primary key, "course1" character varying, "course2" character varying, "course3" character varying, "course4" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "season" character varying, "year" integer, "plan_id" bigint NOT NULL)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE INDEX "index_semesters_on_plan_id" ON "semesters" ("plan_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "students" CASCADE[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "Name" character varying, "CWID" integer, "Concentration" character varying, "Advisor" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "professor_id" bigint NOT NULL)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE INDEX "index_students_on_professor_id" ON "students" ("professor_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "email" character varying NOT NULL, "encrypted_password" character varying(128) NOT NULL, "confirmation_token" character varying(128), "remember_token" character varying(128) NOT NULL)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_750d1a8a36"
+FOREIGN KEY ("discussion_id")
+  REFERENCES "discussions" ("id")
+[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "courses" ADD CONSTRAINT "fk_rails_2bbdc077f9"
+FOREIGN KEY ("semesters_id")
+  REFERENCES "semesters" ("id")
+[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "professors" ADD CONSTRAINT "fk_rails_9cb87ba47d"
+FOREIGN KEY ("programdirector_id")
+  REFERENCES "programdirectors" ("id")
+[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "semesters" ADD CONSTRAINT "fk_rails_39521c9cf2"
+FOREIGN KEY ("plan_id")
+  REFERENCES "plans" ("id")
+[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "students" ADD CONSTRAINT "fk_rails_bd7f9380b5"
+FOREIGN KEY ("professor_id")
+  REFERENCES "professors" ("id")
+[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210325150406)[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210218011755),
+(20210219152433),
+(20210221072628),
+(20210224184505),
+(20210303173753),
+(20210303173834),
+(20210303235055),
+(20210307230142),
+(20210308021241),
+(20210308021242),
+(20210313204735),
+(20210313205036),
+(20210322083607),
+(20210322084420),
+(20210324211058),
+(20210324212936);
+
+[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-04-02 16:13:18.443082"], ["updated_at", "2021-04-02 16:13:18.443082"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (1.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2021-04-02 16:13:18.453019"], ["key", "environment"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "df0efa145bee46bced94385c4c0965a17bdf079d"], ["created_at", "2021-04-02 16:13:18.463077"], ["updated_at", "2021-04-02 16:13:18.463077"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgramdirector Create (0.9ms)[0m  [1m[32mINSERT INTO "programdirectors" ("Name", "CWID", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["Name", "Dr. A"], ["CWID", 256456], ["created_at", "2021-04-02 16:13:18.549192"], ["updated_at", "2021-04-02 16:13:18.549192"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgramdirector Create (1.5ms)[0m  [1m[32mINSERT INTO "programdirectors" ("Name", "CWID", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["Name", "Dr. B"], ["CWID", 251256], ["created_at", "2021-04-02 16:13:18.558589"], ["updated_at", "2021-04-02 16:13:18.558589"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgramdirector Load (0.3ms)[0m  [1m[34mSELECT "programdirectors".* FROM "programdirectors" WHERE "programdirectors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfessor Create (9.7ms)[0m  [1m[32mINSERT INTO "professors" ("Name", "CWID", "created_at", "updated_at", "programdirector_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["Name", "Dr. Rob Stark"], ["CWID", 156456], ["created_at", "2021-04-02 16:13:18.639728"], ["updated_at", "2021-04-02 16:13:18.639728"], ["programdirector_id", 1]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgramdirector Load (1.5ms)[0m  [1m[34mSELECT "programdirectors".* FROM "programdirectors" WHERE "programdirectors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfessor Create (2.2ms)[0m  [1m[32mINSERT INTO "professors" ("Name", "CWID", "created_at", "updated_at", "programdirector_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["Name", "Dr. Tyrion Lannister"], ["CWID", 151256], ["created_at", "2021-04-02 16:13:18.661942"], ["updated_at", "2021-04-02 16:13:18.661942"], ["programdirector_id", 1]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgramdirector Load (1.1ms)[0m  [1m[34mSELECT "programdirectors".* FROM "programdirectors" WHERE "programdirectors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfessor Create (3.0ms)[0m  [1m[32mINSERT INTO "professors" ("Name", "CWID", "created_at", "updated_at", "programdirector_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["Name", "Dr. Sandor Clegane"], ["CWID", 151256], ["created_at", "2021-04-02 16:13:18.672744"], ["updated_at", "2021-04-02 16:13:18.672744"], ["programdirector_id", 1]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgramdirector Load (1.3ms)[0m  [1m[34mSELECT "programdirectors".* FROM "programdirectors" WHERE "programdirectors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfessor Create (0.8ms)[0m  [1m[32mINSERT INTO "professors" ("Name", "CWID", "created_at", "updated_at", "programdirector_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["Name", "Dr. Bronn"], ["CWID", 152346], ["created_at", "2021-04-02 16:13:18.692461"], ["updated_at", "2021-04-02 16:13:18.692461"], ["programdirector_id", 1]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.7ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at", "professor_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["Name", "John Smith"], ["CWID", 456456], ["Concentration", "CSCI"], ["Advisor", "Dr. Rob Stark"], ["created_at", "2021-04-02 16:13:18.721612"], ["updated_at", "2021-04-02 16:13:18.721612"], ["professor_id", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfessor Load (1.5ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at", "professor_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["Name", "Joe Jones"], ["CWID", 451256], ["Concentration", "CSCI"], ["Advisor", "Dr. Rob Stark"], ["created_at", "2021-04-02 16:13:18.733800"], ["updated_at", "2021-04-02 16:13:18.733800"], ["professor_id", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at", "professor_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["Name", "Sansa Stark"], ["CWID", 451256], ["Concentration", "CSCI"], ["Advisor", "Dr. Rob Stark"], ["created_at", "2021-04-02 16:13:18.745466"], ["updated_at", "2021-04-02 16:13:18.745466"], ["professor_id", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at", "professor_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["Name", "Jon Snow"], ["CWID", 452346], ["Concentration", "CSCI"], ["Advisor", "Dr. Tyrion Lannister"], ["created_at", "2021-04-02 16:13:18.756862"], ["updated_at", "2021-04-02 16:13:18.756862"], ["professor_id", 2]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at", "professor_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["Name", "Ramsey Bolton"], ["CWID", 451286], ["Concentration", "CSCI"], ["Advisor", "Dr. Tyrion Lannister"], ["created_at", "2021-04-02 16:13:18.767159"], ["updated_at", "2021-04-02 16:13:18.767159"], ["professor_id", 2]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at", "professor_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["Name", "Oberyn Martell"], ["CWID", 754256], ["Concentration", "MATH"], ["Advisor", "Dr. Sandor Clegane"], ["created_at", "2021-04-02 16:13:18.778779"], ["updated_at", "2021-04-02 16:13:18.778779"], ["professor_id", 2]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at", "professor_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["Name", "Hodor Hodor"], ["CWID", 451235], ["Concentration", "MATH"], ["Advisor", "Dr. Sandor Clegane"], ["created_at", "2021-04-02 16:13:18.789084"], ["updated_at", "2021-04-02 16:13:18.789084"], ["professor_id", 3]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at", "professor_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["Name", "Gregor Clegane"], ["CWID", 499956], ["Concentration", "MATH"], ["Advisor", "Dr. Bronn"], ["created_at", "2021-04-02 16:13:18.799821"], ["updated_at", "2021-04-02 16:13:18.799821"], ["professor_id", 3]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlan Create (0.6ms)[0m  [1m[32mINSERT INTO "plans" ("created_at", "updated_at", "nameofplan", "student_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-04-02 16:13:18.846452"], ["updated_at", "2021-04-02 16:13:18.846452"], ["nameofplan", "Mynewplan1"], ["student_id", 1]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("created_at", "updated_at", "nameofplan", "student_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-04-02 16:13:18.860588"], ["updated_at", "2021-04-02 16:13:18.860588"], ["nameofplan", "JSmith plan 1"], ["student_id", 2]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("created_at", "updated_at", "nameofplan", "student_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-04-02 16:13:18.870996"], ["updated_at", "2021-04-02 16:13:18.870996"], ["nameofplan", "Stick to the plan"], ["student_id", 3]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("created_at", "updated_at", "nameofplan", "student_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-04-02 16:13:18.882097"], ["updated_at", "2021-04-02 16:13:18.882097"], ["nameofplan", "I like this plan"], ["student_id", 4]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mPlan Create (0.4ms)[0m  [1m[32mINSERT INTO "plans" ("created_at", "updated_at", "nameofplan", "student_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-04-02 16:13:18.893555"], ["updated_at", "2021-04-02 16:13:18.893555"], ["nameofplan", "I dislike this plan"], ["student_id", 5]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("created_at", "updated_at", "nameofplan", "student_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-04-02 16:13:18.904367"], ["updated_at", "2021-04-02 16:13:18.904367"], ["nameofplan", "12 courses in one semester plan"], ["student_id", 6]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mPlan Create (0.4ms)[0m  [1m[32mINSERT INTO "plans" ("created_at", "updated_at", "nameofplan", "student_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-04-02 16:13:18.915981"], ["updated_at", "2021-04-02 16:13:18.915981"], ["nameofplan", "graduate in 10 years plan"], ["student_id", 7]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("created_at", "updated_at", "nameofplan", "student_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-04-02 16:13:18.926295"], ["updated_at", "2021-04-02 16:13:18.926295"], ["nameofplan", "planplanplanofstudy"], ["student_id", 8]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/ubuntu/environment/ipos/config/environment.rb:5)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/ubuntu/environment/ipos/config/environment.rb:5)
+Started GET "/" for 155.225.2.100 at 2021-04-02 16:13:49 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LandingpageController#show as HTML
+Redirected to https://8fd3ce43e6f643368c42536621c56a9a.vfs.cloud9.us-east-2.amazonaws.com/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 281ms (ActiveRecord: 0.0ms | Allocations: 220807)
+
+
+Started GET "/sign_in" for 155.225.2.100 at 2021-04-02 16:13:49 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 8.6ms | Allocations: 1896)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 13.7ms | Allocations: 2646)
+  Rendered layout layouts/application.html.erb (Duration: 164.3ms | Allocations: 45007)
+Completed 200 OK in 185ms (Views: 184.6ms | ActiveRecord: 0.0ms | Allocations: 48416)
+
+
+Started GET "/" for 155.225.2.100 at 2021-04-02 16:13:51 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LandingpageController#show as HTML
+Redirected to https://8fd3ce43e6f643368c42536621c56a9a.vfs.cloud9.us-east-2.amazonaws.com/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 292)
+
+
+Started GET "/sign_in" for 155.225.2.100 at 2021-04-02 16:13:51 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 1.0ms | Allocations: 497)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 620)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 3070)
+Completed 200 OK in 40ms (Views: 39.2ms | ActiveRecord: 0.0ms | Allocations: 3519)
+
+
+Started POST "/session" for 155.225.2.100 at 2021-04-02 16:14:14 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"aelgazar@citadel.edu", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "aelgazar@citadel.edu"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/_form.html.erb (Duration: 0.9ms | Allocations: 487)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/sessions/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 610)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 2992)
+Completed 401 Unauthorized in 35ms (Views: 14.3ms | ActiveRecord: 5.1ms | Allocations: 8898)
+
+
+Started GET "/sign_up" for 155.225.2.100 at 2021-04-02 16:14:16 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/_form.html.erb (Duration: 3.4ms | Allocations: 637)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.6/gems/clearance-1.15.1/app/views/users/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1700)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 4095)
+Completed 200 OK in 34ms (Views: 22.1ms | ActiveRecord: 3.4ms | Allocations: 9388)
+
+
+Started POST "/users" for 155.225.2.100 at 2021-04-02 16:14:21 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"aelgazar@citadel.edu", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "aelgazar@citadel.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "remember_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-04-02 16:14:21.980868"], ["updated_at", "2021-04-02 16:14:21.980868"], ["email", "aelgazar@citadel.edu"], ["encrypted_password", "$2a$12$WXYmw2jIbp8/HeZYmVA5ou.d0q048Zw.ib6FNtEo4zylPuzaW7N6y"], ["remember_token", "b2ce6b68becff8279324faf302d4faa3eaf32677"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://8fd3ce43e6f643368c42536621c56a9a.vfs.cloud9.us-east-2.amazonaws.com/
+Completed 302 Found in 302ms (ActiveRecord: 4.7ms | Allocations: 5204)
+
+
+Started GET "/" for 155.225.2.100 at 2021-04-02 16:14:22 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LandingpageController#show as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "b2ce6b68becff8279324faf302d4faa3eaf32677"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering landingpage/show.html.erb within layouts/application
+  Rendered landingpage/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 311)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 2812)
+Completed 200 OK in 21ms (Views: 12.8ms | ActiveRecord: 0.9ms | Allocations: 5112)
+
+
+Started GET "/students" for 155.225.2.100 at 2021-04-02 16:14:49 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "b2ce6b68becff8279324faf302d4faa3eaf32677"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:17
+  Rendered students/index.html.erb within layouts/application (Duration: 18.2ms | Allocations: 6652)
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | Allocations: 9139)
+Completed 200 OK in 47ms (Views: 28.9ms | ActiveRecord: 7.7ms | Allocations: 14161)
+
+
+Started GET "/" for 155.225.2.100 at 2021-04-02 16:14:52 +0000
+Cannot render console from 155.225.2.100! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LandingpageController#show as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "b2ce6b68becff8279324faf302d4faa3eaf32677"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering landingpage/show.html.erb within layouts/application
+  Rendered landingpage/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 115)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 2617)
+Completed 200 OK in 18ms (Views: 10.5ms | ActiveRecord: 1.4ms | Allocations: 4255)
+
+
