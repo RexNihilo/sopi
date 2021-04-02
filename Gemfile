@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
+gem 'travis'
 gem "cancan"
 gem "clearance", '~> 1.15.1' #added this gem for Authentication ELGAZAR and TEAM HELP
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
@@ -71,6 +72,6 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
-
+gem 'simplecov', :require => false
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
