@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_25_150406) do
+ActiveRecord::Schema.define(version: 2021_04_08_143412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 2021_03_25_150406) do
     t.integer "section"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "semesters_id", null: false
+    t.bigint "semesters_id"
     t.index ["semesters_id"], name: "index_courses_on_semesters_id"
   end
 
@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 2021_03_25_150406) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "nameofplan"
-    t.bigint "student_id", null: false
+    t.bigint "student_id"
     t.index ["student_id"], name: "index_plans_on_student_id"
   end
 
@@ -128,7 +128,7 @@ ActiveRecord::Schema.define(version: 2021_03_25_150406) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "season"
     t.integer "year"
-    t.bigint "plan_id", null: false
+    t.bigint "plan_id"
     t.index ["plan_id"], name: "index_semesters_on_plan_id"
   end
 
@@ -150,6 +150,10 @@ ActiveRecord::Schema.define(version: 2021_03_25_150406) do
     t.string "encrypted_password", limit: 128, null: false
     t.string "confirmation_token", limit: 128
     t.string "remember_token", limit: 128, null: false
+    t.boolean "admin", default: false, null: false
+    t.boolean "student", default: false, null: false
+    t.boolean "professor", default: false, null: false
+    t.boolean "programdirector", default: false, null: false
     t.index ["email"], name: "index_users_on_email"
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end

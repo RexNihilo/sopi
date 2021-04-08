@@ -4,11 +4,14 @@ class Ability
 #<%if can? :actionperform, @model you want to perform it on checking users ability
 
 #also in the controller.rb of function like def edit you would have to put at the bottom
+
 #of the method unauthorized! if cannot? 
+  alias_action :create, :read, :update, :destroy, to: :crud
+  
   def initialize(user)
   can :read, :all 
-  
   end 
+  
 end
 
   
