@@ -11,8 +11,6 @@ Rails.application.routes.draw do
  # constraints Clearance::Constraints::SignedIn.new { |user| user.students? } do
   #  root to: "students/dashboards#show", as: :students_root
  # end
- 
-  root "landingpage#show"
   
   resources :notes
   
@@ -39,5 +37,19 @@ Rails.application.routes.draw do
   resources :semesters
   
   resources :courses
+
+  mount RailsAdmin::Engine => "/admin", as: "rails_admin"
+  
+  constraints Clearance::Constraints::SignedIn.new { |user| user.admin? } do
+    root to: "landingpage#show", as: :admin_root
+  end
+
+  constraints Clearance::Constraints::SignedIn.new do
+    root to: "landingpage#show", as: :signed_in_root
+  end
+
+  constraints Clearance::Constraints::SignedOut.new do
+    root to: "landingpage#show"
+  end
 
 end

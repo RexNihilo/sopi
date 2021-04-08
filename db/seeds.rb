@@ -66,5 +66,5 @@ courses = [{:prefix => 'CSCI', :name => 'Easy Course', :number => '100', :sectio
     	 {:prefix => 'CSCI', :name => 'Stress Management When Programming', :number => '430', :section => '01'}
     	 ]
 courses.each do |course|
-  Semesters.Course.create!(course)
+  Course.create!(course)
 end 

@@ -10,7 +10,7 @@ gem 'rails', '~> 6.1.3'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3', '~> 1.4'
 #gem 'pg', group: [:production]
-
+gem 'rails_admin', '~> 2.0'
 gem 'rspec'
 gem 'rails-controller-testing'
 
