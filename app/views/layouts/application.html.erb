@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ipos</title>
+   <!-- Sidebar -->
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="background-color: #1A3152!important; color:white;">
+  <h3 class="w3-bar-item">iPOS</h3>
+     <a href="<%= root_path  %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">HOME</a>
+   <a href="<%= students_path  %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">STUDENTS</a>
+ <a href="<%=professors_path %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">ADVISORS</a>
+  <a href="<%= programdirectors_path %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">PROGRAM DIRECTORS</a>
+ <a href="<%=semesters_path %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">SEMESTERS</a>
+  <a href="<%= comments_path %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">COMMENTS</a>
+    <a href="<%= discussions_path %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">E-MAILS</a>
+       <a href="<%= courses_path  %>" class="w3-bar-item w3-button" style="color:white!important;font-weight:bold;background-color: #3975B7!important;">COURES</a>
+</div>
         <%= image_tag("CITADELLOGO.png",  :size => "200x40", :alt => "rss feed") %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
   </head>
-
   <body>
-      
-  <header> 
       <% if signed_in? %>
         Signed in as: <%= current_user.email %>, User_id: <%= current_user.id %>
         <%= button_to 'Sign out', sign_out_path, method: :delete %>
       <% else %>
         <%= link_to 'Sign in', sign_in_path %>
       <% end %>
-  </header>
-  
   <section>
-  
       <div id="flash">
         <% flash.each do |key, value| %>
           <div class="flash <%= key %>"><%= value %></div>

@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 gem 'travis'
+gem "rolify"
 gem "cancan"
 gem "clearance", '~> 1.15.1' #added this gem for Authentication ELGAZAR and TEAM HELP
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
