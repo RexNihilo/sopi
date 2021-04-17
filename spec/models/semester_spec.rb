@@ -9,7 +9,7 @@ RSpec.describe Semester, type: :model do
        expect(subject).to be_valid
       end
       
-      it "is not valid without a course" do
+      it "is not valid without one course" do
       subject.course1 = nil
         expect(subject).to_not be_valid
       end
