@@ -26,11 +26,18 @@
     <%= form.text_field :Concentration %>
   </div>
 
-  <div class="field">
-    <%= form.label :Advisor %>
-    <%= form.text_field :Advisor %>
+  <div class="control-group">
+    <%= form.label "Advisors", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:Advisor, options_from_collection_for_select(Professor.all, 'Name', 'Name')) %>
+    </div>
   </div>
-
+  
+  <div class="field">
+    <%= form.label :professor_id %>
+    <%= form.number_field :professor_id %>
+  </div>
+  
   <div class="actions">
     <%= form.submit %>
   </div>
