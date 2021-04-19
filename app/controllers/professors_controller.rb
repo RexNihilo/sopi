@@ -65,6 +65,6 @@ class ProfessorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def professor_params
-      params.fetch(:professor, {})
+    params.permit(:Name, :CWID, :programdirector_id)
     end
 end
