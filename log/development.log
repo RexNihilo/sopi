@@ -44413,3 +44413,970 @@ Processing by StudentsController#index as HTML
 Completed 200 OK in 24ms (Views: 16.4ms | ActiveRecord: 3.1ms | Allocations: 6172)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/ubuntu/environment/ipos/config/environment.rb:5)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (114.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_development"[0m
+  [1m[35m (107.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_test"[0m
+  [1m[35m (448.2ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  [1m[35m (249.4ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (4.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "action_mailbox_inbound_emails" CASCADE[0m
+  [1m[35m (44.2ms)[0m  [1m[35mCREATE TABLE "action_mailbox_inbound_emails" ("id" bigserial primary key, "status" integer DEFAULT 0 NOT NULL, "message_id" character varying NOT NULL, "message_checksum" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_action_mailbox_inbound_emails_uniqueness" ON "action_mailbox_inbound_emails" ("message_id", "message_checksum")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "action_text_rich_texts" CASCADE[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "action_text_rich_texts" ("id" bigserial primary key, "name" character varying NOT NULL, "body" text, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_action_text_rich_texts_uniqueness" ON "action_text_rich_texts" ("record_type", "record_id", "name")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "user_id" bigint NOT NULL, "discussion_id" bigint NOT NULL, "body" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE INDEX "index_comments_on_discussion_id" ON "comments" ("discussion_id")[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses" CASCADE[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE "courses" ("id" bigserial primary key, "prefix" character varying, "name" character varying, "number" integer, "section" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "semesters_id" bigint)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE INDEX "index_courses_on_semesters_id" ON "courses" ("semesters_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "discussions" CASCADE[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "discussions" ("id" bigserial primary key, "title" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "notes" CASCADE[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "notes" ("id" bigserial primary key, "title" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "plans" CASCADE[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "plans" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "nameofplan" character varying, "student_id" bigint)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE INDEX "index_plans_on_student_id" ON "plans" ("student_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "professors" CASCADE[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "professors" ("id" bigserial primary key, "Name" character varying, "CWID" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "programdirector_id" bigint NOT NULL)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE INDEX "index_professors_on_programdirector_id" ON "professors" ("programdirector_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "programdirectors" CASCADE[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "programdirectors" ("id" bigserial primary key, "Name" character varying, "CWID" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "semesters" CASCADE[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "semesters" ("id" bigserial primary key, "course1" character varying, "course2" character varying, "course3" character varying, "course4" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "season" character varying, "year" integer, "plan_id" bigint)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE INDEX "index_semesters_on_plan_id" ON "semesters" ("plan_id")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "students" CASCADE[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "Name" character varying, "CWID" integer, "Concentration" character varying, "Advisor" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "professor_id" bigint NOT NULL)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE INDEX "index_students_on_professor_id" ON "students" ("professor_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "email" character varying NOT NULL, "encrypted_password" character varying(128) NOT NULL, "confirmation_token" character varying(128), "remember_token" character varying(128) NOT NULL, "admin" boolean DEFAULT FALSE NOT NULL, "student" boolean DEFAULT FALSE NOT NULL, "professor" boolean DEFAULT FALSE NOT NULL, "programdirector" boolean DEFAULT FALSE NOT NULL)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [1m[35m (6.6ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (3.4ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_750d1a8a36"
+FOREIGN KEY ("discussion_id")
+  REFERENCES "discussions" ("id")
+[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (4.0ms)[0m  [1m[35mALTER TABLE "courses" ADD CONSTRAINT "fk_rails_2bbdc077f9"
+FOREIGN KEY ("semesters_id")
+  REFERENCES "semesters" ("id")
+[0m
+  [1m[35m (2.8ms)[0m  [1m[35mALTER TABLE "professors" ADD CONSTRAINT "fk_rails_9cb87ba47d"
+FOREIGN KEY ("programdirector_id")
+  REFERENCES "programdirectors" ("id")
+[0m
+  [1m[35m (2.8ms)[0m  [1m[35mALTER TABLE "semesters" ADD CONSTRAINT "fk_rails_39521c9cf2"
+FOREIGN KEY ("plan_id")
+  REFERENCES "plans" ("id")
+[0m
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "students" ADD CONSTRAINT "fk_rails_bd7f9380b5"
+FOREIGN KEY ("professor_id")
+  REFERENCES "professors" ("id")
+[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210408143412)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210218011755),
+(20210219152433),
+(20210221072628),
+(20210224184505),
+(20210303173753),
+(20210303173834),
+(20210303235055),
+(20210307230142),
+(20210308021241),
+(20210308021242),
+(20210313204735),
+(20210313205036),
+(20210322083607),
+(20210322084420),
+(20210324211058),
+(20210324212936),
+(20210325150406),
+(20210408122024);
+
+[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-04-20 19:54:37.712754"], ["updated_at", "2021-04-20 19:54:37.712754"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "7270a1f7602e3a2c503686c0a9913b085d6e40a9"], ["created_at", "2021-04-20 19:54:37.727760"], ["updated_at", "2021-04-20 19:54:37.727760"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "action_mailbox_inbound_emails" CASCADE[0m
+  [1m[35m (18.5ms)[0m  [1m[35mCREATE TABLE "action_mailbox_inbound_emails" ("id" bigserial primary key, "status" integer DEFAULT 0 NOT NULL, "message_id" character varying NOT NULL, "message_checksum" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_action_mailbox_inbound_emails_uniqueness" ON "action_mailbox_inbound_emails" ("message_id", "message_checksum")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "action_text_rich_texts" CASCADE[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "action_text_rich_texts" ("id" bigserial primary key, "name" character varying NOT NULL, "body" text, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_action_text_rich_texts_uniqueness" ON "action_text_rich_texts" ("record_type", "record_id", "name")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "user_id" bigint NOT NULL, "discussion_id" bigint NOT NULL, "body" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE INDEX "index_comments_on_discussion_id" ON "comments" ("discussion_id")[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses" CASCADE[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "courses" ("id" bigserial primary key, "prefix" character varying, "name" character varying, "number" integer, "section" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "semesters_id" bigint)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE INDEX "index_courses_on_semesters_id" ON "courses" ("semesters_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "discussions" CASCADE[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "discussions" ("id" bigserial primary key, "title" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "notes" CASCADE[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "notes" ("id" bigserial primary key, "title" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "plans" CASCADE[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "plans" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "nameofplan" character varying, "student_id" bigint)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE INDEX "index_plans_on_student_id" ON "plans" ("student_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "professors" CASCADE[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "professors" ("id" bigserial primary key, "Name" character varying, "CWID" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "programdirector_id" bigint NOT NULL)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE INDEX "index_professors_on_programdirector_id" ON "professors" ("programdirector_id")[0m
+  [1m[35m (2.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "programdirectors" CASCADE[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "programdirectors" ("id" bigserial primary key, "Name" character varying, "CWID" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "semesters" CASCADE[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "semesters" ("id" bigserial primary key, "course1" character varying, "course2" character varying, "course3" character varying, "course4" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "season" character varying, "year" integer, "plan_id" bigint)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE INDEX "index_semesters_on_plan_id" ON "semesters" ("plan_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "students" CASCADE[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "Name" character varying, "CWID" integer, "Concentration" character varying, "Advisor" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "professor_id" bigint NOT NULL)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE INDEX "index_students_on_professor_id" ON "students" ("professor_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "email" character varying NOT NULL, "encrypted_password" character varying(128) NOT NULL, "confirmation_token" character varying(128), "remember_token" character varying(128) NOT NULL, "admin" boolean DEFAULT FALSE NOT NULL, "student" boolean DEFAULT FALSE NOT NULL, "professor" boolean DEFAULT FALSE NOT NULL, "programdirector" boolean DEFAULT FALSE NOT NULL)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_750d1a8a36"
+FOREIGN KEY ("discussion_id")
+  REFERENCES "discussions" ("id")
+[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "courses" ADD CONSTRAINT "fk_rails_2bbdc077f9"
+FOREIGN KEY ("semesters_id")
+  REFERENCES "semesters" ("id")
+[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "professors" ADD CONSTRAINT "fk_rails_9cb87ba47d"
+FOREIGN KEY ("programdirector_id")
+  REFERENCES "programdirectors" ("id")
+[0m
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "semesters" ADD CONSTRAINT "fk_rails_39521c9cf2"
+FOREIGN KEY ("plan_id")
+  REFERENCES "plans" ("id")
+[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "students" ADD CONSTRAINT "fk_rails_bd7f9380b5"
+FOREIGN KEY ("professor_id")
+  REFERENCES "professors" ("id")
+[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210408143412)[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210218011755),
+(20210219152433),
+(20210221072628),
+(20210224184505),
+(20210303173753),
+(20210303173834),
+(20210303235055),
+(20210307230142),
+(20210308021241),
+(20210308021242),
+(20210313204735),
+(20210313205036),
+(20210322083607),
+(20210322084420),
+(20210324211058),
+(20210324212936),
+(20210325150406),
+(20210408122024);
+
+[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-04-20 19:54:38.066855"], ["updated_at", "2021-04-20 19:54:38.066855"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2021-04-20 19:54:38.077820"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "7270a1f7602e3a2c503686c0a9913b085d6e40a9"], ["created_at", "2021-04-20 19:54:38.087259"], ["updated_at", "2021-04-20 19:54:38.087259"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgramdirector Create (0.6ms)[0m  [1m[32mINSERT INTO "programdirectors" ("Name", "CWID", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["Name", "Dr. A"], ["CWID", 256456], ["created_at", "2021-04-20 19:54:38.178966"], ["updated_at", "2021-04-20 19:54:38.178966"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgramdirector Create (0.3ms)[0m  [1m[32mINSERT INTO "programdirectors" ("Name", "CWID", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["Name", "Dr. B"], ["CWID", 251256], ["created_at", "2021-04-20 19:54:38.187292"], ["updated_at", "2021-04-20 19:54:38.187292"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgramdirector Load (0.8ms)[0m  [1m[34mSELECT "programdirectors".* FROM "programdirectors" WHERE "programdirectors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfessor Create (2.7ms)[0m  [1m[32mINSERT INTO "professors" ("Name", "CWID", "created_at", "updated_at", "programdirector_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["Name", "Dr. Rob Stark"], ["CWID", 156456], ["created_at", "2021-04-20 19:54:38.238273"], ["updated_at", "2021-04-20 19:54:38.238273"], ["programdirector_id", 1]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgramdirector Load (1.4ms)[0m  [1m[34mSELECT "programdirectors".* FROM "programdirectors" WHERE "programdirectors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfessor Create (1.3ms)[0m  [1m[32mINSERT INTO "professors" ("Name", "CWID", "created_at", "updated_at", "programdirector_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["Name", "Dr. Tyrion Lannister"], ["CWID", 151256], ["created_at", "2021-04-20 19:54:38.250061"], ["updated_at", "2021-04-20 19:54:38.250061"], ["programdirector_id", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgramdirector Load (1.2ms)[0m  [1m[34mSELECT "programdirectors".* FROM "programdirectors" WHERE "programdirectors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfessor Create (0.4ms)[0m  [1m[32mINSERT INTO "professors" ("Name", "CWID", "created_at", "updated_at", "programdirector_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["Name", "Dr. Sandor Clegane"], ["CWID", 151256], ["created_at", "2021-04-20 19:54:38.260396"], ["updated_at", "2021-04-20 19:54:38.260396"], ["programdirector_id", 1]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProgramdirector Load (0.4ms)[0m  [1m[34mSELECT "programdirectors".* FROM "programdirectors" WHERE "programdirectors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfessor Create (0.4ms)[0m  [1m[32mINSERT INTO "professors" ("Name", "CWID", "created_at", "updated_at", "programdirector_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["Name", "Dr. Bronn"], ["CWID", 152346], ["created_at", "2021-04-20 19:54:38.272075"], ["updated_at", "2021-04-20 19:54:38.272075"], ["programdirector_id", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.7ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at", "professor_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["Name", "John Smith"], ["CWID", 456456], ["Concentration", "CSCI"], ["Advisor", "Dr. Rob Stark"], ["created_at", "2021-04-20 19:54:38.301050"], ["updated_at", "2021-04-20 19:54:38.301050"], ["professor_id", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at", "professor_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["Name", "Joe Jones"], ["CWID", 451256], ["Concentration", "CSCI"], ["Advisor", "Dr. Rob Stark"], ["created_at", "2021-04-20 19:54:38.312081"], ["updated_at", "2021-04-20 19:54:38.312081"], ["professor_id", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at", "professor_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["Name", "Sansa Stark"], ["CWID", 451256], ["Concentration", "CSCI"], ["Advisor", "Dr. Rob Stark"], ["created_at", "2021-04-20 19:54:38.324958"], ["updated_at", "2021-04-20 19:54:38.324958"], ["professor_id", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at", "professor_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["Name", "Jon Snow"], ["CWID", 452346], ["Concentration", "CSCI"], ["Advisor", "Dr. Tyrion Lannister"], ["created_at", "2021-04-20 19:54:38.335141"], ["updated_at", "2021-04-20 19:54:38.335141"], ["professor_id", 2]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at", "professor_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["Name", "Ramsey Bolton"], ["CWID", 451286], ["Concentration", "CSCI"], ["Advisor", "Dr. Tyrion Lannister"], ["created_at", "2021-04-20 19:54:38.345157"], ["updated_at", "2021-04-20 19:54:38.345157"], ["professor_id", 2]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at", "professor_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["Name", "Oberyn Martell"], ["CWID", 754256], ["Concentration", "MATH"], ["Advisor", "Dr. Sandor Clegane"], ["created_at", "2021-04-20 19:54:38.362571"], ["updated_at", "2021-04-20 19:54:38.362571"], ["professor_id", 2]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at", "professor_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["Name", "Hodor Hodor"], ["CWID", 451235], ["Concentration", "MATH"], ["Advisor", "Dr. Sandor Clegane"], ["created_at", "2021-04-20 19:54:38.372687"], ["updated_at", "2021-04-20 19:54:38.372687"], ["professor_id", 3]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at", "professor_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["Name", "Gregor Clegane"], ["CWID", 499956], ["Concentration", "MATH"], ["Advisor", "Dr. Bronn"], ["created_at", "2021-04-20 19:54:38.383183"], ["updated_at", "2021-04-20 19:54:38.383183"], ["professor_id", 3]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Create (0.5ms)[0m  [1m[32mINSERT INTO "plans" ("created_at", "updated_at", "nameofplan", "student_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-04-20 19:54:38.407010"], ["updated_at", "2021-04-20 19:54:38.407010"], ["nameofplan", "Mynewplan1"], ["student_id", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("created_at", "updated_at", "nameofplan", "student_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-04-20 19:54:38.414931"], ["updated_at", "2021-04-20 19:54:38.414931"], ["nameofplan", "JSmith plan 1"], ["student_id", 2]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("created_at", "updated_at", "nameofplan", "student_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-04-20 19:54:38.422046"], ["updated_at", "2021-04-20 19:54:38.422046"], ["nameofplan", "Stick to the plan"], ["student_id", 3]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("created_at", "updated_at", "nameofplan", "student_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-04-20 19:54:38.429485"], ["updated_at", "2021-04-20 19:54:38.429485"], ["nameofplan", "I like this plan"], ["student_id", 4]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("created_at", "updated_at", "nameofplan", "student_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-04-20 19:54:38.436815"], ["updated_at", "2021-04-20 19:54:38.436815"], ["nameofplan", "I dislike this plan"], ["student_id", 5]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("created_at", "updated_at", "nameofplan", "student_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-04-20 19:54:38.443985"], ["updated_at", "2021-04-20 19:54:38.443985"], ["nameofplan", "12 courses in one semester plan"], ["student_id", 6]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("created_at", "updated_at", "nameofplan", "student_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-04-20 19:54:38.451502"], ["updated_at", "2021-04-20 19:54:38.451502"], ["nameofplan", "graduate in 10 years plan"], ["student_id", 7]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("created_at", "updated_at", "nameofplan", "student_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2021-04-20 19:54:38.459017"], ["updated_at", "2021-04-20 19:54:38.459017"], ["nameofplan", "planplanplanofstudy"], ["student_id", 8]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSemester Create (0.6ms)[0m  [1m[32mINSERT INTO "semesters" ("course1", "course2", "course3", "course4", "created_at", "updated_at", "season", "year") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["course1", "CSCI 100"], ["course2", "CSCI 200"], ["course3", "CSCI 300"], ["course4", "CSCI 400"], ["created_at", "2021-04-20 19:54:38.506290"], ["updated_at", "2021-04-20 19:54:38.506290"], ["season", "Spring"], ["year", 2021]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSemester Create (0.3ms)[0m  [1m[32mINSERT INTO "semesters" ("course1", "course2", "course3", "course4", "created_at", "updated_at", "season", "year") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["course1", "CSCI 111"], ["course2", "CSCI 299"], ["course3", "CSCI 310"], ["course4", "CSCI 430"], ["created_at", "2021-04-20 19:54:38.516320"], ["updated_at", "2021-04-20 19:54:38.516320"], ["season", "Summer"], ["year", 2021]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.5ms)[0m  [1m[32mINSERT INTO "courses" ("prefix", "name", "number", "section", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["prefix", "CSCI"], ["name", "Easy Course"], ["number", 100], ["section", 1], ["created_at", "2021-04-20 19:54:38.538733"], ["updated_at", "2021-04-20 19:54:38.538733"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("prefix", "name", "number", "section", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["prefix", "CSCI"], ["name", "Hard Course"], ["number", 200], ["section", 1], ["created_at", "2021-04-20 19:54:38.546330"], ["updated_at", "2021-04-20 19:54:38.546330"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.5ms)[0m  [1m[32mINSERT INTO "courses" ("prefix", "name", "number", "section", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["prefix", "CSCI"], ["name", "Medium Course"], ["number", 300], ["section", 1], ["created_at", "2021-04-20 19:54:38.553427"], ["updated_at", "2021-04-20 19:54:38.553427"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("prefix", "name", "number", "section", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["prefix", "CSCI"], ["name", "Very Hard Course"], ["number", 400], ["section", 1], ["created_at", "2021-04-20 19:54:38.560818"], ["updated_at", "2021-04-20 19:54:38.560818"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("prefix", "name", "number", "section", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["prefix", "CSCI"], ["name", "Java"], ["number", 111], ["section", 1], ["created_at", "2021-04-20 19:54:38.568382"], ["updated_at", "2021-04-20 19:54:38.568382"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("prefix", "name", "number", "section", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["prefix", "CSCI"], ["name", "C++"], ["number", 299], ["section", 1], ["created_at", "2021-04-20 19:54:38.575413"], ["updated_at", "2021-04-20 19:54:38.575413"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("prefix", "name", "number", "section", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["prefix", "CSCI"], ["name", "Python"], ["number", 310], ["section", 4], ["created_at", "2021-04-20 19:54:38.582536"], ["updated_at", "2021-04-20 19:54:38.582536"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("prefix", "name", "number", "section", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["prefix", "CSCI"], ["name", "Stress Management When Programming"], ["number", 430], ["section", 1], ["created_at", "2021-04-20 19:54:38.589652"], ["updated_at", "2021-04-20 19:54:38.589652"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/ubuntu/environment/ipos/config/environment.rb:5)
+Started GET "/" for 143.244.44.143 at 2021-04-20 19:56:42 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LandingpageController#show as HTML
+Redirected to https://0ba73793e1ba47cb9255afb9cf56671d.vfs.cloud9.us-east-2.amazonaws.com/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 415ms (ActiveRecord: 0.0ms | Allocations: 225757)
+
+
+Started GET "/sign_in" for 143.244.44.143 at 2021-04-20 19:56:43 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 14.1ms | Allocations: 1938)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 17.5ms | Allocations: 2604)
+  Rendered layout layouts/application.html.erb (Duration: 2021.4ms | Allocations: 399021)
+Completed 200 OK in 2046ms (Views: 2045.9ms | ActiveRecord: 0.0ms | Allocations: 402674)
+
+
+Started GET "/" for 143.244.44.143 at 2021-04-20 19:56:47 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "9efc7b215c86aed5e897cb370d3c3c53d3da409d"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "9efc7b215c86aed5e897cb370d3c3c53d3da409d"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "9efc7b215c86aed5e897cb370d3c3c53d3da409d"], ["LIMIT", 1]]
+Processing by LandingpageController#show as HTML
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "9efc7b215c86aed5e897cb370d3c3c53d3da409d"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "9efc7b215c86aed5e897cb370d3c3c53d3da409d"], ["LIMIT", 1]]
+Redirected to https://0ba73793e1ba47cb9255afb9cf56671d.vfs.cloud9.us-east-2.amazonaws.com/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 32ms (ActiveRecord: 0.0ms | Allocations: 4854)
+
+
+Started GET "/sign_in" for 143.244.44.143 at 2021-04-20 19:56:47 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "9efc7b215c86aed5e897cb370d3c3c53d3da409d"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 4.1ms | Allocations: 521)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 647)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "9efc7b215c86aed5e897cb370d3c3c53d3da409d"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 3974)
+Completed 200 OK in 43ms (Views: 29.6ms | ActiveRecord: 4.4ms | Allocations: 5670)
+
+
+Started GET "/sign_up" for 143.244.44.143 at 2021-04-20 19:57:00 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::UsersController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "9efc7b215c86aed5e897cb370d3c3c53d3da409d"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.2ms | Allocations: 639)
+  Rendered users/new.html.erb within layouts/application (Duration: 13.2ms | Allocations: 1649)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "9efc7b215c86aed5e897cb370d3c3c53d3da409d"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | Allocations: 4917)
+Completed 200 OK in 49ms (Views: 32.3ms | ActiveRecord: 0.9ms | Allocations: 13216)
+
+
+Started POST "/users" for 143.244.44.143 at 2021-04-20 19:57:01 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bongoo@citadel.edu", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "9efc7b215c86aed5e897cb370d3c3c53d3da409d"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bongoo@citadel.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "remember_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-04-20 19:57:02.147428"], ["updated_at", "2021-04-20 19:57:02.147428"], ["email", "bongoo@citadel.edu"], ["encrypted_password", "$2a$12$SzssWS9jDF2vpU7N89kw/uuuALdh6kecd61AuxOF68J5ARris9jP6"], ["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to https://0ba73793e1ba47cb9255afb9cf56671d.vfs.cloud9.us-east-2.amazonaws.com/
+Completed 302 Found in 445ms (ActiveRecord: 8.1ms | Allocations: 6325)
+
+
+Started GET "/" for 143.244.44.143 at 2021-04-20 19:57:02 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+Processing by LandingpageController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering landingpage/show.html.erb within layouts/application
+  Rendered landingpage/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 791)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 3405)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.0ms | Allocations: 4632)
+
+
+Started GET "/students" for 143.244.44.143 at 2021-04-20 19:57:14 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:17
+  Rendered students/index.html.erb within layouts/application (Duration: 34.6ms | Allocations: 7375)
+  Rendered layout layouts/application.html.erb (Duration: 44.1ms | Allocations: 10132)
+Completed 200 OK in 73ms (Views: 45.5ms | ActiveRecord: 8.5ms | Allocations: 15372)
+
+
+Started DELETE "/students/8" for 143.244.44.143 at 2021-04-20 19:57:16 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"8"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:62:in `set_student'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/students_controller.rb:52:in `destroy'
+  [1m[36mStudent Destroy (1.2ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/students_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/students_controller.rb:52:in `destroy'
+Redirected to https://0ba73793e1ba47cb9255afb9cf56671d.vfs.cloud9.us-east-2.amazonaws.com/students
+Completed 302 Found in 23ms (ActiveRecord: 7.0ms | Allocations: 4143)
+
+
+Started GET "/students" for 143.244.44.143 at 2021-04-20 19:57:16 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:17
+  Rendered students/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2136)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 4880)
+Completed 200 OK in 25ms (Views: 16.6ms | ActiveRecord: 3.4ms | Allocations: 6561)
+
+
+Started DELETE "/students/5" for 143.244.44.143 at 2021-04-20 19:57:38 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"5"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  [1m[36mStudent Load (2.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:62:in `set_student'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/students_controller.rb:52:in `destroy'
+  [1m[36mStudent Destroy (1.0ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/students_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/students_controller.rb:52:in `destroy'
+Redirected to https://0ba73793e1ba47cb9255afb9cf56671d.vfs.cloud9.us-east-2.amazonaws.com/students
+Completed 302 Found in 22ms (ActiveRecord: 7.2ms | Allocations: 4011)
+
+
+Started GET "/students" for 143.244.44.143 at 2021-04-20 19:57:38 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (2.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:17
+  Rendered students/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1939)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 4683)
+Completed 200 OK in 22ms (Views: 13.0ms | ActiveRecord: 3.6ms | Allocations: 6363)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/ubuntu/environment/ipos/config/environment.rb:5)
+Started GET "/students" for 143.244.44.143 at 2021-04-20 19:57:57 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:17
+  Rendered students/index.html.erb within layouts/application (Duration: 33.0ms | Allocations: 6696)
+  Rendered layout layouts/application.html.erb (Duration: 262.5ms | Allocations: 60029)
+Completed 200 OK in 304ms (Views: 261.0ms | ActiveRecord: 13.6ms | Allocations: 74890)
+
+
+Started GET "/students/7" for 143.244.44.143 at 2021-04-20 19:57:58 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:62:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mPlan Load (1.2ms)[0m  [1m[34mSELECT "plans".* FROM "plans" WHERE "plans"."student_id" = $1[0m  [["student_id", 7]]
+  ↳ app/views/students/show.html.erb:25
+  Rendered students/show.html.erb within layouts/application (Duration: 196.5ms | Allocations: 234845)
+  Rendered layout layouts/application.html.erb (Duration: 205.0ms | Allocations: 237598)
+Completed 200 OK in 238ms (Views: 200.6ms | ActiveRecord: 10.6ms | Allocations: 240124)
+
+
+Started GET "/students" for 143.244.44.143 at 2021-04-20 19:58:00 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:17
+  Rendered students/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1482)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 4227)
+Completed 200 OK in 33ms (Views: 23.3ms | ActiveRecord: 2.9ms | Allocations: 5920)
+
+
+Started GET "/students" for 143.244.44.143 at 2021-04-20 19:58:14 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.1ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:17
+  Rendered students/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2215)
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 5441)
+Completed 200 OK in 33ms (Views: 24.1ms | ActiveRecord: 2.2ms | Allocations: 8175)
+
+
+Started GET "/students/new" for 143.244.44.143 at 2021-04-20 19:58:15 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  [1m[36mProfessor Load (10.0ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/students/_form.html.erb:32
+  Rendered students/_form.html.erb (Duration: 44.2ms | Allocations: 8006)
+  Rendered students/new.html.erb within layouts/application (Duration: 47.2ms | Allocations: 8375)
+  Rendered layout layouts/application.html.erb (Duration: 58.7ms | Allocations: 11136)
+Completed 200 OK in 71ms (Views: 46.0ms | ActiveRecord: 16.7ms | Allocations: 12947)
+
+
+Started POST "/students" for 143.244.44.143 at 2021-04-20 19:58:24 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"Name"=>"John Kreisler", "CWID"=>"1234", "Concentration"=>"Mathz", "Advisor"=>"Dr. Rob Stark", "professor_id"=>"1"}, "commit"=>"Create Student"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/students_controller.rb:27:in `block in create'
+  [1m[36mProfessor Load (0.9ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:27:in `block in create'
+  [1m[36mStudent Create (6.1ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at", "professor_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["Name", "John Kreisler"], ["CWID", 1234], ["Concentration", "Mathz"], ["Advisor", "Dr. Rob Stark"], ["created_at", "2021-04-20 19:58:24.306941"], ["updated_at", "2021-04-20 19:58:24.306941"], ["professor_id", 1]]
+  ↳ app/controllers/students_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/students_controller.rb:27:in `block in create'
+Redirected to https://0ba73793e1ba47cb9255afb9cf56671d.vfs.cloud9.us-east-2.amazonaws.com/students/9
+Completed 302 Found in 47ms (ActiveRecord: 12.6ms | Allocations: 6161)
+
+
+Started GET "/students/9" for 143.244.44.143 at 2021-04-20 19:58:24 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  [1m[36mStudent Load (1.9ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:62:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mPlan Load (2.1ms)[0m  [1m[34mSELECT "plans".* FROM "plans" WHERE "plans"."student_id" = $1[0m  [["student_id", 9]]
+  ↳ app/views/students/show.html.erb:25
+  Rendered students/show.html.erb within layouts/application (Duration: 10.2ms | Allocations: 1754)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 4507)
+Completed 200 OK in 40ms (Views: 22.6ms | ActiveRecord: 6.1ms | Allocations: 6911)
+
+
+Started GET "/students" for 143.244.44.143 at 2021-04-20 19:58:29 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.6ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:17
+  Rendered students/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 2137)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 4879)
+Completed 200 OK in 27ms (Views: 18.0ms | ActiveRecord: 2.8ms | Allocations: 6552)
+
+
+Started DELETE "/students/9" for 143.244.44.143 at 2021-04-20 19:58:31 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"9"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  [1m[36mStudent Load (2.8ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:62:in `set_student'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/students_controller.rb:52:in `destroy'
+  [1m[36mStudent Destroy (1.0ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = $1[0m  [["id", 9]]
+  ↳ app/controllers/students_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/students_controller.rb:52:in `destroy'
+Redirected to https://0ba73793e1ba47cb9255afb9cf56671d.vfs.cloud9.us-east-2.amazonaws.com/students
+Completed 302 Found in 25ms (ActiveRecord: 7.8ms | Allocations: 4034)
+
+
+Started GET "/students" for 143.244.44.143 at 2021-04-20 19:58:31 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:17
+  Rendered students/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1939)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 4683)
+Completed 200 OK in 26ms (Views: 17.1ms | ActiveRecord: 2.9ms | Allocations: 6363)
+
+
+Started GET "/students" for 143.244.44.143 at 2021-04-20 19:58:55 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (2.0ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:17
+  Rendered students/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 3060)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 6285)
+Completed 200 OK in 33ms (Views: 24.7ms | ActiveRecord: 3.3ms | Allocations: 9000)
+
+
+Started POST "/students/7" for 143.244.44.143 at 2021-04-20 19:59:12 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/students/7"):
+  
+Started GET "/students" for 143.244.44.143 at 2021-04-20 19:59:14 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:17
+  Rendered students/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 2783)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 5527)
+Completed 200 OK in 26ms (Views: 18.5ms | ActiveRecord: 3.1ms | Allocations: 7218)
+
+
+Started POST "/students/3" for 143.244.44.143 at 2021-04-20 19:59:17 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/students/3"):
+  
+Started GET "/students" for 143.244.44.143 at 2021-04-20 19:59:20 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:17
+  Rendered students/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 2777)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 5519)
+Completed 200 OK in 28ms (Views: 20.1ms | ActiveRecord: 3.4ms | Allocations: 7190)
+
+
+Started GET "/students" for 143.244.44.143 at 2021-04-20 19:59:36 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.0ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:17
+  Rendered students/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2220)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 5445)
+Completed 200 OK in 31ms (Views: 23.8ms | ActiveRecord: 2.2ms | Allocations: 8161)
+
+
+Started GET "/students/7/edit" for 143.244.44.143 at 2021-04-20 19:59:38 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  [1m[36mStudent Load (2.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:62:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/edit.html.erb within layouts/application
+  [1m[36mProfessor Load (1.0ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/students/_form.html.erb:32
+  Rendered students/_form.html.erb (Duration: 9.3ms | Allocations: 2635)
+  Rendered students/edit.html.erb within layouts/application (Duration: 12.6ms | Allocations: 3044)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 5805)
+Completed 200 OK in 34ms (Views: 20.6ms | ActiveRecord: 4.8ms | Allocations: 8198)
+
+
+Started GET "/students" for 143.244.44.143 at 2021-04-20 19:59:39 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:17
+  Rendered students/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1940)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 4682)
+Completed 200 OK in 24ms (Views: 15.4ms | ActiveRecord: 3.0ms | Allocations: 6355)
+
+
+Started GET "/students/3" for 143.244.44.143 at 2021-04-20 19:59:40 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:62:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mPlan Load (2.3ms)[0m  [1m[34mSELECT "plans".* FROM "plans" WHERE "plans"."student_id" = $1[0m  [["student_id", 3]]
+  ↳ app/views/students/show.html.erb:25
+  Rendered students/show.html.erb within layouts/application (Duration: 9.7ms | Allocations: 2092)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 4843)
+Completed 200 OK in 32ms (Views: 18.5ms | ActiveRecord: 4.2ms | Allocations: 7238)
+
+
+Started GET "/students" for 143.244.44.143 at 2021-04-20 19:59:41 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:17
+  Rendered students/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1939)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 4681)
+Completed 200 OK in 25ms (Views: 17.0ms | ActiveRecord: 3.3ms | Allocations: 6354)
+
+
+Started GET "/students/new" for 143.244.44.143 at 2021-04-20 19:59:54 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#new as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/new.html.erb within layouts/application
+  [1m[36mProfessor Load (2.1ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/students/_form.html.erb:32
+  Rendered students/_form.html.erb (Duration: 7.7ms | Allocations: 2160)
+  Rendered students/new.html.erb within layouts/application (Duration: 14.1ms | Allocations: 2389)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 5150)
+Completed 200 OK in 32ms (Views: 22.8ms | ActiveRecord: 4.4ms | Allocations: 6959)
+
+
+Started POST "/students" for 143.244.44.143 at 2021-04-20 20:00:00 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "student"=>{"Name"=>"John Kreisler", "CWID"=>"123", "Concentration"=>"123231", "Advisor"=>"Dr. Rob Stark", "professor_id"=>"1"}, "commit"=>"Create Student"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/students_controller.rb:27:in `block in create'
+  [1m[36mProfessor Load (1.2ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:27:in `block in create'
+  [1m[36mStudent Create (2.1ms)[0m  [1m[32mINSERT INTO "students" ("Name", "CWID", "Concentration", "Advisor", "created_at", "updated_at", "professor_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["Name", "John Kreisler"], ["CWID", 123], ["Concentration", "123231"], ["Advisor", "Dr. Rob Stark"], ["created_at", "2021-04-20 20:00:00.916775"], ["updated_at", "2021-04-20 20:00:00.916775"], ["professor_id", 1]]
+  ↳ app/controllers/students_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/students_controller.rb:27:in `block in create'
+Redirected to https://0ba73793e1ba47cb9255afb9cf56671d.vfs.cloud9.us-east-2.amazonaws.com/students/10
+Completed 302 Found in 28ms (ActiveRecord: 7.0ms | Allocations: 5046)
+
+
+Started GET "/students/10" for 143.244.44.143 at 2021-04-20 20:00:00 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  [1m[36mStudent Load (1.8ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:62:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mPlan Load (2.0ms)[0m  [1m[34mSELECT "plans".* FROM "plans" WHERE "plans"."student_id" = $1[0m  [["student_id", 10]]
+  ↳ app/views/students/show.html.erb:25
+  Rendered students/show.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1354)
+  Rendered layout layouts/application.html.erb (Duration: 35.7ms | Allocations: 4098)
+Completed 200 OK in 59ms (Views: 46.7ms | ActiveRecord: 5.6ms | Allocations: 6369)
+
+
+Started GET "/students" for 143.244.44.143 at 2021-04-20 20:00:02 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:17
+  Rendered students/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2137)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 4879)
+Completed 200 OK in 25ms (Views: 17.5ms | ActiveRecord: 3.3ms | Allocations: 6551)
+
+
+Started DELETE "/students/10" for 143.244.44.143 at 2021-04-20 20:00:05 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"10"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:62:in `set_student'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/students_controller.rb:52:in `destroy'
+  [1m[36mStudent Destroy (1.0ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = $1[0m  [["id", 10]]
+  ↳ app/controllers/students_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/students_controller.rb:52:in `destroy'
+Redirected to https://0ba73793e1ba47cb9255afb9cf56671d.vfs.cloud9.us-east-2.amazonaws.com/students
+Completed 302 Found in 22ms (ActiveRecord: 5.7ms | Allocations: 4012)
+
+
+Started GET "/students" for 143.244.44.143 at 2021-04-20 20:00:05 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.0ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:17
+  Rendered students/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1939)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 4683)
+Completed 200 OK in 33ms (Views: 26.2ms | ActiveRecord: 2.9ms | Allocations: 6363)
+
+
+Started GET "/students/7" for 143.244.44.143 at 2021-04-20 20:00:06 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  [1m[36mStudent Load (1.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:62:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering students/show.html.erb within layouts/application
+  [1m[36mPlan Load (1.3ms)[0m  [1m[34mSELECT "plans".* FROM "plans" WHERE "plans"."student_id" = $1[0m  [["student_id", 7]]
+  ↳ app/views/students/show.html.erb:25
+  Rendered students/show.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1691)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 4433)
+Completed 200 OK in 28ms (Views: 16.3ms | ActiveRecord: 3.8ms | Allocations: 6696)
+
+
+Started GET "/students" for 143.244.44.143 at 2021-04-20 20:00:14 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "d2998862cfc7e7fa5e88f0c823146854907c65b6"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (1.0ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/views/students/index.html.erb:17
+  Rendered students/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1937)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 4680)
+Completed 200 OK in 52ms (Views: 20.1ms | ActiveRecord: 1.8ms | Allocations: 6354)
+
+
