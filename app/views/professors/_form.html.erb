@@ -21,7 +21,12 @@
     <%= form.number_field :CWID %>
   </div>
   
-  
+   <div class="control-group">
+    <%= form.label "Program Director", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:Programdirector, options_from_collection_for_select(Programdirector.all, 'Name', 'Name')) %>
+    </div>
+  </div>
   
    <div class="field">
     <%= form.label :programdirector_id %>

@@ -48525,3 +48525,333 @@ Processing by ProfessorsController#index as HTML
 Completed 200 OK in 19ms (Views: 12.0ms | ActiveRecord: 2.0ms | Allocations: 5743)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/ubuntu/environment/ipos/config/environment.rb:5)
+Started GET "/" for 143.244.44.143 at 2021-04-20 21:11:58 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LandingpageController#show as HTML
+Redirected to https://0ba73793e1ba47cb9255afb9cf56671d.vfs.cloud9.us-east-2.amazonaws.com/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 110ms (ActiveRecord: 0.0ms | Allocations: 220129)
+
+
+Started GET "/sign_in" for 143.244.44.143 at 2021-04-20 21:11:58 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Clearance::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 2.5ms | Allocations: 1356)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1861)
+  Rendered layout layouts/application.html.erb (Duration: 175.9ms | Allocations: 55094)
+Completed 200 OK in 183ms (Views: 182.2ms | ActiveRecord: 0.0ms | Allocations: 57822)
+
+
+Started GET "/" for 143.244.44.143 at 2021-04-20 21:11:59 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "44e581bfb61e190ea47131a7a2dfb2de1bc8b6b2"], ["LIMIT", 1]]
+Processing by LandingpageController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering landingpage/show.html.erb within layouts/application
+  Rendered landingpage/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 807)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 3426)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.0ms | Allocations: 4656)
+
+
+Started GET "/professors" for 143.244.44.143 at 2021-04-20 21:12:03 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfessorsController#index as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "44e581bfb61e190ea47131a7a2dfb2de1bc8b6b2"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (1.2ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/professors/index.html.erb:13
+  Rendered professors/index.html.erb within layouts/application (Duration: 17.8ms | Allocations: 5230)
+  Rendered layout layouts/application.html.erb (Duration: 40.0ms | Allocations: 7982)
+Completed 200 OK in 68ms (Views: 39.1ms | ActiveRecord: 8.3ms | Allocations: 12010)
+
+
+Started GET "/professors/new" for 143.244.44.143 at 2021-04-20 21:12:04 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfessorsController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "44e581bfb61e190ea47131a7a2dfb2de1bc8b6b2"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professors/new.html.erb within layouts/application
+  [1m[36mProgramdirector Load (1.2ms)[0m  [1m[34mSELECT "programdirectors".* FROM "programdirectors"[0m
+  ↳ app/views/professors/_form.html.erb:27
+  Rendered professors/_form.html.erb (Duration: 17.3ms | Allocations: 6537)
+  Rendered professors/new.html.erb within layouts/application (Duration: 20.1ms | Allocations: 6902)
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 9666)
+Completed 200 OK in 37ms (Views: 24.7ms | ActiveRecord: 7.1ms | Allocations: 11481)
+
+
+Started POST "/professors" for 143.244.44.143 at 2021-04-20 21:12:17 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfessorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "professor"=>{"Name"=>"Staudt", "CWID"=>"12343", "Programdirector"=>"Dr. A", "programdirector_id"=>"1"}, "commit"=>"Create Professor"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "44e581bfb61e190ea47131a7a2dfb2de1bc8b6b2"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.4ms | Allocations: 2085)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'Programdirector' for Professor.):
+  
+app/controllers/professors_controller.rb:25:in `create'
+Started POST "/professors" for 143.244.44.143 at 2021-04-20 21:12:55 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfessorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "professor"=>{"Name"=>"Staudt", "CWID"=>"12343", "Programdirector"=>"Dr. A", "programdirector_id"=>"1"}, "commit"=>"Create Professor"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "44e581bfb61e190ea47131a7a2dfb2de1bc8b6b2"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.8ms | Allocations: 2006)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'Programdirector' for Professor.):
+  
+app/controllers/professors_controller.rb:25:in `create'
+Started GET "/professors/new" for 143.244.44.143 at 2021-04-20 21:12:56 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfessorsController#new as HTML
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "44e581bfb61e190ea47131a7a2dfb2de1bc8b6b2"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professors/new.html.erb within layouts/application
+  [1m[36mProgramdirector Load (2.5ms)[0m  [1m[34mSELECT "programdirectors".* FROM "programdirectors"[0m
+  ↳ app/views/professors/_form.html.erb:27
+  Rendered professors/_form.html.erb (Duration: 12.1ms | Allocations: 1926)
+  Rendered professors/new.html.erb within layouts/application (Duration: 14.6ms | Allocations: 2044)
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 4796)
+Completed 200 OK in 60ms (Views: 24.5ms | ActiveRecord: 7.9ms | Allocations: 6487)
+
+
+Started POST "/professors" for 143.244.44.143 at 2021-04-20 21:12:58 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfessorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "professor"=>{"Name"=>"Staudt", "CWID"=>"12343", "Programdirector"=>"Dr. A", "programdirector_id"=>"1"}, "commit"=>"Create Professor"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "44e581bfb61e190ea47131a7a2dfb2de1bc8b6b2"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.7ms | Allocations: 2007)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'Programdirector' for Professor.):
+  
+app/controllers/professors_controller.rb:25:in `create'
+Started GET "/professors/new" for 143.244.44.143 at 2021-04-20 21:13:03 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfessorsController#new as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "44e581bfb61e190ea47131a7a2dfb2de1bc8b6b2"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professors/new.html.erb within layouts/application
+  [1m[36mProgramdirector Load (1.6ms)[0m  [1m[34mSELECT "programdirectors".* FROM "programdirectors"[0m
+  ↳ app/views/professors/_form.html.erb:27
+  Rendered professors/_form.html.erb (Duration: 7.1ms | Allocations: 1926)
+  Rendered professors/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 2044)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 4798)
+Completed 200 OK in 39ms (Views: 25.5ms | ActiveRecord: 3.5ms | Allocations: 6494)
+
+
+Started POST "/professors" for 143.244.44.143 at 2021-04-20 21:13:28 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfessorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "professor"=>{"Name"=>"Staudt", "CWID"=>"12343", "Programdirector"=>"Dr. A", "programdirector_id"=>"1"}, "commit"=>"Create Professor"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "44e581bfb61e190ea47131a7a2dfb2de1bc8b6b2"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 2.1ms | Allocations: 2007)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'Programdirector' for Professor.):
+  
+app/controllers/professors_controller.rb:25:in `create'
+Started POST "/professors" for 143.244.44.143 at 2021-04-20 21:15:05 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfessorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "professor"=>{"Name"=>"Staudt", "CWID"=>"12343", "Programdirector"=>"Dr. A", "programdirector_id"=>"1"}, "commit"=>"Create Professor"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "44e581bfb61e190ea47131a7a2dfb2de1bc8b6b2"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :Programdirector[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/professors_controller.rb:28:in `block in create'
+  [1m[36mProgramdirector Load (0.9ms)[0m  [1m[34mSELECT "programdirectors".* FROM "programdirectors" WHERE "programdirectors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:28:in `block in create'
+  [1m[36mProfessor Create (1.2ms)[0m  [1m[32mINSERT INTO "professors" ("Name", "CWID", "created_at", "updated_at", "programdirector_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["Name", "Staudt"], ["CWID", 12343], ["created_at", "2021-04-20 21:15:05.525872"], ["updated_at", "2021-04-20 21:15:05.525872"], ["programdirector_id", 1]]
+  ↳ app/controllers/professors_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/professors_controller.rb:28:in `block in create'
+Redirected to https://0ba73793e1ba47cb9255afb9cf56671d.vfs.cloud9.us-east-2.amazonaws.com/professors/18
+Completed 302 Found in 62ms (ActiveRecord: 19.5ms | Allocations: 21459)
+
+
+Started GET "/professors/18" for 143.244.44.143 at 2021-04-20 21:15:05 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "44e581bfb61e190ea47131a7a2dfb2de1bc8b6b2"], ["LIMIT", 1]]
+  [1m[36mProfessor Load (0.8ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:63:in `set_professor'
+  [1m[36mCACHE Professor Load (0.0ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mStudent Load (1.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."professor_id" = $1[0m  [["professor_id", 18]]
+  ↳ app/views/professors/show.html.erb:14
+  Rendered professors/show.html.erb within layouts/application (Duration: 44.0ms | Allocations: 5661)
+  Rendered layout layouts/application.html.erb (Duration: 67.1ms | Allocations: 8419)
+Completed 200 OK in 100ms (Views: 74.1ms | ActiveRecord: 15.1ms | Allocations: 11464)
+
+
+Started GET "/professors" for 143.244.44.143 at 2021-04-20 21:15:07 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfessorsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "44e581bfb61e190ea47131a7a2dfb2de1bc8b6b2"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (1.5ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/professors/index.html.erb:13
+  Rendered professors/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1513)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 4255)
+Completed 200 OK in 21ms (Views: 13.0ms | ActiveRecord: 2.7ms | Allocations: 5928)
+
+
+Started DELETE "/professors/18" for 143.244.44.143 at 2021-04-20 21:15:09 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfessorsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"18"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "44e581bfb61e190ea47131a7a2dfb2de1bc8b6b2"], ["LIMIT", 1]]
+  [1m[36mProfessor Load (0.8ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:63:in `set_professor'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/professors_controller.rb:53:in `destroy'
+  [1m[36mProfessor Destroy (1.1ms)[0m  [1m[31mDELETE FROM "professors" WHERE "professors"."id" = $1[0m  [["id", 18]]
+  ↳ app/controllers/professors_controller.rb:53:in `destroy'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/professors_controller.rb:53:in `destroy'
+Redirected to https://0ba73793e1ba47cb9255afb9cf56671d.vfs.cloud9.us-east-2.amazonaws.com/professors
+Completed 302 Found in 23ms (ActiveRecord: 4.7ms | Allocations: 4021)
+
+
+Started GET "/professors" for 143.244.44.143 at 2021-04-20 21:15:09 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfessorsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "44e581bfb61e190ea47131a7a2dfb2de1bc8b6b2"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (1.4ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/professors/index.html.erb:13
+  Rendered professors/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1319)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 4063)
+Completed 200 OK in 25ms (Views: 16.8ms | ActiveRecord: 3.4ms | Allocations: 5743)
+
+
+Started GET "/professors/new" for 143.244.44.143 at 2021-04-20 21:15:10 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfessorsController#new as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "44e581bfb61e190ea47131a7a2dfb2de1bc8b6b2"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professors/new.html.erb within layouts/application
+  [1m[36mProgramdirector Load (1.6ms)[0m  [1m[34mSELECT "programdirectors".* FROM "programdirectors"[0m
+  ↳ app/views/professors/_form.html.erb:27
+  Rendered professors/_form.html.erb (Duration: 6.9ms | Allocations: 1962)
+  Rendered professors/new.html.erb within layouts/application (Duration: 8.4ms | Allocations: 2080)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 4832)
+Completed 200 OK in 24ms (Views: 16.1ms | ActiveRecord: 3.4ms | Allocations: 6509)
+
+
+Started POST "/professors" for 143.244.44.143 at 2021-04-20 21:15:24 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfessorsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "professor"=>{"Name"=>"Staudt", "CWID"=>"123", "Programdirector"=>"Dr. A", "programdirector_id"=>"1"}, "commit"=>"Create Professor"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "44e581bfb61e190ea47131a7a2dfb2de1bc8b6b2"], ["LIMIT", 1]]
+[31mUnpermitted parameter: :Programdirector[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/professors_controller.rb:28:in `block in create'
+  [1m[36mProgramdirector Load (1.0ms)[0m  [1m[34mSELECT "programdirectors".* FROM "programdirectors" WHERE "programdirectors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:28:in `block in create'
+  [1m[36mProfessor Create (1.1ms)[0m  [1m[32mINSERT INTO "professors" ("Name", "CWID", "created_at", "updated_at", "programdirector_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["Name", "Staudt"], ["CWID", 123], ["created_at", "2021-04-20 21:15:24.711254"], ["updated_at", "2021-04-20 21:15:24.711254"], ["programdirector_id", 1]]
+  ↳ app/controllers/professors_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/professors_controller.rb:28:in `block in create'
+Redirected to https://0ba73793e1ba47cb9255afb9cf56671d.vfs.cloud9.us-east-2.amazonaws.com/professors/19
+Completed 302 Found in 28ms (ActiveRecord: 6.1ms | Allocations: 5007)
+
+
+Started GET "/professors/19" for 143.244.44.143 at 2021-04-20 21:15:24 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "44e581bfb61e190ea47131a7a2dfb2de1bc8b6b2"], ["LIMIT", 1]]
+  [1m[36mProfessor Load (4.9ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:63:in `set_professor'
+  [1m[36mCACHE Professor Load (0.0ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mStudent Load (1.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."professor_id" = $1[0m  [["professor_id", 19]]
+  ↳ app/views/professors/show.html.erb:14
+  Rendered professors/show.html.erb within layouts/application (Duration: 7.2ms | Allocations: 904)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 3649)
+Completed 200 OK in 27ms (Views: 12.5ms | ActiveRecord: 7.4ms | Allocations: 6300)
+
+
+Started GET "/professors" for 143.244.44.143 at 2021-04-20 21:15:25 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfessorsController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "44e581bfb61e190ea47131a7a2dfb2de1bc8b6b2"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (1.4ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/professors/index.html.erb:13
+  Rendered professors/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1507)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 4249)
+Completed 200 OK in 21ms (Views: 13.0ms | ActiveRecord: 3.4ms | Allocations: 5921)
+
+
+Started DELETE "/professors/19" for 143.244.44.143 at 2021-04-20 21:15:27 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfessorsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"19"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "44e581bfb61e190ea47131a7a2dfb2de1bc8b6b2"], ["LIMIT", 1]]
+  [1m[36mProfessor Load (1.2ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:63:in `set_professor'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/professors_controller.rb:53:in `destroy'
+  [1m[36mProfessor Destroy (1.0ms)[0m  [1m[31mDELETE FROM "professors" WHERE "professors"."id" = $1[0m  [["id", 19]]
+  ↳ app/controllers/professors_controller.rb:53:in `destroy'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/professors_controller.rb:53:in `destroy'
+Redirected to https://0ba73793e1ba47cb9255afb9cf56671d.vfs.cloud9.us-east-2.amazonaws.com/professors
+Completed 302 Found in 23ms (ActiveRecord: 6.7ms | Allocations: 3999)
+
+
+Started GET "/professors" for 143.244.44.143 at 2021-04-20 21:15:27 +0000
+Cannot render console from 143.244.44.143! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProfessorsController#index as HTML
+  [1m[36mUser Load (16.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."remember_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["remember_token", "44e581bfb61e190ea47131a7a2dfb2de1bc8b6b2"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (1.5ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/professors/index.html.erb:13
+  Rendered professors/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1319)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 4063)
+Completed 200 OK in 50ms (Views: 19.6ms | ActiveRecord: 18.0ms | Allocations: 5743)
+
+
