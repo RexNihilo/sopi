@@ -15,7 +15,7 @@
         <td><%= professor.Name %></td>
         <td><%= link_to 'Show', professor %></td>
         <td><%= link_to 'Edit', edit_professor_path(professor) %></td>
-        <td><%= link_to 'Destroy', professor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Destroy', professor_path(:id => professor), method: :delete%></td>
       </tr>
     <% end %>
   </tbody>

@@ -10,6 +10,24 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="field">
+    <%= form.label :Name %>
+    <%= form.text_field :Name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :CWID %>
+    <%= form.number_field :CWID %>
+  </div>
+  
+  
+  
+   <div class="field">
+    <%= form.label :programdirector_id %>
+    <%= form.number_field :programdirector_id %>
+  </div>
+  
 
   <div class="actions">
     <%= form.submit %>

@@ -8,7 +8,7 @@ class ProfessorsController < ApplicationController
 
   # GET /professors/1 or /professors/1.json
   def show
-    @students = Student.find(params[:id])
+    @professors = Professor.find(params[:id])
   end
 
   # GET /professors/new
@@ -65,6 +65,6 @@ class ProfessorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def professor_params
-    params.permit(:Name, :CWID, :programdirector_id)
+    params.require(:professor).permit(:Name, :CWID, :Programdirector, :programdirector_id)
     end
 end
