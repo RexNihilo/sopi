@@ -19,6 +19,8 @@ module NavigationHelpers
     when /^the  login page$/ then '/sign_in'
     when /^the  sign in page$/ then '/sign_in' 
     when /^the new stud page$/ then '/students/new'
+    when /^the professor page$/ then '/professors'
+    when /^the program director page$/ then '/programdirectors'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
