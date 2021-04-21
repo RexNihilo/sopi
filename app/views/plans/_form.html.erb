@@ -18,6 +18,13 @@
       <div><%= message %></div>
     <% end %>
   </div>
+  
+  <div class="control-group">
+    <%= form.label "Course1a", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:Course, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

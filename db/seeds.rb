@@ -48,14 +48,6 @@ plans.each do |plan|
   Plan.create!(plan)
 end 
 
-semesters = [{:season => 'Spring', :year => '2021', :course1 => 'CSCI 100', :course2 => 'CSCI 200', :course3 => 'CSCI 300', :course4 => 'CSCI 400'},
-        {:season => 'Summer', :year => '2021', :course1 => 'CSCI 111', :course2 => 'CSCI 299', :course3 => 'CSCI 310', :course4 => 'CSCI 430'}
-    	]
-semesters.each do |semester|
-  Semester.create!(semester)
-end 
-
-
 courses = [{:prefix => 'CSCI', :name => 'Easy Course', :number => '100', :section => '01'},
     	 {:prefix => 'CSCI', :name => 'Hard Course', :number => '200', :section => '01'},
     	 {:prefix => 'CSCI', :name => 'Medium Course', :number => '300', :section => '01'},
