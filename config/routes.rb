@@ -34,8 +34,6 @@ Rails.application.routes.draw do
    resources :plans
   end
   
-  resources :semesters
-  
   resources :courses
 
   mount RailsAdmin::Engine => "/admin", as: "rails_admin"
