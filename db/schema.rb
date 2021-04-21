@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_08_143412) do
+ActiveRecord::Schema.define(version: 2021_04_21_180117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,8 +79,6 @@ ActiveRecord::Schema.define(version: 2021_04_08_143412) do
     t.integer "section"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "semesters_id"
-    t.index ["semesters_id"], name: "index_courses_on_semesters_id"
   end
 
   create_table "discussions", force: :cascade do |t|
@@ -100,6 +98,66 @@ ActiveRecord::Schema.define(version: 2021_04_08_143412) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "nameofplan"
     t.bigint "student_id"
+    t.string "semester1"
+    t.string "course1a"
+    t.string "course1b"
+    t.string "course1c"
+    t.string "course1d"
+    t.string "semester2"
+    t.string "course2a"
+    t.string "course2b"
+    t.string "course2c"
+    t.string "course2d"
+    t.string "semester3"
+    t.string "course3a"
+    t.string "course3b"
+    t.string "course3c"
+    t.string "course3d"
+    t.string "semester4"
+    t.string "course4a"
+    t.string "course4b"
+    t.string "course4c"
+    t.string "course4d"
+    t.string "semester5"
+    t.string "course5a"
+    t.string "course5b"
+    t.string "course5c"
+    t.string "course5d"
+    t.string "semester6"
+    t.string "course6a"
+    t.string "course6b"
+    t.string "course6c"
+    t.string "course6d"
+    t.string "semester7"
+    t.string "course7a"
+    t.string "course7b"
+    t.string "course7c"
+    t.string "course7d"
+    t.string "semester8"
+    t.string "course8a"
+    t.string "course8b"
+    t.string "course8c"
+    t.string "course8d"
+    t.string "semester9"
+    t.string "course9a"
+    t.string "course9b"
+    t.string "course9c"
+    t.string "course9d"
+    t.string "semester10"
+    t.string "course10a"
+    t.string "course10b"
+    t.string "course10c"
+    t.string "course10d"
+    t.string "semester11"
+    t.string "course11a"
+    t.string "course11b"
+    t.string "course11c"
+    t.string "course11d"
+    t.string "semester12"
+    t.string "course12a"
+    t.string "course12b"
+    t.string "course12c"
+    t.string "course12d"
     t.index ["student_id"], name: "index_plans_on_student_id"
   end
 
@@ -117,19 +175,6 @@ ActiveRecord::Schema.define(version: 2021_04_08_143412) do
     t.integer "CWID"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "semesters", force: :cascade do |t|
-    t.string "course1"
-    t.string "course2"
-    t.string "course3"
-    t.string "course4"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "season"
-    t.integer "year"
-    t.bigint "plan_id"
-    t.index ["plan_id"], name: "index_semesters_on_plan_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -162,8 +207,6 @@ ActiveRecord::Schema.define(version: 2021_04_08_143412) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "discussions"
   add_foreign_key "comments", "users"
-  add_foreign_key "courses", "semesters", column: "semesters_id"
   add_foreign_key "professors", "programdirectors"
-  add_foreign_key "semesters", "plans"
   add_foreign_key "students", "professors"
 end
