@@ -1,6 +1,11 @@
 class SemestersController < ApplicationController
+# before action Elgazar notes 
+  before_action :require_login 
+  #this could be used to protect 
+  
   def index
-    @semesters = Semester.all
+    @user = current_user
+    @semesters = @user.semesters
   end
   
   def show
@@ -12,8 +17,7 @@ class SemestersController < ApplicationController
   end
 
   def create
-    @semester = Semester.new(semester_params)
-
+    @semester = current_user.semesters.new(semester_params)
     if @semester.save
       redirect_to @semester
     else
@@ -44,6 +48,6 @@ class SemestersController < ApplicationController
   
   private
     def semester_params
-      params.require(:semester).permit(:season, :year, :course1, :course2, :course3, :course4)
+      params.require(:semester).permit(:name, :course1, :course2, :course3, :course4, :user_id)
     end
 end

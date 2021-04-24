@@ -1,11 +1,8 @@
-<h1><%= @semester.season %></h1>
-
-<p>Prefix: <%= @semester.year %></p>
+<p>Semester: <%= @semester.name %></p>
 <p>Number: <%= @semester.course1 %></p>
 <p>Number: <%= @semester.course2 %></p>
 <p>Number: <%= @semester.course3 %></p>
 <p>Number: <%= @semester.course4 %></p>
-<p><%= @semester.created_at %></p>
 <ul>
   <li><%= link_to "Edit", edit_semester_path(@semester) %></li>
 

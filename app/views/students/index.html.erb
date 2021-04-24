@@ -16,13 +16,7 @@
   <tbody>
     <% @students.each do |student| %>
       <tr>
-        <td><%= student.Name %></td>
-        <td><%= student.CWID %></td>
-        <td><%= student.Concentration %></td>
-        <td><%= student.Advisor %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= button_to 'Destroy', student_path(:id => student), method: :delete%></td>
+        <td><%= link_to student.email, student_path(student) %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,0 +1,388 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Student: <%= @student.Name %></h1>
+
+<p>
+  <strong>Cwid:</strong>
+  <%= @student.CWID %>
+</p>
+
+<p>
+  <strong>Concentration:</strong>
+  <%= @student.Concentration %>
+</p>
+
+<p>
+  <strong>Advisor:</strong>
+  <%= @student.Advisor %>
+</p>
+
+<%= link_to 'Edit Student', edit_student_path(@student) %> |
+<%= link_to 'Destroy', student_path(:id => @student), method: :delete%>
+<%= link_to 'Back', students_path %>
+
+<h2>Plans Of Study:</h2>
+<ul>
+  <% @student.plans.each do |plan| %>
+    <li>
+      <%=link_to plan.nameofplan, plan%>
+      <%=plan.created_at%>
+      <%= button_to 'Destroy Plan', [plan.student, plan],
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+              
+      <%= button_to 'Submit To Advisor', @student.plans.destroy %>        
+  <% end %>
+</ul>
+
+<strong>Add a Plan Of Study:</strong>
+
+<%= form_with model: [ @student, @student.plans.build ] do |form| %>
+  <p>
+   Name Of POS: <%= form.text_field :nameofplan %>
+  </p>
+  
+  <p>
+   Name of Semester1: <%= form.text_field :semester1 %>
+  </p>
+  
+  <div class="control-group">
+    <%= form.label "Course1a", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course1a, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course1b", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course1b, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course1c", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course1c, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course1d", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course1d, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+  <p>
+   Name of Semester2: <%= form.text_field :semester2 %>
+  </p>
+  
+  <div class="control-group">
+    <%= form.label "Course2a", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course2a, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course2b", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course2b, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course2c", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course2c, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course2d", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course2d, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+  <p>
+   Name of Semester3: <%= form.text_field :semester3 %>
+  </p>
+  
+    <div class="control-group">
+    <%= form.label "Course3a", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course3a, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course3b", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course3b, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course3c", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course3c, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course3d", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course3d, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+  <p>
+   Name of Semester4: <%= form.text_field :semester4 %>
+  </p>
+  
+  <div class="control-group">
+    <%= form.label "Course4a", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course4a, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course4b", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course4b, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course4c", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course4c, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course4d", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course4d, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+  <p>
+   Name of Semester5: <%= form.text_field :semester5 %>
+  </p>
+  
+  <div class="control-group">
+    <%= form.label "Course5a", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course5a, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course5b", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course5b, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course5c", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course5c, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course5d", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course5d, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+  <p>
+   Name of Semester6: <%= form.text_field :semester6 %>
+  </p>
+  
+  <div class="control-group">
+    <%= form.label "Course6a", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course6a, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course6b", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course6b, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course6c", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course6c, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course6d", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course6d, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+  <p>
+   Name of Semester7: <%= form.text_field :semester7 %>
+  </p>
+  
+  <div class="control-group">
+    <%= form.label "Course7a", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course7a, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course7b", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course7b, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course7c", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course7c, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course7d", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course7d, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+  <p>
+   Name of Semester8: <%= form.text_field :semester8 %>
+  </p>
+  
+  <div class="control-group">
+    <%= form.label "Course8a", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course8a, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course8b", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course8b, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course8c", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course8c, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course8d", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course8d, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+  <p>
+   Name of Semester9: <%= form.text_field :semester9 %>
+  </p>
+  
+  <div class="control-group">
+    <%= form.label "Course9a", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course9a, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course9b", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course9b, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course9c", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course9c, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course9d", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course9d, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+  <p>
+   Name of Semester10: <%= form.text_field :semester10 %>
+  </p>
+  
+  <div class="control-group">
+    <%= form.label "Course10a", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course10a, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course10b", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course10b, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course10c", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course10c, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course10d", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course10d, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+  <p>
+    
+   Name of Semester11: <%= form.text_field :semester11 %>
+  </p>
+  
+  <div class="control-group">
+    <%= form.label "Course11a", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course11a, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course11b", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course11b, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course11c", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course11c, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course11d", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course11d, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+  <p>
+   Name of Semester12: <%= form.text_field :semester12 %>
+  </p>
+  
+  <div class="control-group">
+    <%= form.label "Course12a", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course12a, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course12b", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course12b, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course12c", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course12c, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+    <div class="control-group">
+    <%= form.label "Course12d", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:course12d, options_from_collection_for_select(Course.all, 'name', 'name')) %>
+    </div>
+  </div>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+</p>

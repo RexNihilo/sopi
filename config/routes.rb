@@ -34,7 +34,7 @@ Rails.application.routes.draw do
    resources :plans
   end
   
-  resources :courses
+  resources :semesters
 
   mount RailsAdmin::Engine => "/admin", as: "rails_admin"
   
@@ -49,5 +49,12 @@ Rails.application.routes.draw do
   constraints Clearance::Constraints::SignedOut.new do
     root to: "landingpage#show"
   end
+  
+  # get '/', to: 'welcome#index', as: :root
+  # get '/sign_up', to: 'users#new', as: :register
+  # get '/sign_in', to: 'sessions#new', as: :sign_in
+  # post '/login', to: 'sessions#create'
+  
+  resources :users, only: [:edit, :show, :update]
 
 end

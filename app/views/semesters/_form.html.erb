@@ -12,20 +12,13 @@
   <% end %>
   
   <div>
-    <%= form.label :season %><br>
-    <%= form.text_field :season %>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
     <% semester.errors.full_messages_for(:season).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
-  <div>
-    <%= form.label :year %><br>
-    <%= form.text_field :year %>
-    <% semester.errors.full_messages_for(:year).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
   <div>
     <%= form.label :course1 %><br>
     <%= form.text_field :course1 %>
@@ -33,6 +26,7 @@
       <div><%= message %></div>
     <% end %>
   </div>
+  
   <div>
     <%= form.label :course2 %><br>
     <%= form.text_field :course2 %>
@@ -40,21 +34,25 @@
       <div><%= message %></div>
     <% end %>
   </div>
-    <div>
+  
+  <div>
     <%= form.label :course3 %><br>
     <%= form.text_field :course3 %>
     <% semester.errors.full_messages_for(:course3).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
-    <div>
+  
+  <div>
     <%= form.label :course4 %><br>
     <%= form.text_field :course4 %>
     <% semester.errors.full_messages_for(:course4).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
+  
   <div class="actions">
     <%= form.submit %>
   </div>
+  
 <% end %>

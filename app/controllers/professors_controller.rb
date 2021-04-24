@@ -3,7 +3,7 @@ class ProfessorsController < ApplicationController
 
   # GET /professors or /professors.json
   def index
-    @professors = Professor.all
+    @professors = User.professors
   end
 
   # GET /professors/1 or /professors/1.json

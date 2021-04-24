@@ -1,0 +1,12 @@
+<h1>Account Settings</h1>
+
+<%= form_for @user, url: "#{@user.id}" do |f| %>
+    <div class="form-group">
+      <%= f.label :role %>
+      <%= f.collection_select :role, User::ROLES, :to_s, :to_s, :include_blank => true, class:"form-control" %>
+    </div>
+
+
+<%= f.submit 'Update', class:"btn btn-primary" %>
+
+<% end %>

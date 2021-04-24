@@ -1,7 +1,4 @@
 class Semester < ApplicationRecord
-    belongs_to :plan, optional: true
-   # has_many :courses
-    #    validates :course1, presence: true
-     #   validates :season, presence: true
-      #  validates :year, presence: true
+ validates_presence_of :name, :course1, :course2, :course3, :course4
+ belongs_to :user
 end

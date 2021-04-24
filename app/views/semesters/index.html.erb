@@ -1,12 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Semesters</h1>
+<h1>My courses</h1>
 
 <ul>
   <% @semesters.each do |semester| %>
     <li>
-      <%= link_to semester.season, semester %>
-      <%=semester.year%>
+      <%= link_to semester.name, semester %>
       <%=semester.course1%>
       <%=semester.course2%>
       <%=semester.course3%>
@@ -15,5 +14,3 @@
   <% end %>
 </ul>
 <%= link_to "New Semester", new_semester_path %>
-
-<p>Find this view in app/views/semesterss/index.html.erb</p>
