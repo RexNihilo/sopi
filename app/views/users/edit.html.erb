@@ -1,12 +1,34 @@
 <h1>Account Settings</h1>
 
-<%= form_for @user, url: "#{@user.id}" do |f| %>
+<%= form_for @user do |f| %>
+
+   <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :role %>
+    <%= f.collection_select :role, User::ROLES, :to_s, :to_s, :include_blank => true, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :cwid %>
+    <%= f.number_field :cwid, class:"form-control" %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :concentration %>
+    <%= f.text_field :concentration, class:"form-control" %>
+  </div>
+  
+  <% if @user.student? %>
     <div class="form-group">
-      <%= f.label :role %>
-      <%= f.collection_select :role, User::ROLES, :to_s, :to_s, :include_blank => true, class:"form-control" %>
+      <%= f.label :advisor %>
+      <%= f.collection_select :advisor_id, User.professors, :id, :name, :include_blank => true, class:"form-control" %>
     </div>
-
-
-<%= f.submit 'Update', class:"btn btn-primary" %>
+  <% end %>
+  
+  <%= f.submit 'Update', class:"btn btn-primary" %>
 
 <% end %>

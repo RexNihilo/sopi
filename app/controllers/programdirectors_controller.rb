@@ -1,13 +1,13 @@
 class ProgramdirectorsController < ApplicationController
   def index
-    @professor = Professor.all
-    @student = Student.all
-     @course = Course.all
+    @professor = User.professors
+    @students = User.students
+    @courses = []#Course.all
   end
   
   def show
     @professor = Professor.find(params[:id])
-    @student= Student.find(params[:id])
+    @students = Student.find(params[:id])
     @course = Course.find(params[:id])
   end
   

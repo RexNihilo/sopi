@@ -1,12 +1,16 @@
-<p>Semester: <%= @semester.name %></p>
-<p>Number: <%= @semester.course1 %></p>
-<p>Number: <%= @semester.course2 %></p>
-<p>Number: <%= @semester.course3 %></p>
-<p>Number: <%= @semester.course4 %></p>
-<ul>
-  <li><%= link_to "Edit", edit_semester_path(@semester) %></li>
+<h1><%= @semester.name %></h1>
+<table>
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= link_to course.dept + course.number.to_s + ' - ' + course.name, course %> </td>
+        <td><%= button_to "Remove Course", semester_course_path(@semester, course), method: :delete, data: {:confirm => "You sure?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  
+<%= link_to "Add Course", new_semester_course_path(@semester) %> |
+<%= link_to "Change Name", edit_semester_path(@semester) %> |
+<%= link_to "Delete", semester_path(@semester), method: :delete, data: { confirm: "Are you sure?" } %>
 
-<li><%= link_to "Destroy Semester", semester_path(@semester),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %></li>
-</ul>

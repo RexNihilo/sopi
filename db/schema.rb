@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_24_003243) do
+ActiveRecord::Schema.define(version: 2021_04_25_190159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,11 +25,25 @@ ActiveRecord::Schema.define(version: 2021_04_24_003243) do
     t.index ["student_id"], name: "index_comments_on_student_id"
   end
 
+  create_table "course_semesters", force: :cascade do |t|
+    t.bigint "course_id", null: false
+    t.bigint "semester_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["course_id"], name: "index_course_semesters_on_course_id"
+    t.index ["semester_id"], name: "index_course_semesters_on_semester_id"
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string "name"
+    t.string "dept"
+    t.integer "number"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "semesters", force: :cascade do |t|
-    t.string "course1", default: "Unassigned"
-    t.string "course2", default: "Unassigned"
-    t.string "course3", default: "Unassigned"
-    t.string "course4", default: "Unassigned"
     t.string "name"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -38,7 +52,11 @@ ActiveRecord::Schema.define(version: 2021_04_24_003243) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "name"
     t.string "email"
+    t.integer "cwid"
+    t.string "concentration"
+    t.integer "advisor_id"
     t.string "encrypted_password"
     t.integer "role"
     t.string "remember_token"
@@ -46,5 +64,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_003243) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "course_semesters", "courses"
+  add_foreign_key "course_semesters", "semesters"
   add_foreign_key "semesters", "users"
 end

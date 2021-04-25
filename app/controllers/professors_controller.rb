@@ -1,5 +1,5 @@
 class ProfessorsController < ApplicationController
-  before_action :set_professor, only: %i[ show edit update destroy ]
+  # before_action :set_professor, only: %i[ show edit update destroy ]
 
   # GET /professors or /professors.json
   def index
@@ -8,7 +8,7 @@ class ProfessorsController < ApplicationController
 
   # GET /professors/1 or /professors/1.json
   def show
-    @professors = Professor.find(params[:id])
+    @professor = User.find(params[:id])
   end
 
   # GET /professors/new

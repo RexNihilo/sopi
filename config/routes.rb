@@ -34,7 +34,10 @@ Rails.application.routes.draw do
    resources :plans
   end
   
-  resources :semesters
+  resources :semesters do
+   resources :courses, only: [:new, :create, :destroy]
+  end
+  resources :courses
 
   mount RailsAdmin::Engine => "/admin", as: "rails_admin"
   

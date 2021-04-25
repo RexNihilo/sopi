@@ -5,22 +5,20 @@
 <table>
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Name</th>
+      <th>Cwid</th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @professors.each do |professor| %>
       <tr>
-        <td><%= professor.Name %></td>
-        <td><%= link_to 'Show', professor %></td>
-        <td><%= link_to 'Edit', edit_professor_path(professor) %></td>
-        <td><%= button_to 'Destroy', professor_path(:id => professor), method: :delete%></td>
+        <td><%= link_to professor.name, professor_path(professor) %></td>
+        <td><%= professor.cwid %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Professor', new_professor_path %>

@@ -9,14 +9,20 @@
       <th>Cwid</th>
       <th>Concentration</th>
       <th>Advisor</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @students.each do |student| %>
       <tr>
-        <td><%= link_to student.email, student_path(student) %></td>
+        <td><%= link_to student.name, student_path(student) %></td>
+        <td><%= student.cwid %></td>
+        <td><%= student.concentration %></td>
+        <% if student.advisor_id %>
+          <% advisor = student.advisor %>
+          <td><%= link_to advisor.name, professor_path(advisor) %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +30,3 @@
 
 <br>
 
-<%= link_to 'New Student', new_student_path %>

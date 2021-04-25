@@ -1,7 +1,8 @@
 class Course < ApplicationRecord
-   # belongs_to :semester, optional: true
+    has_many :course_semesters
+    has_many :courses, through: :course_semesters
     validates :name, presence: true
-    validates :prefix, presence: true
+    validates :dept, presence: true
     validates :number, presence: true
-    validates :section, presence: true
+    validates :description, presence: true
 end

@@ -2,8 +2,6 @@
 
 <h1>Student: <%= @student.email %></h1>
 
-<%= link_to 'Edit Student', edit_student_path(@student) %> |
-<%= link_to 'Destroy', student_path(:id => @student), method: :delete%>
 <%= link_to 'Back', students_path %>
 
 <h2>Plans Of Study:</h2>

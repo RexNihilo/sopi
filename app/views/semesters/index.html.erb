@@ -5,11 +5,10 @@
 <ul>
   <% @semesters.each do |semester| %>
     <li>
-      <%= link_to semester.name, semester %>
-      <%=semester.course1%>
-      <%=semester.course2%>
-      <%=semester.course3%>
-      <%=semester.course4%>
+      <h2><%= link_to semester.name, semester %></h2>
+      <% semester.courses.each do |course| %>
+        <%= link_to course.dept + course.number.to_s + ' - ' + course.name, course %></br>
+      <% end %>
     </li>
   <% end %>
 </ul>

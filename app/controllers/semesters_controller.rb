@@ -1,7 +1,5 @@
 class SemestersController < ApplicationController
-# before action Elgazar notes 
-  before_action :require_login 
-  #this could be used to protect 
+  before_action :require_login
   
   def index
     @user = current_user
@@ -10,6 +8,7 @@ class SemestersController < ApplicationController
   
   def show
     @semester = Semester.find(params[:id])
+    @courses = @semester.courses
   end
   
   def new
